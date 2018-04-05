@@ -15,9 +15,9 @@ namespace Dreyever {
 		public GameObject hitbox;
 		private BoxCollider2D hitboxCollider;
 
-		private GameObject smoke;
-		private Animator smokeAnimator;
-		private SpriteRenderer smokeRenderer;
+		public GameObject smoke;
+        private Animator smokeAnimator;
+        private SpriteRenderer smokeRenderer;
 
 		private const float runningSpeed = 9f;
 		private float bonusSpeed = 0f;
@@ -36,14 +36,12 @@ namespace Dreyever {
 
 		void Start() {
 			collider = GetComponent<PolygonCollider2D> ();
-
 			hitboxCollider = hitbox.GetComponent<BoxCollider2D> ();
 
-			smoke = GetComponent<Init> ().smoke;
-			smokeAnimator = smoke.GetComponent<Animator> ();
-			smokeRenderer = smoke.GetComponent<SpriteRenderer> ();
-			smokeRenderer.enabled = false;
-		}
+            smokeAnimator = smoke.GetComponent<Animator>();
+            smokeAnimator.enabled = false;
+            smokeRenderer = smoke.GetComponent<SpriteRenderer>();
+        }
 
 		void FixedUpdate() {
 			AdaptLooks ();
@@ -71,8 +69,7 @@ namespace Dreyever {
 
 			// Show smoke appropriately.
 			if (standsOnTheGround && (currentMovement == Movement.RUNNING)) {
-				smokeRenderer.enabled = true;
-				smokeAnimator.Play("smoke");
+                smokeAnimator.enabled = true;
 
 				int smokeShift = 0;
 				if (currentDirection == Direction.LEFT) {
@@ -85,8 +82,6 @@ namespace Dreyever {
 
 				smoke.transform.position = new Vector3 (collider.bounds.center.x + collider.bounds.extents.x * smokeShift,
 					collider.bounds.min.y, 0);
-			} else {
-				smokeRenderer.enabled = false;
 			}
 		}
 
