@@ -47,7 +47,7 @@ namespace Dreyever {
 			AdaptLooks ();
 			AdaptPhysics ();
 
-			MoveHorizontal ();
+			//MoveHorizontal ();
 			MoveVertical ();
 		}
 

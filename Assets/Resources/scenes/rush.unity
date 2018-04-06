@@ -649,6 +649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 787883473}
   - component: {fileID: 787883472}
+  - component: {fileID: 787883474}
   m_Layer: 0
   m_Name: ReversedBulldozeringDreyever
   m_TagString: Untagged
@@ -706,13 +707,24 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 787883471}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.31, y: -17.57, z: -0.75}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.6, y: 1.6000004, z: -0.75}
   m_LocalScale: {x: 1.4979746, y: 1.4979746, z: 1.4979746}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &787883474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 787883471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fab5f356d018ba44a9ab498bafa6abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &845540114
 GameObject:
   m_ObjectHideFlags: 0
