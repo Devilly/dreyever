@@ -27,7 +27,7 @@ namespace Dreyever {
 		private const float gravity = 1.5f;
 		private const float jumpSpeed = 0.4f;
 
-		private bool standsOnTheGround = false;
+		private bool grounded = false;
 		private float verticalSpeed = 0f;
 
 		public const float safetyRing = 0.01f;
@@ -68,7 +68,7 @@ namespace Dreyever {
 			transform.eulerAngles = new Vector3 (0, 0, rotation);
 
 			// Show smoke appropriately.
-			if (standsOnTheGround && (currentMovement == Movement.RUNNING)) {
+			if (grounded && (currentMovement == Movement.RUNNING)) {
                 smokeAnimator.enabled = true;
 
 				int smokeShift = 0;
@@ -99,7 +99,7 @@ namespace Dreyever {
 		void MoveHorizontal() {
 			Movement currentMovement = state.GetMovement();
 
-			if (standsOnTheGround) {
+			if (grounded) {
 				bonusSpeed -= bonusSpeedLoss * Time.fixedDeltaTime;
 				if (bonusSpeed < 0f) {
 					bonusSpeed = 0f;
@@ -139,8 +139,8 @@ namespace Dreyever {
 		void MoveVertical() {
 			bool isCurrentlyJumping = state.IsJumping ();
 
-			if (standsOnTheGround && isCurrentlyJumping) {
-				standsOnTheGround = false;
+			if (grounded && isCurrentlyJumping) {
+				grounded = false;
 				verticalSpeed = jumpSpeed;
 			}
 
@@ -156,35 +156,34 @@ namespace Dreyever {
 			RaycastHit2D hit = hits [0];
 
 			if (hit.collider != null) {
-				bool hasTouchedFloor = false;
+				bool touchedFloor = false;
 
 				float maximumDistance = movementVector.y < 0 ? -hit.distance + safetyRing : hit.distance - safetyRing;
 				if (hit.distance == 0) {
 					movementVector = new Vector2 (0, 0);
-					hasTouchedFloor = true;
+					touchedFloor = true;
 				} else if (Mathf.Abs (maximumDistance) < Mathf.Abs (movementVector.y)) {
 					movementVector = new Vector2 (0, maximumDistance);
-					hasTouchedFloor = true;
+					touchedFloor = true;
 				}
-
-				if (hasTouchedFloor) {
+                bool prevg = grounded;
+				if (touchedFloor) {
 					if (movementVector.y < 0) {
 						// movementVector.y smaller than 0 means a falling movement.
-						// Therefore when touching the floor it's on the upperside and the dreyever stands again.
-						standsOnTheGround = true;
+						grounded = true;
 					}
 
 					verticalSpeed = 0f;
 				} else {
-					standsOnTheGround = false;
+					grounded = false;
 				}
 			} else {
-				standsOnTheGround = false;
+				grounded = false;
 			}
 
 			Move(0, movementVector.y);
 
-			if (standsOnTheGround) {
+			if (grounded) {
 				RaycastHit2D[] floorHits = Physics2D.BoxCastAll(hitboxCollider.bounds.center, hitboxCollider.bounds.size,
 					0, Vector2.down,
 					safetyRing,

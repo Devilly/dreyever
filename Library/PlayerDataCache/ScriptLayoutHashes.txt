@@ -2,7 +2,6 @@ Android
 SceneListBegin?
 Assets/Resources/scenes/start.unity
 Assets/Resources/scenes/menu.unity
-Assets/Resources/scenes/test.unity
 Assets/Resources/scenes/rush.unity
 Assets/Resources/scenes/mode.unity
 SceneListEnd?
@@ -137,6 +136,7 @@ ed9279a9d1042bde3a6ae6cd0c1a92fa Assembly-CSharp.dll:Cinemachine.CinemachinePOV
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Menu.Notification
 61a13d8f72f69fbb8c87ee8c414b086f Assembly-CSharp.dll:Cinemachine.CinemachineOrbitalTransposer
 c261e943c1efad142d715ca930c9b7c6 Assembly-CSharp.dll:Cinemachine.CinemachineComposer
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SmokeBehaviour
 7de429fd231b7c107cd7c9153b821faa Assembly-CSharp.dll:Environment.Speed.Interact
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
