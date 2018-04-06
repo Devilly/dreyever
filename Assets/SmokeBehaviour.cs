@@ -14,14 +14,16 @@ public class SmokeBehaviour : StateMachineBehaviour {
     
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         const float alphaTop = 0.5f;
+        const int framesToTop = 4;
+        const int totalNumberOfFrames = 15;
 
         float alphaDifference;
         if(!hasReachedTop && renderer.color.a < alphaTop)
         {
-            alphaDifference = alphaTop / 10;
+            alphaDifference = alphaTop / framesToTop;
         } else
         {
-            alphaDifference = alphaTop / 10 * -1;
+            alphaDifference = alphaTop / (totalNumberOfFrames - framesToTop) * -1;
         }
 
         float newAlpha = renderer.color.a + alphaDifference;
