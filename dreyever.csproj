@@ -342,7 +342,8 @@
     <Compile Include="Assets\Resources\scripts\camera\Background.cs" />
     <Compile Include="Assets\Resources\scripts\camera\Follow.cs" />
     <Compile Include="Assets\Resources\scripts\camera\Orientation.cs" />
-    <Compile Include="Assets\Resources\scripts\dead\Resize.cs" />
+    <Compile Include="Assets\Resources\scripts\dead\CanvasResize.cs" />
+    <Compile Include="Assets\Resources\scripts\dead\SpriteResize.cs" />
     <Compile Include="Assets\Resources\scripts\dreyever\Controls.cs" />
     <Compile Include="Assets\Resources\scripts\dreyever\Direction.cs" />
     <Compile Include="Assets\Resources\scripts\dreyever\Movement.cs" />

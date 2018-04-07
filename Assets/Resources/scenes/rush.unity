@@ -708,7 +708,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 787883471}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.6, y: 1.6000004, z: -0.75}
+  m_LocalPosition: {x: -23.7, y: -17.5, z: 0}
   m_LocalScale: {x: 1.4979746, y: 1.4979746, z: 1.4979746}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3031,6 +3031,7 @@ GameObject:
   - component: {fileID: 2095289905}
   - component: {fileID: 2095289904}
   - component: {fileID: 2095289903}
+  - component: {fileID: 2095289907}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
@@ -3116,3 +3117,14 @@ RectTransform:
   m_AnchoredPosition: {x: 0.43, y: -17.58}
   m_SizeDelta: {x: 32.047, y: 16.328}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2095289907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2095289902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cccd8dbccad928544815bec72ecf1f37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
