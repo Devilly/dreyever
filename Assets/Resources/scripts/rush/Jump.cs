@@ -10,7 +10,7 @@ namespace Rush {
 
 		void FixedUpdate () {
 			if (Input.touches.Length > 0) {
-				state.StartJumping ();
+                state.StartJumping();
 			} else {
 				state.StopJumping ();
 			}
