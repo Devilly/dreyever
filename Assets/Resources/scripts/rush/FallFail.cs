@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FallFail : MonoBehaviour {
-
-    public GameObject dreyever;
-
-    private void FixedUpdate()
+namespace Rush
+{
+    public class FallFail : MonoBehaviour
     {
-        if(dreyever.transform.position.y < -15)
+
+        public GameObject dreyever;
+        public Behavior shinigamiBehavior;
+
+        private void FixedUpdate()
         {
-            Time.timeScale = 0;
+            if (dreyever.transform.position.y < -15)
+            {
+                shinigamiBehavior.activate();
+            }
         }
     }
 }

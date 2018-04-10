@@ -11,7 +11,17 @@ public class CanvasResize : MonoBehaviour {
         float verticalScale = Camera.main.orthographicSize / halfHeight;
 
         float width = transform.sizeDelta.x;
-        float futureWidth = Camera.main.orthographicSize * 2 / Screen.height * Screen.width;
+        float smallerDimension, biggerDimension;
+        if(Screen.width < Screen.height)
+        {
+            smallerDimension = Screen.width;
+            biggerDimension = Screen.height;
+        } else
+        {
+            smallerDimension = Screen.height;
+            biggerDimension = Screen.width;
+        }
+        float futureWidth = Camera.main.orthographicSize * 2 / smallerDimension * biggerDimension;
         float horizontalScale = futureWidth / width;
             
         transform.localScale = new Vector3(transform.localScale.x * horizontalScale,

@@ -128,13 +128,16 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 31aaf521b3ef8699466676591ea0efd4 Assembly-CSharp.dll:Cinemachine.Timeline.CinemachineTrack
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Dreyever.State
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SpriteResize
 fe460ef6985517d84e68664be1e7af5b Assembly-CSharp.dll:Cinemachine.CinemachineFramingTransposer
 ed9279a9d1042bde3a6ae6cd0c1a92fa Assembly-CSharp.dll:Cinemachine.CinemachinePOV
 0e3d49d9101a427e0be411200df79f87 Assembly-CSharp.dll:Start.Play
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Menu.Play
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Start.Framerate
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Menu.Notification
+ca255087a79e00df9f4b2b2e4ff98f41 Assembly-CSharp.dll:Rush.FallFail
 61a13d8f72f69fbb8c87ee8c414b086f Assembly-CSharp.dll:Cinemachine.CinemachineOrbitalTransposer
+fcd6fe9968ae16c22a5f6db7a659e4fc Assembly-CSharp.dll:.Behavior
 c261e943c1efad142d715ca930c9b7c6 Assembly-CSharp.dll:Cinemachine.CinemachineComposer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SmokeBehaviour
 7de429fd231b7c107cd7c9153b821faa Assembly-CSharp.dll:Environment.Speed.Interact
@@ -185,7 +188,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 f739fe68956c7babcc274f024cbc4a87 Assembly-CSharp.dll:Cinemachine.CinemachineSmoothPath
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Cinemachine.CinemachineHardLookAt
-1d0da648f59ff6d81b7d735ad683a07f Assembly-CSharp.dll:CameraSpace.Follow
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CanvasResize
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Mode.Back
 761e1377c086413ee5a6b8af82617e44 Assembly-CSharp.dll:Rush.Jump
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Test.Back
@@ -193,3 +196,6 @@ ef47b5b296e56702c76218de521ccc37 Assembly-CSharp.dll:Cinemachine.CinemachineBrai
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Cinemachine.CinemachineHardLockToTarget
 506e030fa92c58e7a9fb2a4b86130357 Assembly-CSharp.dll:Cinemachine.CinemachineBasicMultiChannelPerlin
 9dd74a41363b134db6b934985dfd2f92 Assembly-CSharp.dll:Cinemachine.CinemachineClearShot
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Dead.Exit
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Restart
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SceneReset

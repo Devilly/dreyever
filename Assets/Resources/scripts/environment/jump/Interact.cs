@@ -17,7 +17,6 @@ namespace Environment.Jump {
 		private const float timeToReset = 2f;
 
 		private new SpriteRenderer renderer;
-		private IEnumerator coroutine;
 
 		private new Collider2D collider;
 

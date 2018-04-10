@@ -341,7 +341,10 @@
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineTrack.cs" />
     <Compile Include="Assets\Resources\scripts\camera\Background.cs" />
     <Compile Include="Assets\Resources\scripts\camera\Orientation.cs" />
+    <Compile Include="Assets\Resources\scripts\dead\Behavior.cs" />
     <Compile Include="Assets\Resources\scripts\dead\CanvasResize.cs" />
+    <Compile Include="Assets\Resources\scripts\dead\Exit.cs" />
+    <Compile Include="Assets\Resources\scripts\dead\Restart.cs" />
     <Compile Include="Assets\Resources\scripts\dead\SpriteResize.cs" />
     <Compile Include="Assets\Resources\scripts\dreyever\Controls.cs" />
     <Compile Include="Assets\Resources\scripts\dreyever\Direction.cs" />
@@ -369,6 +372,7 @@
     <Compile Include="Assets\Resources\scripts\start\Framerate.cs" />
     <Compile Include="Assets\Resources\scripts\start\NoSleep.cs" />
     <Compile Include="Assets\Resources\scripts\start\Play.cs" />
+    <Compile Include="Assets\Resources\scripts\start\SceneReset.cs" />
     <Compile Include="Assets\Resources\scripts\test\Back.cs" />
     <Compile Include="Assets\SmokeBehaviour.cs" />
   </ItemGroup>
