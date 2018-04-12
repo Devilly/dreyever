@@ -5,6 +5,7 @@ Assets/Resources/scenes/menu.unity
 Assets/Resources/scenes/rush.unity
 Assets/Resources/scenes/mode.unity
 SceneListEnd?
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SceneReset
 9b9c71cf06a525199c2eb4d3be433bc2 Assembly-CSharp.dll:Cinemachine.CinemachineStateDrivenCamera
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -177,6 +178,7 @@ d9ae8c6401801a4a88651871144fd209 Assembly-CSharp.dll:Cinemachine.CinemachineBlen
 879db55796310b9ecf6f670c91db1b42 Assembly-CSharp.dll:Cinemachine.CinemachineVirtualCamera
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Restart
 0fcbcbd9afa80c74caef99e7ba749bb0 Assembly-CSharp.dll:Cinemachine.CinemachineCollider
 0f54a2b60c93ab3dd560d125a2b60197 Assembly-CSharp.dll:Cinemachine.CinemachineBlenderSettings
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
@@ -189,6 +191,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 f739fe68956c7babcc274f024cbc4a87 Assembly-CSharp.dll:Cinemachine.CinemachineSmoothPath
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Cinemachine.CinemachineHardLookAt
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CanvasResize
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Dead.Exit
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Mode.Back
 761e1377c086413ee5a6b8af82617e44 Assembly-CSharp.dll:Rush.Jump
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Test.Back
@@ -196,6 +199,3 @@ ef47b5b296e56702c76218de521ccc37 Assembly-CSharp.dll:Cinemachine.CinemachineBrai
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Cinemachine.CinemachineHardLockToTarget
 506e030fa92c58e7a9fb2a4b86130357 Assembly-CSharp.dll:Cinemachine.CinemachineBasicMultiChannelPerlin
 9dd74a41363b134db6b934985dfd2f92 Assembly-CSharp.dll:Cinemachine.CinemachineClearShot
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Dead.Exit
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Restart
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SceneReset
