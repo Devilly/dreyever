@@ -100,7 +100,7 @@ namespace Dreyever {
 			Movement currentMovement = state.GetMovement();
 
 			if (grounded) {
-				bonusSpeed -= bonusSpeedLoss * Time.fixedDeltaTime;
+				bonusSpeed -= bonusSpeedLoss * Time.deltaTime;
 				if (bonusSpeed < 0f) {
 					bonusSpeed = 0f;
 				}
@@ -113,7 +113,7 @@ namespace Dreyever {
 
 			float movementDistance = 0;
 			if (currentMovement == Movement.RUNNING) {
-				movementDistance = (runningSpeed + bonusSpeed) * Time.fixedDeltaTime;
+				movementDistance = (runningSpeed + bonusSpeed) * Time.deltaTime;
 			}
 
 			if (currentDirection == Direction.LEFT) {
@@ -144,7 +144,7 @@ namespace Dreyever {
 				verticalSpeed = jumpSpeed;
 			}
 
-			verticalSpeed -= gravity * Time.fixedDeltaTime;
+			verticalSpeed -= gravity * Time.deltaTime;
 			if (verticalSpeed < maximumVerticalDropSpeed) {
 				verticalSpeed = maximumVerticalDropSpeed;
 			}

@@ -373,7 +373,6 @@
     <Compile Include="Assets\Resources\scripts\start\NoSleep.cs" />
     <Compile Include="Assets\Resources\scripts\start\Play.cs" />
     <Compile Include="Assets\Resources\scripts\start\SceneReset.cs" />
-    <Compile Include="Assets\Resources\scripts\test\Back.cs" />
     <Compile Include="Assets\SmokeBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
