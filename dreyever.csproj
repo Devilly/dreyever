@@ -350,6 +350,7 @@
     <Compile Include="Assets\Resources\scripts\dreyever\Direction.cs" />
     <Compile Include="Assets\Resources\scripts\dreyever\Movement.cs" />
     <Compile Include="Assets\Resources\scripts\dreyever\State.cs" />
+    <Compile Include="Assets\Resources\scripts\environment\cannon\Aim.cs" />
     <Compile Include="Assets\Resources\scripts\environment\Influence.cs" />
     <Compile Include="Assets\Resources\scripts\environment\InteractionBase.cs" />
     <Compile Include="Assets\Resources\scripts\environment\jump\Interact.cs" />
