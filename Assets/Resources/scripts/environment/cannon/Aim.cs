@@ -9,10 +9,10 @@ public class Aim : MonoBehaviour {
 	
 	void Start () {
         playerTransform = GameObject.Find("Dreyever").transform;
-        barrelTransform = transform.Find("Barrel");
+        barrelTransform = transform;
 	}
 	
-	void Update () {
+	void FixedUpdate () {
         Vector3 position = transform.position;
         Vector3 playerPosition = playerTransform.position;
 
