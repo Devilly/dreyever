@@ -21,9 +21,8 @@ namespace Environment.Speed {
 			} else {
 				StopCoroutine (coroutine);
 			}
-
-			coroutine = ChangeSprite ();
-			StartCoroutine (coroutine);
+            
+			StartCoroutine (coroutine = ChangeSprite());
 
 			return influence;
 		}
@@ -35,11 +34,9 @@ namespace Environment.Speed {
 			for (int index = 1; index < sprites.Length; index++) {
 				yield return new WaitForSeconds(delayPerSprite);
 				renderer.sprite = sprites[index];
-
-				if (index == sprites.Length - 1) {
-					coroutine = null;
-				}
 			}
-		}
+            
+            coroutine = null;
+        }
 	}
 }

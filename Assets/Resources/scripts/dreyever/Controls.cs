@@ -166,7 +166,7 @@ namespace Dreyever {
 					movementVector = new Vector2 (0, maximumDistance);
 					touchedFloor = true;
 				}
-                bool prevg = grounded;
+
 				if (touchedFloor) {
 					if (movementVector.y < 0) {
 						// movementVector.y smaller than 0 means a falling movement.
