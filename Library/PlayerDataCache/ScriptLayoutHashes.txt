@@ -194,8 +194,10 @@ f739fe68956c7babcc274f024cbc4a87 Assembly-CSharp.dll:Cinemachine.CinemachineSmoo
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Dead.Exit
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Mode.Back
 761e1377c086413ee5a6b8af82617e44 Assembly-CSharp.dll:Rush.Jump
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Test.Back
 ef47b5b296e56702c76218de521ccc37 Assembly-CSharp.dll:Cinemachine.CinemachineBrain
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Cinemachine.CinemachineHardLockToTarget
 506e030fa92c58e7a9fb2a4b86130357 Assembly-CSharp.dll:Cinemachine.CinemachineBasicMultiChannelPerlin
 9dd74a41363b134db6b934985dfd2f92 Assembly-CSharp.dll:Cinemachine.CinemachineClearShot
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Aim
+2afe27c30ffab6522e6d68e3852542bd Assembly-CSharp.dll:.Shoot
+9f79bed950423eaac7a59d60c45d761f Assembly-CSharp.dll:.BallBehaviour
