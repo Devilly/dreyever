@@ -193,23 +193,25 @@ namespace Dreyever {
 					if (floorHit.collider != null) {
 						InteractionBase interact = floorHit.rigidbody.GetComponent<InteractionBase> ();
 						if (interact != null) {
-							Influence influence = interact.Do ();
-							bonusSpeed += influence.Speed ();
+							Influence(interact.Do ());
 						}
 					}
 				}
 			}
 		}
 
-		public void Move(float x, float y) {
-			Vector3 positionVector = new Vector2 (container.transform.position.x + x,
-				container.transform.position.y + y);
+        public void Influence(Influence influence)
+        {
+            bonusSpeed += influence.HorizontalMovement();
+            verticalSpeed += influence.VerticalMovement();
 
-			container.transform.position = positionVector;
-		}
+            Move(influence.Reposition().x, influence.Reposition().y);
+        }
 
-		public void ForceJump(float jumpSpeed) {
-			this.verticalSpeed = jumpSpeed;
-		}
+		private void Move(float x, float y)
+        {
+            container.transform.position = new Vector2(container.transform.position.x + x,
+                container.transform.position.y + y);
+        }
 	}
 }

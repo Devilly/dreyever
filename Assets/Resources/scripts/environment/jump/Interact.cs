@@ -69,7 +69,7 @@ namespace Environment.Jump {
 				}
 
 				RaycastHit2D[] hits = new RaycastHit2D[100];
-				int numberOfHits = collider.Cast (Vector2.up, hits);
+				collider.Cast (Vector2.up, hits);
 				IEnumerable<RaycastHit2D> trackedBodies = from hit in hits
 				                                          where hit.collider != null && hit.collider.name == "Hitbox" && hit.distance < deltaY
 				                                          select hit;
@@ -78,10 +78,10 @@ namespace Environment.Jump {
 				if (trackedBodies.Count () > 0) {
 					trackedBodies.ToList ().ForEach (hit => {
 						Controls controls = hit.collider.gameObject.transform.parent.GetComponentInChildren<Controls> ();
-						controls.Move (0, deltaY - hit.distance + Controls.safetyRing);
+                        controls.Influence(new Influence().Reposition(new Vector2(0, deltaY - hit.distance + Controls.safetyRing)));
 
 						if (isCatapulted) {
-							controls.ForceJump (0.6f);
+                            controls.Influence(new Influence().VerticalMovement(0.6f));
 						}
 					});
 				}

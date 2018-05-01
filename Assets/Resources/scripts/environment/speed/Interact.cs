@@ -17,7 +17,7 @@ namespace Environment.Speed {
 		public override Influence Do() {
 			Influence influence = new Influence();
 			if (coroutine == null) {
-				influence = influence.Speed (2f);
+				influence = influence.HorizontalMovement (2f);
 			} else {
 				StopCoroutine (coroutine);
 			}
