@@ -44,12 +44,11 @@ namespace Dreyever {
         }
 
 		void FixedUpdate() {
-			AdaptLooks ();
-			AdaptPhysics ();
-
 			MoveHorizontal ();
 			MoveVertical ();
-		}
+            
+            AdaptLooks();
+        }
 
 		void AdaptLooks() {
 			Movement currentMovement = state.GetMovement();
@@ -125,15 +124,51 @@ namespace Dreyever {
             RaycastHit2D hit = Physics2D.BoxCast(hitboxCollider.bounds.center, hitboxCollider.bounds.size,
                 0, movementVector, Mathf.Infinity, LayerMask.GetMask(collisionLayers));
 
-			if (hit.collider != null) {
-				float maximumDistance = movementVector.x < 0 ? -hit.distance + safetyRing : hit.distance - safetyRing;
-				if (Mathf.Abs (maximumDistance) < Mathf.Abs (movementVector.x)) {
-					movementVector = new Vector2 (maximumDistance, 0);
-				}
+            if (hit.collider != null)
+            {
+                var maximumDistance = CalculateMaximumDistance(movementVector, hit);
+                if (Mathf.Abs(maximumDistance) < Mathf.Abs(movementVector.x))
+                {
+                    RaycastHit2D alternativeHit;
+                    float alternativeMaximumDistance = 0;
+
+                    const float liftStep = 0.01f;
+                    float lift = liftStep;
+                    bool found = false;
+
+                    while((lift <= 0.1) && !found)
+                    {
+                        alternativeHit = Physics2D.BoxCast(hitboxCollider.bounds.center + new Vector3(0, lift, 0), hitboxCollider.bounds.size,
+                            0, movementVector, Mathf.Infinity, LayerMask.GetMask(collisionLayers));
+
+                        alternativeMaximumDistance = CalculateMaximumDistance(movementVector, alternativeHit);
+                        if(alternativeMaximumDistance > maximumDistance)
+                        {
+                            found = true;
+                            break;
+                        }
+
+                        lift += liftStep;
+                    }
+
+                    movementVector = new Vector2(found ? alternativeMaximumDistance : maximumDistance,
+                        found ? lift + safetyRing : 0);
+                }
 			}
 
-			Move(movementVector.x, 0);
+			Move(movementVector);
 		}
+
+        private float CalculateMaximumDistance(Vector2 movementVector, RaycastHit2D hit)
+        {
+            if(hit.collider == null)
+            {
+                return movementVector.x;
+            } else
+            {
+                return movementVector.x < 0 ? -hit.distance + safetyRing : hit.distance - safetyRing;
+            }
+        }
 
 		void MoveVertical() {
 			bool isCurrentlyJumping = state.IsJumping ();
@@ -179,7 +214,7 @@ namespace Dreyever {
 				grounded = false;
 			}
 
-			Move(0, movementVector.y);
+			Move(movementVector);
 
 			if (grounded) {
 				RaycastHit2D[] floorHits = Physics2D.BoxCastAll(hitboxCollider.bounds.center, hitboxCollider.bounds.size,
@@ -201,13 +236,15 @@ namespace Dreyever {
             bonusSpeed += influence.HorizontalMovement();
             verticalSpeed += influence.VerticalMovement();
 
-            Move(influence.Reposition().x, influence.Reposition().y);
+            Move(new Vector2(influence.Reposition().x, influence.Reposition().y));
         }
 
-		private void Move(float x, float y)
+		private void Move(Vector2 movementVector)
         {
-            container.transform.position = new Vector2(container.transform.position.x + x,
-                container.transform.position.y + y);
+            container.transform.position = new Vector2(container.transform.position.x + movementVector.x,
+                container.transform.position.y + movementVector.y);
+
+            AdaptPhysics();
         }
 	}
 }
