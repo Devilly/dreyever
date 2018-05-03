@@ -122,9 +122,8 @@ namespace Dreyever {
 
 			Vector2 movementVector = new Vector2 (movementDistance, 0);
 
-			RaycastHit2D[] hits = new RaycastHit2D[1];
-			hitboxCollider.Cast (movementVector, hits);
-			RaycastHit2D hit = hits [0];
+            RaycastHit2D hit = Physics2D.BoxCast(hitboxCollider.bounds.center, hitboxCollider.bounds.size,
+                0, movementVector, Mathf.Infinity, LayerMask.GetMask(collisionLayers));
 
 			if (hit.collider != null) {
 				float maximumDistance = movementVector.x < 0 ? -hit.distance + safetyRing : hit.distance - safetyRing;
@@ -151,9 +150,8 @@ namespace Dreyever {
 				
 			Vector2 movementVector = new Vector2 (0, verticalSpeed);
 
-			RaycastHit2D[] hits = new RaycastHit2D[1];
-			hitboxCollider.Cast (movementVector, hits);
-			RaycastHit2D hit = hits [0];
+			RaycastHit2D hit = Physics2D.BoxCast(hitboxCollider.bounds.center, hitboxCollider.bounds.size,
+                0, movementVector, Mathf.Infinity, LayerMask.GetMask(collisionLayers));
 
 			if (hit.collider != null) {
 				bool touchedFloor = false;
@@ -185,9 +183,7 @@ namespace Dreyever {
 
 			if (grounded) {
 				RaycastHit2D[] floorHits = Physics2D.BoxCastAll(hitboxCollider.bounds.center, hitboxCollider.bounds.size,
-					0, Vector2.down,
-					safetyRing,
-					LayerMask.GetMask(collisionLayers));
+					0, Vector2.down, safetyRing, LayerMask.GetMask(collisionLayers));
 
 				foreach(RaycastHit2D floorHit in floorHits) {
 					if (floorHit.collider != null) {
