@@ -2,23 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shoot : MonoBehaviour {
-
-    public GameObject cannonball;
-    
-	void Start () {
-        StartCoroutine(Fire());
-	}
-
-    private IEnumerator Fire()
+namespace Environment.Cannon
+{
+    public class Shoot : MonoBehaviour
     {
-        while(true)
-        {
-            yield return new WaitForSeconds(.5f);
 
-            GameObject newCannonball = Instantiate(cannonball, transform.position, transform.rotation);
-            BallBehaviour behaviour = newCannonball.GetComponent<BallBehaviour>();
-            behaviour.SetAngle(transform.rotation.eulerAngles.z);
+        public GameObject cannonball;
+
+        void Start()
+        {
+            StartCoroutine(Fire());
+        }
+
+        private IEnumerator Fire()
+        {
+            while (true)
+            {
+                yield return new WaitForSeconds(.5f);
+
+                GameObject newCannonball = Instantiate(cannonball, transform.position, transform.rotation);
+                BallBehaviour behaviour = newCannonball.GetComponent<BallBehaviour>();
+                behaviour.SetAngle(transform.rotation.eulerAngles.z);
+            }
         }
     }
 }

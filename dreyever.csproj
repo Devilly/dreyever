@@ -341,6 +341,7 @@
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineTrack.cs" />
     <Compile Include="Assets\Resources\scripts\camera\Background.cs" />
     <Compile Include="Assets\Resources\scripts\camera\Orientation.cs" />
+    <Compile Include="Assets\Resources\scripts\camera\ResetEnvironment.cs" />
     <Compile Include="Assets\Resources\scripts\dead\Behavior.cs" />
     <Compile Include="Assets\Resources\scripts\dead\CanvasResize.cs" />
     <Compile Include="Assets\Resources\scripts\dead\Exit.cs" />
@@ -350,6 +351,8 @@
     <Compile Include="Assets\Resources\scripts\dreyever\Direction.cs" />
     <Compile Include="Assets\Resources\scripts\dreyever\Movement.cs" />
     <Compile Include="Assets\Resources\scripts\dreyever\State.cs" />
+    <Compile Include="Assets\Resources\scripts\environment\bridge\BridgePartInteract.cs" />
+    <Compile Include="Assets\Resources\scripts\environment\bridge\BridgeSectionBehaviour.cs" />
     <Compile Include="Assets\Resources\scripts\environment\cannon\Aim.cs" />
     <Compile Include="Assets\Resources\scripts\environment\cannon\BallBehaviour.cs" />
     <Compile Include="Assets\Resources\scripts\environment\cannon\Shoot.cs" />
