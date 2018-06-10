@@ -28,7 +28,7 @@ namespace Environment.Bridge
 
             foreach (BridgePartInteract bridgePartInteract in bridgePartInteracts)
             {
-                //bridgePartInteract.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                bridgePartInteract.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             }
         }
     }

@@ -96,8 +96,6 @@ namespace Dreyever {
 		}
 
 		void MoveHorizontal() {
-			Movement currentMovement = state.GetMovement();
-
 			if (grounded) {
 				bonusSpeed -= bonusSpeedLoss * Time.deltaTime;
 				if (bonusSpeed < 0f) {
@@ -105,69 +103,118 @@ namespace Dreyever {
 				}
 			}
 
-			Direction currentDirection = Direction.RIGHT;
-			if (state.GetDirection () == Direction.LEFT) {
-				currentDirection = Direction.LEFT;
-			}
-
-			float movementDistance = 0;
+            Movement currentMovement = state.GetMovement();
+            float naturalMovementDistance = 0;
 			if (currentMovement == Movement.RUNNING) {
-				movementDistance = (runningSpeed + bonusSpeed) * Time.deltaTime;
+				naturalMovementDistance = (runningSpeed + bonusSpeed) * Time.deltaTime;
 			}
 
-			if (currentDirection == Direction.LEFT) {
-				movementDistance *= -1;
-			}
-
-			Vector2 movementVector = new Vector2 (movementDistance, 0);
+			Vector2 movementVector = new Vector2 (naturalMovementDistance, 0);
 
             RaycastHit2D hit = Physics2D.BoxCast(hitboxCollider.bounds.center, hitboxCollider.bounds.size,
-                0, movementVector, Mathf.Infinity, LayerMask.GetMask(collisionLayers));
+                0, movementVector, Mathf.Abs(movementVector.x), LayerMask.GetMask(collisionLayers));
 
             if (hit.collider != null)
             {
-                var maximumDistance = CalculateMaximumDistance(movementVector, hit);
-                if (Mathf.Abs(maximumDistance) < Mathf.Abs(movementVector.x))
+                float maximumMovementDistance = CalculateMaximumDistance(naturalMovementDistance, hit);
+                movementVector = new Vector2(maximumMovementDistance, 0);
+
+                if (Mathf.Abs(maximumMovementDistance) < Mathf.Abs(naturalMovementDistance))
                 {
-                    RaycastHit2D alternativeHit;
-                    float alternativeMaximumDistance = 0;
-
-                    const float liftStep = 0.01f;
-                    float lift = liftStep;
-                    bool found = false;
-
-                    while((lift <= 0.1) && !found)
+                    Vector2? alternativeMovementVector = CalculatePossibleSlopeMovementVector(maximumMovementDistance, naturalMovementDistance);
+                    if(!alternativeMovementVector.HasValue)
                     {
-                        alternativeHit = Physics2D.BoxCast(hitboxCollider.bounds.center + new Vector3(0, lift, 0), hitboxCollider.bounds.size,
-                            0, movementVector, Mathf.Infinity, LayerMask.GetMask(collisionLayers));
-
-                        alternativeMaximumDistance = CalculateMaximumDistance(movementVector, alternativeHit);
-                        if(alternativeMaximumDistance > maximumDistance)
-                        {
-                            found = true;
-                            break;
-                        }
-
-                        lift += liftStep;
+                        alternativeMovementVector = CalculateAcceptableVerticalLiftMovementVector(maximumMovementDistance, naturalMovementDistance);
                     }
 
-                    movementVector = new Vector2(found ? alternativeMaximumDistance : maximumDistance,
-                        found ? lift + safetyRing : 0);
+                    if(alternativeMovementVector.HasValue)
+                    {
+                        movementVector = (Vector2) alternativeMovementVector;
+                    }
                 }
 			}
 
 			Move(movementVector);
+
+            if(grounded && hit.collider == null)
+            {
+                RaycastHit2D hitDown = Physics2D.Raycast(new Vector2(hitboxCollider.bounds.min.x, hitboxCollider.bounds.min.y),
+                    Vector2.down, Mathf.Infinity, LayerMask.GetMask(collisionLayers));
+                float angleNormalDown = Vector3.Angle(Vector2.up, hitDown.normal);
+
+                if (hitDown.normal.x > 0 && angleNormalDown > 0 && angleNormalDown <= 45)
+                {
+                    Move(new Vector2(0, -hitDown.distance + safetyRing));
+                }
+            }
 		}
 
-        private float CalculateMaximumDistance(Vector2 movementVector, RaycastHit2D hit)
+        private float CalculateMaximumDistance(float naturalMovementDistance, RaycastHit2D hit)
         {
             if(hit.collider == null)
             {
-                return movementVector.x;
+                return naturalMovementDistance;
             } else
             {
-                return movementVector.x < 0 ? -hit.distance + safetyRing : hit.distance - safetyRing;
+                float distanceToCollision = state.GetDirection() == Direction.LEFT ? -hit.distance + safetyRing : hit.distance - safetyRing;
+                return Mathf.Abs(distanceToCollision) < Mathf.Abs(naturalMovementDistance) ? distanceToCollision : naturalMovementDistance;
             }
+        }
+
+        private Vector2? CalculatePossibleSlopeMovementVector(float maximumMovementDistance, float naturalMovementDistance)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(new Vector2(hitboxCollider.bounds.min.x, hitboxCollider.bounds.min.y),
+                new Vector2(naturalMovementDistance, 0), Mathf.Infinity, LayerMask.GetMask(collisionLayers));
+
+            float angleNormal = Vector3.Angle(Vector2.left, hit.normal);
+            if (angleNormal > 0 && angleNormal <= 45)
+            {
+                float horizontalMovementToSlope = hit.distance - hitboxCollider.bounds.extents.x;
+                float horizontalMovementOnSlope = 0;
+                float verticalMovementOnSlope = 0;
+                if (horizontalMovementToSlope < naturalMovementDistance)
+                {
+                    float distanceLeft = naturalMovementDistance - horizontalMovementToSlope;
+                    horizontalMovementOnSlope = Mathf.Cos(angleNormal * Mathf.Deg2Rad) * distanceLeft;
+                    verticalMovementOnSlope = Mathf.Sin(angleNormal * Mathf.Deg2Rad) * distanceLeft;
+                }
+                return new Vector2(horizontalMovementToSlope + horizontalMovementOnSlope, verticalMovementOnSlope);
+            }
+
+            return null;
+        }
+
+        // This code tries to find a direct horizontal path that is unobscured and as close as possible above any hindrances.
+        // What would also be possible is to make codes which takes a leap over anything high, e.g. 0.1,
+        // and after that dropping down until hitting the ground again.
+        private Vector2? CalculateAcceptableVerticalLiftMovementVector(float maximumMovementDistance, float naturalMovementDistance)
+        {
+            RaycastHit2D hit;
+            float alternativeMovementDistance = 0;
+
+            const float liftStep = safetyRing;
+            float lift = liftStep;
+            bool found = false;
+
+            while ((lift <= 0.1) && !found)
+            {
+                hit = Physics2D.BoxCast(hitboxCollider.bounds.center + new Vector3(0, lift, 0), hitboxCollider.bounds.size,
+                    0, new Vector2(naturalMovementDistance, 0), Mathf.Infinity, LayerMask.GetMask(collisionLayers));
+
+                alternativeMovementDistance = CalculateMaximumDistance(naturalMovementDistance, hit);
+                if (alternativeMovementDistance > maximumMovementDistance)
+                {
+                    found = true;
+                }
+
+                lift += liftStep;
+            }
+
+            if(found)
+            {
+                return new Vector2(alternativeMovementDistance, lift + safetyRing);
+            }
+            return null;
         }
 
 		void MoveVertical() {
@@ -186,7 +233,7 @@ namespace Dreyever {
 			Vector2 movementVector = new Vector2 (0, verticalSpeed);
 
 			RaycastHit2D hit = Physics2D.BoxCast(hitboxCollider.bounds.center, hitboxCollider.bounds.size,
-                0, movementVector, Mathf.Infinity, LayerMask.GetMask(collisionLayers));
+                0, movementVector, Mathf.Abs(movementVector.y), LayerMask.GetMask(collisionLayers));
 
 			if (hit.collider != null) {
 				bool touchedFloor = false;

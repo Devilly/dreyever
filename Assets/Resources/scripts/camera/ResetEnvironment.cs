@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResetEnvironment : MonoBehaviour {
-    
-	void Start () {
-        Time.timeScale = 1;
-	}
+namespace CameraSpace
+{
+    public class ResetEnvironment : MonoBehaviour
+    {
+        void Start()
+        {
+            Time.timeScale = 1;
+        }
+    }
 }

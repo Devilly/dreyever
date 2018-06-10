@@ -12,7 +12,7 @@ namespace Menu {
 		}
 
 		private IEnumerator StartNavigation() {
-			yield return SceneManager.LoadSceneAsync ("mode");
+			yield return SceneManager.LoadSceneAsync ("rush");
 		}
 	}
 }

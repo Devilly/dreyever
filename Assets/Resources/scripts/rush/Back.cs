@@ -10,7 +10,7 @@ namespace Rush {
 		}
 
 		private IEnumerator StartNavigation() {
-			yield return SceneManager.LoadSceneAsync ("mode");
+			yield return SceneManager.LoadSceneAsync ("menu");
 		}
 	}
 }
