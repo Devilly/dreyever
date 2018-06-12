@@ -121,11 +121,7 @@ namespace Dreyever {
 
                 if (Mathf.Abs(maximumMovementDistance) < Mathf.Abs(naturalMovementDistance))
                 {
-                    Vector2? alternativeMovementVector = CalculatePossibleSlopeMovementVector(maximumMovementDistance, naturalMovementDistance);
-                    if(!alternativeMovementVector.HasValue)
-                    {
-                        alternativeMovementVector = CalculateAcceptableVerticalLiftMovementVector(maximumMovementDistance, naturalMovementDistance);
-                    }
+                    Vector2? alternativeMovementVector = CalculateAcceptableVerticalLiftMovementVector(maximumMovementDistance, naturalMovementDistance);
 
                     if(alternativeMovementVector.HasValue)
                     {
@@ -135,18 +131,6 @@ namespace Dreyever {
 			}
 
 			Move(movementVector);
-
-            if(grounded && hit.collider == null)
-            {
-                RaycastHit2D hitDown = Physics2D.Raycast(new Vector2(hitboxCollider.bounds.min.x, hitboxCollider.bounds.min.y),
-                    Vector2.down, Mathf.Infinity, LayerMask.GetMask(collisionLayers));
-                float angleNormalDown = Vector3.Angle(Vector2.up, hitDown.normal);
-
-                if (hitDown.normal.x > 0 && angleNormalDown > 0 && angleNormalDown <= 45)
-                {
-                    Move(new Vector2(0, -hitDown.distance + safetyRing));
-                }
-            }
 		}
 
         private float CalculateMaximumDistance(float naturalMovementDistance, RaycastHit2D hit)
@@ -159,29 +143,6 @@ namespace Dreyever {
                 float distanceToCollision = state.GetDirection() == Direction.LEFT ? -hit.distance + safetyRing : hit.distance - safetyRing;
                 return Mathf.Abs(distanceToCollision) < Mathf.Abs(naturalMovementDistance) ? distanceToCollision : naturalMovementDistance;
             }
-        }
-
-        private Vector2? CalculatePossibleSlopeMovementVector(float maximumMovementDistance, float naturalMovementDistance)
-        {
-            RaycastHit2D hit = Physics2D.Raycast(new Vector2(hitboxCollider.bounds.min.x, hitboxCollider.bounds.min.y),
-                new Vector2(naturalMovementDistance, 0), Mathf.Infinity, LayerMask.GetMask(collisionLayers));
-
-            float angleNormal = Vector3.Angle(Vector2.left, hit.normal);
-            if (angleNormal > 0 && angleNormal <= 45)
-            {
-                float horizontalMovementToSlope = hit.distance - hitboxCollider.bounds.extents.x;
-                float horizontalMovementOnSlope = 0;
-                float verticalMovementOnSlope = 0;
-                if (horizontalMovementToSlope < naturalMovementDistance)
-                {
-                    float distanceLeft = naturalMovementDistance - horizontalMovementToSlope;
-                    horizontalMovementOnSlope = Mathf.Cos(angleNormal * Mathf.Deg2Rad) * distanceLeft;
-                    verticalMovementOnSlope = Mathf.Sin(angleNormal * Mathf.Deg2Rad) * distanceLeft;
-                }
-                return new Vector2(horizontalMovementToSlope + horizontalMovementOnSlope, verticalMovementOnSlope);
-            }
-
-            return null;
         }
 
         // This code tries to find a direct horizontal path that is unobscured and as close as possible above any hindrances.

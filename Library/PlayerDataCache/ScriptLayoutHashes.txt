@@ -94,7 +94,6 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 ca3ac0b37762af0a2124a1fd6e4bfbed Assembly-CSharp.dll:Cinemachine.CinemachineExternalCamera
 56ce15dd7401a24d085fbe0967ae56c6 Assembly-CSharp.dll:GoogleARCore.Examples.ComputerVision.TextureReader
 b203c0a7615dfebdf3d7d05b7551f462 Assembly-CSharp.dll:GoogleARCore.Examples.CloudAnchor.CloudAnchorController
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Rush.Back
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -214,7 +213,7 @@ f739fe68956c7babcc274f024cbc4a87 Assembly-CSharp.dll:Cinemachine.CinemachineSmoo
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CanvasResize
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Dead.Exit
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:GoogleARCore.Examples.Common.DetectedPlaneVisualizer
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ResetEnvironment
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:CameraSpace.ResetEnvironment
 761e1377c086413ee5a6b8af82617e44 Assembly-CSharp.dll:Rush.Jump
 ef47b5b296e56702c76218de521ccc37 Assembly-CSharp.dll:Cinemachine.CinemachineBrain
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Cinemachine.CinemachineHardLockToTarget
