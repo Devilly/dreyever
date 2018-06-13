@@ -497,7 +497,8 @@
     <Compile Include="Assets\Resources\scripts\environment\Influence.cs" />
     <Compile Include="Assets\Resources\scripts\environment\InteractionBase.cs" />
     <Compile Include="Assets\Resources\scripts\environment\jump\Interact.cs" />
-    <Compile Include="Assets\Resources\scripts\environment\speed\Interact.cs" />
+    <Compile Include="Assets\Resources\scripts\environment\speed\SpeedPartInteract.cs" />
+    <Compile Include="Assets\Resources\scripts\environment\speed\SpeedSectionBehaviour.cs" />
     <Compile Include="Assets\Resources\scripts\hue\BridgeInfo.cs" />
     <Compile Include="Assets\Resources\scripts\hue\Bridges.cs" />
     <Compile Include="Assets\Resources\scripts\hue\Connect.cs" />

@@ -8,7 +8,9 @@ namespace Environment.Bridge
     {
         public BridgePartInteract[] bridgePartInteracts;
 
-        private void Start()
+        public float timeBeforeDrop = .25f;
+
+        void Start()
         {
             foreach(BridgePartInteract bridgePartInteract in bridgePartInteracts)
             {
@@ -24,7 +26,7 @@ namespace Environment.Bridge
 
         private IEnumerator DropAfterPeriodOfLoad()
         {
-            yield return new WaitForSeconds(.25f);
+            yield return new WaitForSeconds(timeBeforeDrop);
 
             foreach (BridgePartInteract bridgePartInteract in bridgePartInteracts)
             {

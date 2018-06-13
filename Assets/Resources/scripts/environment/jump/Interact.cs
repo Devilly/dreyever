@@ -16,7 +16,9 @@ namespace Environment.Jump {
 
 		private const float timeToReset = 2f;
 
-		private new SpriteRenderer renderer;
+        public float transmittedVerticalMovement = 0.6f;
+
+        private new SpriteRenderer renderer;
 
 		private new Collider2D collider;
 
@@ -81,7 +83,7 @@ namespace Environment.Jump {
                         controls.Influence(new Influence().Reposition(new Vector2(0, deltaY - hit.distance + Controls.safetyRing)));
 
 						if (isCatapulted) {
-                            controls.Influence(new Influence().VerticalMovement(0.6f));
+                            controls.Influence(new Influence().VerticalMovement(transmittedVerticalMovement));
 						}
 					});
 				}
