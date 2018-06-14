@@ -2,15 +2,19 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class Restart : MonoBehaviour {
-
-    public void Entered()
+namespace Dead
+{
+    public class Restart : MonoBehaviour
     {
-        StartCoroutine(StartNavigation());
-    }
 
-    private IEnumerator StartNavigation()
-    {
-        yield return SceneManager.LoadSceneAsync("rush");
+        public void Entered()
+        {
+            StartCoroutine(StartNavigation());
+        }
+
+        private IEnumerator StartNavigation()
+        {
+            yield return SceneManager.LoadSceneAsync("rush");
+        }
     }
 }

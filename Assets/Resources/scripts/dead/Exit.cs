@@ -2,7 +2,8 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-namespace Dead {
+namespace Dead
+{
     public class Exit : MonoBehaviour
     {
 

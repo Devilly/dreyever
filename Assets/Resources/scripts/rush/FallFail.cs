@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Dead;
 
 namespace Rush
 {
@@ -14,7 +15,7 @@ namespace Rush
         {
             if (dreyever.transform.position.y < -15)
             {
-                shinigamiBehavior.activate();
+                shinigamiBehavior.Activate();
             }
         }
     }

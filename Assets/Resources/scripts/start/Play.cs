@@ -16,7 +16,6 @@ namespace Start {
 
 		public void Entered() {
 			StartCoroutine (StartAnimation());
-			StartCoroutine (StartNavigation ());
 		}
 
 		private IEnumerator StartAnimation() {
@@ -25,10 +24,12 @@ namespace Start {
 				yield return new WaitForSeconds (frameTime);
 				image.sprite = sprite;
 			}
+
+            StartCoroutine(StartNavigation());
 		}
 
 		private IEnumerator StartNavigation() {
-			yield return new WaitForSeconds (.5f);
+			yield return new WaitForSeconds (.1f);
 			SceneManager.LoadSceneAsync ("menu");
 		}
 	}
