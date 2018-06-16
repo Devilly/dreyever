@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Dead;
 
 namespace Environment.Cannon
 {
     public class Shoot : MonoBehaviour
     {
-
+        public Behavior shinigamiBehavior;
         public GameObject cannonball;
 
         void Start()
@@ -18,10 +19,11 @@ namespace Environment.Cannon
         {
             while (true)
             {
-                yield return new WaitForSeconds(.5f);
+                yield return new WaitForSeconds(3f);
 
                 GameObject newCannonball = Instantiate(cannonball, transform.position, transform.rotation);
                 BallBehaviour behaviour = newCannonball.GetComponent<BallBehaviour>();
+                behaviour.SetShinigamiBehavior(shinigamiBehavior);
                 behaviour.SetAngle(transform.rotation.eulerAngles.z);
             }
         }
