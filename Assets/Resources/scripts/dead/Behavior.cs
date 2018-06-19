@@ -25,7 +25,7 @@ namespace Dead
                 Vector3 bottomLeftPoint = Camera.main.ViewportToWorldPoint(new Vector3(0f, 0, 0));
                 if (deathScreen.transform.position.x > bottomLeftPoint.x)
                 {
-                    Vector3 movement = new Vector3(-6f * Time.unscaledDeltaTime, 0, 0);
+                    Vector3 movement = new Vector3(-12f * Time.unscaledDeltaTime, 0, 0);
                     transform.position += movement;
                     deathScreen.transform.position += movement;
                 }
