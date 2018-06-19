@@ -90,8 +90,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shinigamiBehavior: {fileID: 0}
-  minDistancePerSecond: 5
-  maxDistancePerSecond: 20
+  minDistancePerSecond: 15
+  maxDistancePerSecond: 30
 --- !u!212 &212938612240896768
 SpriteRenderer:
   m_ObjectHideFlags: 1
