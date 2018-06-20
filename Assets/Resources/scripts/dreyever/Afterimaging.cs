@@ -23,10 +23,10 @@ namespace Dreyever
                 Destroy(afterimage.GetComponent<State>());
                 Destroy(afterimage.GetComponent<Controls>());
                 Destroy(afterimage.GetComponent<Afterimaging>());
+                Destroy(afterimage.GetComponent<PolygonCollider2D>());
 
                 afterimage.AddComponent<AfterimageFading>();
                 afterimage.GetComponent<SpriteRenderer>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder - 1;
-                
             }
         }
 
