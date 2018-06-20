@@ -21,7 +21,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:GoogleARCore.CrossPlatform.XPAnchor
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:GoogleARCore.Anchor
-834306a30daf6300fe05f178f4f5538c Assembly-CSharp.dll:Dreyever.Controls
+c7f90be49e9d3fcac978d6419caeab28 Assembly-CSharp.dll:Dreyever.Controls
 4c75752238fd236ce350bb4f9dc2936d Assembly-CSharp.dll:Cinemachine.CinemachineFollowZoom
 058f5a326d126a7e616e489f041d811a Assembly-CSharp.dll:Environment.Cannon.Shoot
 5254dcdaaa25b4f51a7bf42590280bf0 Assembly-CSharp.dll:CameraSpace.Background
@@ -152,7 +152,6 @@ ca255087a79e00df9f4b2b2e4ff98f41 Assembly-CSharp.dll:Rush.FallFail
 61a13d8f72f69fbb8c87ee8c414b086f Assembly-CSharp.dll:Cinemachine.CinemachineOrbitalTransposer
 fcd6fe9968ae16c22a5f6db7a659e4fc Assembly-CSharp.dll:Dead.Behavior
 c261e943c1efad142d715ca930c9b7c6 Assembly-CSharp.dll:Cinemachine.CinemachineComposer
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SmokeBehaviour
 7de429fd231b7c107cd7c9153b821faa Assembly-CSharp.dll:Environment.Speed.SpeedPartInteract
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
@@ -222,3 +221,4 @@ ef47b5b296e56702c76218de521ccc37 Assembly-CSharp.dll:Cinemachine.CinemachineBrai
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Cinemachine.CinemachineHardLockToTarget
 506e030fa92c58e7a9fb2a4b86130357 Assembly-CSharp.dll:Cinemachine.CinemachineBasicMultiChannelPerlin
 9dd74a41363b134db6b934985dfd2f92 Assembly-CSharp.dll:Cinemachine.CinemachineClearShot
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Environment.Coins.Aesthetics

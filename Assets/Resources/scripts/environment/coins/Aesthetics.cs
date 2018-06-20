@@ -23,7 +23,7 @@ namespace Environment.Coins
 
         void Update()
         {
-            sineTime += 2 * Time.deltaTime;
+            sineTime += 4 * Time.deltaTime;
             sineTime = sineTime % (2 * Mathf.PI);
 
             float valueToBling = .3f * Mathf.PI;
