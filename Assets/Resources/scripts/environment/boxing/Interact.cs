@@ -72,10 +72,9 @@ namespace Environment.Boxing
             intermediateStartTime = Time.time;
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void OnTriggerEnter2D(Collider2D collider)
         {
-            Debug.Log(collision.name);
-            if(collision.name == "Hitbox")
+            if (collider.name == "Hitbox")
             {
                 shinigamiBehavior.Activate();
             }

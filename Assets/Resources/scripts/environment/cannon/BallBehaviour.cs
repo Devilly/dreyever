@@ -34,15 +34,11 @@ namespace Environment.Cannon
             transform.position += new Vector3(xPerSecond * Time.fixedDeltaTime, yPerSecond * Time.fixedDeltaTime, 0);
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void OnTriggerEnter2D(Collider2D collider)
         {
-            Collider2D collider = collision.GetComponent<Collider2D>();
-            if(collider != null)
+            if(collider.name == "Hitbox")
             {
-                if(collider.name == "Hitbox")
-                {
-                    shinigamiBehavior.Activate();
-                }
+                shinigamiBehavior.Activate();
             }
             
             Destroy(gameObject);
