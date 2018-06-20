@@ -20,10 +20,14 @@ namespace Dreyever
                 yield return new WaitForSeconds(.05f);
 
                 GameObject afterimage = Object.Instantiate(gameObject, transform.position, transform.rotation);
-                Destroy(afterimage.GetComponent<State>());
-                Destroy(afterimage.GetComponent<Controls>());
-                Destroy(afterimage.GetComponent<Afterimaging>());
-                Destroy(afterimage.GetComponent<PolygonCollider2D>());
+                Component[] components = afterimage.GetComponents<Component>();
+                foreach(Component component in components) {
+                    System.Type type = component.GetType();
+                    if (type != typeof(Transform) && type != typeof(SpriteRenderer))
+                    {
+                        Destroy(component);
+                    }
+                }
 
                 afterimage.AddComponent<AfterimageFading>();
                 afterimage.GetComponent<SpriteRenderer>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder - 1;
