@@ -518,6 +518,7 @@
     <Compile Include="Assets\Resources\scripts\start\NoSleep.cs" />
     <Compile Include="Assets\Resources\scripts\start\Play.cs" />
     <Compile Include="Assets\Resources\scripts\start\SceneReset.cs" />
+    <Compile Include="Assets\Resources\scripts\start\WallOfDreyevers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Cinemachine\ReleaseNotes.txt" />
