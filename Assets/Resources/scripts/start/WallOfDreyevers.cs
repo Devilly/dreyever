@@ -15,10 +15,10 @@ public class WallOfDreyevers : MonoBehaviour {
     
 	void Start () {
         float height = Camera.main.orthographicSize * 2;
-        float rowHeight = height / (numberOfRows + 1);
+        float rowHeight = height / (numberOfRows + .5f);
 
         float width = height / Screen.height * Screen.width;
-        float columnWidth = width / (numberOfColumns + 1);
+        float columnWidth = width / (numberOfColumns + .5f);
 
         Vector3 topLeftCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0));
         Vector3 bottomRightCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
@@ -33,13 +33,9 @@ public class WallOfDreyevers : MonoBehaviour {
                 GameObject dreyeverShadow = new GameObject();
                 SpriteMask mask = dreyeverShadow.AddComponent<SpriteMask>();
                 mask.sprite = dreyevers[random.Next(0, dreyevers.Length)];
-                float resizeBy = 2 / (new float[] { mask.bounds.size.x, mask.bounds.size.y }).Max();
+                float resizeBy = columnWidth / (new float[] { mask.bounds.size.x, mask.bounds.size.y }).Max();
                 dreyeverShadow.transform.localScale = new Vector3(dreyeverShadow.transform.localScale.x * resizeBy,
                     dreyeverShadow.transform.localScale.y * resizeBy, 1);
-
-                Debug.Log(mask.sprite.name);
-                Debug.Log(mask.sprite.pivot.x + " - " + mask.sprite.pivot.y);
-                Debug.Log(mask.sprite.rect.width + " - " + mask.sprite.rect.height);
 
                 float centerX = mask.sprite.rect.width / 2;
                 float pivotX = mask.sprite.pivot.x;
@@ -49,9 +45,10 @@ public class WallOfDreyevers : MonoBehaviour {
                 float pivotY = mask.sprite.pivot.y;
                 float offsetY = (pivotY - centerY) / mask.sprite.rect.height;
 
+                float marginAsCellSizeFraction = .75f;
                 dreyeverShadow.transform.position = new Vector3(
-                    topLeftCorner.x + (columnIndex + 1) * columnWidth + mask.bounds.size.x * offsetX,
-                    topLeftCorner.y - (rowIndex + 1) * rowHeight + mask.bounds.size.y * offsetY,
+                    topLeftCorner.x + (columnIndex + marginAsCellSizeFraction) * columnWidth + mask.bounds.size.x * offsetX,
+                    topLeftCorner.y - (rowIndex + marginAsCellSizeFraction) * rowHeight + mask.bounds.size.y * offsetY,
                     0);                
             }
         }

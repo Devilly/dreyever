@@ -213,6 +213,7 @@ f739fe68956c7babcc274f024cbc4a87 Assembly-CSharp.dll:Cinemachine.CinemachineSmoo
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Dead.CanvasResize
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Dead.Exit
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:GoogleARCore.Examples.Common.DetectedPlaneVisualizer
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Environment.Coins.Aesthetics
 e50e88db07609b7b983cb0abb23ce44c Assembly-CSharp.dll:Environment.Cannon.Follow
 761e1377c086413ee5a6b8af82617e44 Assembly-CSharp.dll:Rush.Jump
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Dreyever.Afterimaging
@@ -221,4 +222,4 @@ ef47b5b296e56702c76218de521ccc37 Assembly-CSharp.dll:Cinemachine.CinemachineBrai
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Cinemachine.CinemachineHardLockToTarget
 506e030fa92c58e7a9fb2a4b86130357 Assembly-CSharp.dll:Cinemachine.CinemachineBasicMultiChannelPerlin
 9dd74a41363b134db6b934985dfd2f92 Assembly-CSharp.dll:Cinemachine.CinemachineClearShot
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Environment.Coins.Aesthetics
+05d593de43ab73ed0e7f5004c5e25cea Assembly-CSharp.dll:.WallOfDreyevers
