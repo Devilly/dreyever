@@ -22,6 +22,7 @@ public class WallOfDreyevers : MonoBehaviour {
 
         Vector3 topLeftCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0));
         Vector3 bottomRightCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
+        float worldToPixelRatio = Screen.width / (bottomRightCorner.x - topLeftCorner.x);
 
         System.Random random = new System.Random();
 
@@ -35,11 +36,23 @@ public class WallOfDreyevers : MonoBehaviour {
                 float resizeBy = 2 / (new float[] { mask.bounds.size.x, mask.bounds.size.y }).Max();
                 dreyeverShadow.transform.localScale = new Vector3(dreyeverShadow.transform.localScale.x * resizeBy,
                     dreyeverShadow.transform.localScale.y * resizeBy, 1);
-                dreyeverShadow.transform.position = new Vector3(topLeftCorner.x + (columnIndex + 1) * columnWidth,
-                    topLeftCorner.y - (rowIndex + 1) * rowHeight, 0);
-                // correct position by adapting to changed pivot points
 
-                
+                Debug.Log(mask.sprite.name);
+                Debug.Log(mask.sprite.pivot.x + " - " + mask.sprite.pivot.y);
+                Debug.Log(mask.sprite.rect.width + " - " + mask.sprite.rect.height);
+
+                float centerX = mask.sprite.rect.width / 2;
+                float pivotX = mask.sprite.pivot.x;
+                float offsetX = (pivotX - centerX) / mask.sprite.rect.width;
+
+                float centerY = mask.sprite.rect.height / 2;
+                float pivotY = mask.sprite.pivot.y;
+                float offsetY = (pivotY - centerY) / mask.sprite.rect.height;
+
+                dreyeverShadow.transform.position = new Vector3(
+                    topLeftCorner.x + (columnIndex + 1) * columnWidth + mask.bounds.size.x * offsetX,
+                    topLeftCorner.y - (rowIndex + 1) * rowHeight + mask.bounds.size.y * offsetY,
+                    0);                
             }
         }
 
