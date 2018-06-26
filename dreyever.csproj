@@ -497,6 +497,7 @@
     <Compile Include="Assets\Resources\scripts\environment\cannon\Follow.cs" />
     <Compile Include="Assets\Resources\scripts\environment\cannon\Shoot.cs" />
     <Compile Include="Assets\Resources\scripts\environment\coins\Aesthetics.cs" />
+    <Compile Include="Assets\Resources\scripts\environment\coins\CoinBehaviour.cs" />
     <Compile Include="Assets\Resources\scripts\environment\Influence.cs" />
     <Compile Include="Assets\Resources\scripts\environment\InteractionBase.cs" />
     <Compile Include="Assets\Resources\scripts\environment\jump\Interact.cs" />
