@@ -477,6 +477,7 @@
     <Compile Include="Assets\GoogleARCore\SDK\Scripts\XPSession.cs" />
     <Compile Include="Assets\GoogleARCore\SDK\Scripts\XPSessionStatus.cs" />
     <Compile Include="Assets\GoogleARCore\SDK\Scripts\XPTrackingState.cs" />
+    <Compile Include="Assets\Resources\scriptables\Dreyever.cs" />
     <Compile Include="Assets\Resources\scripts\camera\Background.cs" />
     <Compile Include="Assets\Resources\scripts\camera\Orientation.cs" />
     <Compile Include="Assets\Resources\scripts\dead\Behavior.cs" />
@@ -503,6 +504,7 @@
     <Compile Include="Assets\Resources\scripts\environment\jump\Interact.cs" />
     <Compile Include="Assets\Resources\scripts\environment\speed\SpeedPartInteract.cs" />
     <Compile Include="Assets\Resources\scripts\environment\speed\SpeedSectionBehaviour.cs" />
+    <Compile Include="Assets\Resources\scripts\garage\Back.cs" />
     <Compile Include="Assets\Resources\scripts\hue\BridgeInfo.cs" />
     <Compile Include="Assets\Resources\scripts\hue\Bridges.cs" />
     <Compile Include="Assets\Resources\scripts\hue\Connect.cs" />
@@ -510,6 +512,7 @@
     <Compile Include="Assets\Resources\scripts\hue\NewUserInfo.cs" />
     <Compile Include="Assets\Resources\scripts\hue\NewUserListItem.cs" />
     <Compile Include="Assets\Resources\scripts\hue\persistence\Data.cs" />
+    <Compile Include="Assets\Resources\scripts\menu\Garage.cs" />
     <Compile Include="Assets\Resources\scripts\menu\Notification.cs" />
     <Compile Include="Assets\Resources\scripts\menu\Play.cs" />
     <Compile Include="Assets\Resources\scripts\rush\AutoRun.cs" />
