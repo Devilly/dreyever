@@ -310,7 +310,6 @@ MonoBehaviour:
   opacityForOverlayedColor: 0.085
   numberOfRows: 6
   numberOfColumns: 5
-  margin: 1.5
 --- !u!1001 &583597068
 Prefab:
   m_ObjectHideFlags: 0
