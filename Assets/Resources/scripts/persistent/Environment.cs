@@ -1,10 +1,10 @@
-﻿using CameraSpace.Persistence;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using System.Linq;
+using Persistent.Model;
 
 namespace Persistent
 {
@@ -49,6 +49,14 @@ namespace Persistent
             }
         }
 
+        private void Save()
+        {
+            using (FileStream file = File.Create(persistencePath))
+            {
+                new BinaryFormatter().Serialize(file, progress);
+            }
+        }
+
         public Scriptables.Dreyevers.Dreyever GetCurrentDreyever()
         {
             return allDreyevers.OfType<Scriptables.Dreyevers.Dreyever>().ToList()
@@ -59,6 +67,8 @@ namespace Persistent
         {
             progress.currentDreyever = allDreyevers.OfType<Scriptables.Dreyevers.Dreyever>().ToList()
                 .Find(dreyever => dreyever.sprite == sprite).name;
+
+            Save();
         }
     }
 }

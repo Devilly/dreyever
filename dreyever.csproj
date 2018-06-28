@@ -481,7 +481,6 @@
     <Compile Include="Assets\Resources\scripts\_Debug_\Continue.cs" />
     <Compile Include="Assets\Resources\scripts\camera\Background.cs" />
     <Compile Include="Assets\Resources\scripts\camera\Orientation.cs" />
-    <Compile Include="Assets\Resources\scripts\camera\persistence\Progress.cs" />
     <Compile Include="Assets\Resources\scripts\dead\Behavior.cs" />
     <Compile Include="Assets\Resources\scripts\dead\CanvasResize.cs" />
     <Compile Include="Assets\Resources\scripts\dead\Exit.cs" />
@@ -523,6 +522,7 @@
     <Compile Include="Assets\Resources\scripts\menu\Notification.cs" />
     <Compile Include="Assets\Resources\scripts\menu\Play.cs" />
     <Compile Include="Assets\Resources\scripts\persistent\Environment.cs" />
+    <Compile Include="Assets\Resources\scripts\persistent\model\Progress.cs" />
     <Compile Include="Assets\Resources\scripts\rush\AutoRun.cs" />
     <Compile Include="Assets\Resources\scripts\rush\FallFail.cs" />
     <Compile Include="Assets\Resources\scripts\rush\Jump.cs" />
