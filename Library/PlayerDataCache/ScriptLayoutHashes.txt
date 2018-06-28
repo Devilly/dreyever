@@ -22,7 +22,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:GoogleARCore.CrossPlatform.XPAnchor
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:GoogleARCore.Anchor
-c7f90be49e9d3fcac978d6419caeab28 Assembly-CSharp.dll:Dreyever.Controls
+890d26cd22e808a959825dfd6c206302 Assembly-CSharp.dll:Dreyever.Controls
 4c75752238fd236ce350bb4f9dc2936d Assembly-CSharp.dll:Cinemachine.CinemachineFollowZoom
 058f5a326d126a7e616e489f041d811a Assembly-CSharp.dll:Environment.Cannon.Shoot
 5254dcdaaa25b4f51a7bf42590280bf0 Assembly-CSharp.dll:CameraSpace.Background
