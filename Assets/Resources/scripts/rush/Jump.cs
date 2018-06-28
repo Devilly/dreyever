@@ -9,11 +9,22 @@ namespace Rush {
 		public State state;
 
 		void FixedUpdate () {
-			if (Input.touches.Length > 0) {
+#if UNITY_EDITOR
+            if (Input.anyKey)
+            {
+                state.StartJumping();
+            }
+            else
+            {
+                state.StopJumping();
+            }
+#else
+            if (Input.touches.Length > 0) {
                 state.StartJumping();
 			} else {
 				state.StopJumping ();
 			}
-		}
-	}
+#endif
+        }
+    }
 }
