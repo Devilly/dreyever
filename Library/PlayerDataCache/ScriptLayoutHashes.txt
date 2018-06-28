@@ -234,3 +234,4 @@ c2f104d202ef84e5d5a9c5d872b4492a Assembly-CSharp.dll:Scriptables.Dreyevers.Dreye
 4ed12342330e003868edf8e23c50a7de Assembly-CSharp.dll:Persistent.Environment
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Garage.DreyeverBehaviour
 63476c3cd723e567416f94104be571f7 Assembly-CSharp.dll:.Continue
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SetDreyever

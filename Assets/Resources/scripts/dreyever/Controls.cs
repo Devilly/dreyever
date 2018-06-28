@@ -10,7 +10,7 @@ namespace Dreyever {
 
 		public GameObject container;
 
-		private new Collider2D collider;
+        public new PolygonCollider2D collider;
 
 		public GameObject hitbox;
 		private BoxCollider2D hitboxCollider;
@@ -31,8 +31,9 @@ namespace Dreyever {
 		private string[] collisionLayers = new string[]{ "environment" };
 
 		void Start() {
-			collider = GetComponent<PolygonCollider2D> ();
-			hitboxCollider = hitbox.GetComponent<BoxCollider2D> ();
+            collider = gameObject.AddComponent<PolygonCollider2D>();
+
+            hitboxCollider = hitbox.GetComponent<BoxCollider2D> ();
         }
 
 		void FixedUpdate() {
@@ -60,7 +61,7 @@ namespace Dreyever {
 		}
 
 		void AdaptPhysics() {
-			Bounds realBounds = collider.bounds;
+            Bounds realBounds = collider.bounds;
 			float bottomSpacing = 0.05f;
 
 			Vector2 size = ((Vector2) realBounds.size) - new Vector2 (0, bottomSpacing);
