@@ -185,8 +185,7 @@ namespace Dreyever {
 				}
 
 				if (touchedFloor) {
-					if (movementVector.y < 0) {
-						// movementVector.y smaller than 0 means a falling movement.
+					if (verticalSpeed < 0) {
 						grounded = true;
 					}
 

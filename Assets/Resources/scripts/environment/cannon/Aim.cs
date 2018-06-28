@@ -22,7 +22,7 @@ namespace Environment.Cannon
             Vector3 playerPosition = playerTransform.position;
 
             barrelTransform.rotation = Quaternion.FromToRotation(Vector3.down,
-                new Vector3(playerPosition.x - position.x, playerPosition.y - position.y, 0));
+                new Vector3(playerPosition.x - position.x, Mathf.Clamp(playerPosition.y - position.y, Mathf.NegativeInfinity, 0)));
         }
     }
 }
