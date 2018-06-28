@@ -478,7 +478,6 @@
     <Compile Include="Assets\GoogleARCore\SDK\Scripts\XPSessionStatus.cs" />
     <Compile Include="Assets\GoogleARCore\SDK\Scripts\XPTrackingState.cs" />
     <Compile Include="Assets\Resources\scriptables\dreyevers\Dreyever.cs" />
-    <Compile Include="Assets\Resources\scripts\_Debug_\Continue.cs" />
     <Compile Include="Assets\Resources\scripts\camera\Background.cs" />
     <Compile Include="Assets\Resources\scripts\camera\Orientation.cs" />
     <Compile Include="Assets\Resources\scripts\dead\Behavior.cs" />
@@ -504,6 +503,7 @@
     <Compile Include="Assets\Resources\scripts\environment\Influence.cs" />
     <Compile Include="Assets\Resources\scripts\environment\InteractionBase.cs" />
     <Compile Include="Assets\Resources\scripts\environment\jump\Interact.cs" />
+    <Compile Include="Assets\Resources\scripts\environment\machine\Reverse.cs" />
     <Compile Include="Assets\Resources\scripts\environment\speed\SpeedPartInteract.cs" />
     <Compile Include="Assets\Resources\scripts\environment\speed\SpeedSectionBehaviour.cs" />
     <Compile Include="Assets\Resources\scripts\garage\Back.cs" />

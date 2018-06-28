@@ -79,13 +79,20 @@ namespace Dreyever {
 				}
 			}
 
-            Movement currentMovement = state.GetMovement();
             float naturalMovementDistance = 0;
+
+            Movement currentMovement = state.GetMovement();
 			if (currentMovement == Movement.RUNNING) {
 				naturalMovementDistance = (runningSpeed + bonusSpeed) * Time.deltaTime;
 			}
 
-			Vector2 movementVector = new Vector2 (naturalMovementDistance, 0);
+            Direction currentDirection = state.GetDirection();
+            if(currentDirection == Direction.LEFT)
+            {
+                naturalMovementDistance *= -1;
+            }
+
+            Vector2 movementVector = new Vector2 (naturalMovementDistance, 0);
 
             RaycastHit2D hit = Physics2D.BoxCast(hitboxCollider.bounds.center, hitboxCollider.bounds.size,
                 0, movementVector, Mathf.Abs(movementVector.x), LayerMask.GetMask(collisionLayers));

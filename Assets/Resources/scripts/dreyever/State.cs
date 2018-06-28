@@ -18,10 +18,20 @@ namespace Dreyever {
 			StartMoving (Direction.RIGHT);
 		}
 
+        public void TurnAround()
+        {
+            direction = direction == Direction.RIGHT ? Direction.LEFT : Direction.RIGHT;
+        }
+
 		private void StartMoving(Direction direction) {
 			movement = Movement.RUNNING;
 			this.direction = direction;
 		}
+
+        public void StartMoving()
+        {
+            movement = Movement.RUNNING;
+        }
 
 		public void StopMoving() {
 			movement = Movement.NONE;
