@@ -3,6 +3,7 @@ SceneListBegin?
 Assets/Resources/scenes/start.unity
 Assets/Resources/scenes/menu.unity
 Assets/Resources/scenes/rush.unity
+Assets/Resources/scenes/garage.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SceneReset
 9b9c71cf06a525199c2eb4d3be433bc2 Assembly-CSharp.dll:Cinemachine.CinemachineStateDrivenCamera
@@ -223,3 +224,13 @@ ef47b5b296e56702c76218de521ccc37 Assembly-CSharp.dll:Cinemachine.CinemachineBrai
 506e030fa92c58e7a9fb2a4b86130357 Assembly-CSharp.dll:Cinemachine.CinemachineBasicMultiChannelPerlin
 9dd74a41363b134db6b934985dfd2f92 Assembly-CSharp.dll:Cinemachine.CinemachineClearShot
 05d593de43ab73ed0e7f5004c5e25cea Assembly-CSharp.dll:.WallOfDreyevers
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CoinBehaviour
+c2f104d202ef84e5d5a9c5d872b4492a Assembly-CSharp.dll:Scriptables.Dreyevers.Dreyever
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Menu.Garage
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Garage.Back
+51efcaef12d74c9827ce71c60e060151 Assembly-CSharp.dll:Garage.DreyeverListing
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Garage.NameDreyever
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Garage.ImageDreyever
+4ed12342330e003868edf8e23c50a7de Assembly-CSharp.dll:Persistent.Environment
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Garage.DreyeverBehaviour
+63476c3cd723e567416f94104be571f7 Assembly-CSharp.dll:.Continue
