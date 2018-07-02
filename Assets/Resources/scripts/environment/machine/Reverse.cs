@@ -7,7 +7,8 @@ namespace Environment.Machine
 {
     public class Reverse : MonoBehaviour
     {
-        public new SpriteRenderer renderer;
+        public new SpriteRenderer symbol;
+
         public Sprite inactive;
         public Sprite active;
 
@@ -23,13 +24,13 @@ namespace Environment.Machine
         private IEnumerator TurnAround(State state)
         {
             state.StopMoving();
-            renderer.sprite = active;
+            symbol.sprite = active;
 
             yield return new WaitForSeconds(1);
 
             state.TurnAround();
             state.StartMoving();
-            renderer.sprite = inactive;
+            symbol.sprite = inactive;
         }
     }
 }
