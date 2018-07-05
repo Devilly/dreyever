@@ -21,6 +21,8 @@ namespace Garage
         public void Entered(PointerEventData data)
         {
             Persistent.Environment.instance.SetCurrentDreyever(GetComponent<Image>().sprite);
+
+            Persistent.Vibrator.Vibrate(10);
         }
     }
 }

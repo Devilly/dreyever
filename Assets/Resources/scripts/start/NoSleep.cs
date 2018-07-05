@@ -7,6 +7,6 @@ namespace Start {
 		
 		void Start () {
 			Screen.sleepTimeout = SleepTimeout.NeverSleep;
-		}
+        }
 	}
 }

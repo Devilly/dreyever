@@ -20,15 +20,7 @@ namespace Persistent
 
         private void Awake()
         {
-            if(instance == null)
-            {
-                instance = this;
-            } else
-            {
-                Destroy(gameObject);
-            }
-
-            DontDestroyOnLoad(gameObject);
+            instance = this;
 
             persistencePath = Application.persistentDataPath + "/progress.data";
         }

@@ -100,6 +100,7 @@ ca3ac0b37762af0a2124a1fd6e4bfbed Assembly-CSharp.dll:Cinemachine.CinemachineExte
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Garage.NameDreyever
 56ce15dd7401a24d085fbe0967ae56c6 Assembly-CSharp.dll:GoogleARCore.Examples.ComputerVision.TextureReader
 b203c0a7615dfebdf3d7d05b7551f462 Assembly-CSharp.dll:GoogleARCore.Examples.CloudAnchor.CloudAnchorController
+4c9263ed23ab032f078a6a6087e7d1b9 Assembly-CSharp.dll:.VirtualCameraManagement
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -148,6 +149,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 fe460ef6985517d84e68664be1e7af5b Assembly-CSharp.dll:Cinemachine.CinemachineFramingTransposer
 ed9279a9d1042bde3a6ae6cd0c1a92fa Assembly-CSharp.dll:Cinemachine.CinemachinePOV
 0e3d49d9101a427e0be411200df79f87 Assembly-CSharp.dll:Start.Play
+87e7220f3c7e8c018344c36b228a3990 Assembly-CSharp.dll:Scriptables.Environment.Machine.Properties
 0352182229dc15ceae98dd2533712b4a Assembly-CSharp.dll:GoogleARCore.ARCoreBackgroundRenderer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Menu.Play
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Start.Framerate
@@ -224,6 +226,7 @@ f739fe68956c7babcc274f024cbc4a87 Assembly-CSharp.dll:Cinemachine.CinemachineSmoo
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Dead.CanvasResize
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Dead.Exit
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:GoogleARCore.Examples.Common.DetectedPlaneVisualizer
+96f60feb5adaec50bf08249c8852156a Assembly-CSharp.dll:Environment.Machine.Layout
 c2f104d202ef84e5d5a9c5d872b4492a Assembly-CSharp.dll:Scriptables.Dreyevers.Dreyever
 198821265cde3c9f54b6e533eaf2419b Assembly-CSharp.dll:Environment.Machine.Deport
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Environment.Coins.Aesthetics
@@ -236,5 +239,5 @@ ef47b5b296e56702c76218de521ccc37 Assembly-CSharp.dll:Cinemachine.CinemachineBrai
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Cinemachine.CinemachineHardLockToTarget
 506e030fa92c58e7a9fb2a4b86130357 Assembly-CSharp.dll:Cinemachine.CinemachineBasicMultiChannelPerlin
 9dd74a41363b134db6b934985dfd2f92 Assembly-CSharp.dll:Cinemachine.CinemachineClearShot
-96f60feb5adaec50bf08249c8852156a Assembly-CSharp.dll:Environment.Machine.Layout
-87e7220f3c7e8c018344c36b228a3990 Assembly-CSharp.dll:Scriptables.Environment.Machine.Properties
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Persistent.MakeNotDestroyedSingleton
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Persistent.Vibrator
