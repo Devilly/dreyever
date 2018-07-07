@@ -101,7 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d2efa661125b74a9b9674ad94d9d5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathScreen: {fileID: 0}
+  prefab: {fileID: 0}
+  deathScreenPrefab: {fileID: 1198198333472638, guid: 8ff84b010369cb04a8278eac073dc769,
+    type: 2}
 --- !u!114 &114421330705447316
 MonoBehaviour:
   m_ObjectHideFlags: 1

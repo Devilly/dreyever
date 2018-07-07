@@ -2,24 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Dead;
+using Scriptables.Util;
 
 namespace Environment.Cannon
 {
     public class BallBehaviour : MonoBehaviour
     {
-
-        public Behavior shinigamiBehavior;
+        public Instantiater instantiater;
 
         private float angle = 0;
         public float minDistancePerSecond = 10;
         public float maxDistancePerSecond = 20;
         private float xPerSecond = 0;
         private float yPerSecond = 0;
-
-        public void SetShinigamiBehavior(Behavior shinigamiBehavior)
-        {
-            this.shinigamiBehavior = shinigamiBehavior;
-        }
 
         public void SetAngle(float angle)
         {
@@ -38,7 +33,7 @@ namespace Environment.Cannon
         {
             if(collider.name == "Hitbox")
             {
-                shinigamiBehavior.Activate();
+                instantiater.Clone();
             }
             
             Destroy(gameObject);

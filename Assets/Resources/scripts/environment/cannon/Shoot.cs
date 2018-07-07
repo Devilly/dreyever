@@ -7,7 +7,6 @@ namespace Environment.Cannon
 {
     public class Shoot : MonoBehaviour
     {
-        public Behavior shinigamiBehavior;
         public GameObject cannonball;
 
         void Start()
@@ -23,7 +22,6 @@ namespace Environment.Cannon
 
                 GameObject newCannonball = Instantiate(cannonball, transform.position, transform.rotation);
                 BallBehaviour behaviour = newCannonball.GetComponent<BallBehaviour>();
-                behaviour.SetShinigamiBehavior(shinigamiBehavior);
                 behaviour.SetAngle(transform.rotation.eulerAngles.z);
             }
         }

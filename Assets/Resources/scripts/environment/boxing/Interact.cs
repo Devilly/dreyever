@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Dead;
+using Scriptables.Util;
 
 namespace Environment.Boxing
 {
     public class Interact : MonoBehaviour
     {
-        public Behavior shinigamiBehavior;
+        public Instantiater instantiater;
 
         private Transform playerTransform;
 
@@ -76,7 +77,7 @@ namespace Environment.Boxing
         {
             if (collider.name == "Hitbox")
             {
-                shinigamiBehavior.Activate();
+                instantiater.Clone();
             }
         }
     }
