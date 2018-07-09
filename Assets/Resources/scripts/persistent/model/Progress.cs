@@ -9,5 +9,9 @@ namespace Persistent.Model
     public class Progress
     {
         public string currentDreyever;
+
+        public int coinsCountA;
+        public int coinsCountB;
+        public int coinsCountC;
     }
 }

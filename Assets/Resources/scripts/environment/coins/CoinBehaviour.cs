@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinBehaviour : MonoBehaviour {
-
-    private void OnTriggerEnter2D(Collider2D collider)
+namespace Coins
+{
+    public class CoinBehaviour : MonoBehaviour
     {
-        if (collider.name == "Hitbox")
+        public CoinType type;
+
+        private void OnTriggerEnter2D(Collider2D collider)
         {
-            Destroy(gameObject);
+            if (collider.name == "Hitbox")
+            {
+                Destroy(gameObject);
+                Persistent.Environment.instance.IncreaseCoinsCount(type);
+            }
         }
     }
 }

@@ -503,6 +503,7 @@
     <Compile Include="Assets\Resources\scripts\environment\cannon\Shoot.cs" />
     <Compile Include="Assets\Resources\scripts\environment\coins\Aesthetics.cs" />
     <Compile Include="Assets\Resources\scripts\environment\coins\CoinBehaviour.cs" />
+    <Compile Include="Assets\Resources\scripts\environment\coins\CoinType.cs" />
     <Compile Include="Assets\Resources\scripts\environment\Influence.cs" />
     <Compile Include="Assets\Resources\scripts\environment\InteractionBase.cs" />
     <Compile Include="Assets\Resources\scripts\environment\jump\Interact.cs" />
@@ -526,8 +527,8 @@
     <Compile Include="Assets\Resources\scripts\menu\Garage.cs" />
     <Compile Include="Assets\Resources\scripts\menu\Notification.cs" />
     <Compile Include="Assets\Resources\scripts\menu\Play.cs" />
+    <Compile Include="Assets\Resources\scripts\menu\TextCoinsCount.cs" />
     <Compile Include="Assets\Resources\scripts\persistent\Environment.cs" />
-    <Compile Include="Assets\Resources\scripts\persistent\MakeNotDestroyedSingleton.cs" />
     <Compile Include="Assets\Resources\scripts\persistent\model\Progress.cs" />
     <Compile Include="Assets\Resources\scripts\persistent\Vibrator.cs" />
     <Compile Include="Assets\Resources\scripts\rush\AutoRun.cs" />
@@ -538,6 +539,8 @@
     <Compile Include="Assets\Resources\scripts\start\Play.cs" />
     <Compile Include="Assets\Resources\scripts\start\SceneReset.cs" />
     <Compile Include="Assets\Resources\scripts\start\WallOfDreyevers.cs" />
+    <Compile Include="Assets\Resources\scripts\util\MakeNotDestroyed.cs" />
+    <Compile Include="Assets\Resources\scripts\util\MakeSingleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Cinemachine\ReleaseNotes.txt" />

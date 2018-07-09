@@ -212,10 +212,14 @@ namespace Dreyever {
 
 				foreach(RaycastHit2D floorHit in floorHits) {
 					if (floorHit.collider != null) {
-						InteractionBase interact = floorHit.rigidbody.GetComponent<InteractionBase> ();
-						if (interact != null) {
-							Influence(interact.Do ());
-						}
+                        if(floorHit.rigidbody != null)
+                        {
+                            InteractionBase interact = floorHit.rigidbody.GetComponent<InteractionBase>();
+                            if (interact != null)
+                            {
+                                Influence(interact.Do());
+                            }
+                        }
 					}
 				}
 			}

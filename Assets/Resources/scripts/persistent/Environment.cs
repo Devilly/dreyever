@@ -5,6 +5,8 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using System.Linq;
 using Persistent.Model;
+using Coins;
+using System;
 
 namespace Persistent
 {
@@ -59,6 +61,42 @@ namespace Persistent
         {
             progress.currentDreyever = allDreyevers.OfType<Scriptables.Dreyevers.Dreyever>().ToList()
                 .Find(dreyever => dreyever.sprite == sprite).name;
+
+            Save();
+        }
+
+        public int GetCoinsCount(CoinType type)
+        {
+            if(type == CoinType.A)
+            {
+                return progress.coinsCountA;
+            } else if(type == CoinType.B)
+            {
+                return progress.coinsCountB;
+            } else if(type == CoinType.C)
+            {
+                return progress.coinsCountC;
+            } else
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public void IncreaseCoinsCount(CoinType type)
+        {
+            if(type == CoinType.A)
+            {
+                progress.coinsCountA++;
+            } else if(type == CoinType.B)
+            {
+                progress.coinsCountB++;
+            } else if(type == CoinType.C)
+            {
+                progress.coinsCountC++;
+            } else
+            {
+                throw new NotImplementedException();
+            }
 
             Save();
         }

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212159869101148676}
   - component: {fileID: 114421330705447316}
   - component: {fileID: 114151865481862910}
+  - component: {fileID: 114037536567021248}
   m_Layer: 5
   m_Name: ReversedBulldozeringDreyever
   m_TagString: Untagged
@@ -90,6 +91,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114037536567021248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666687568841462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83f93bd45a8c49e49b495908e0aae382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114151865481862910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,7 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d2efa661125b74a9b9674ad94d9d5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
   deathScreenPrefab: {fileID: 1198198333472638, guid: 8ff84b010369cb04a8278eac073dc769,
     type: 2}
 --- !u!114 &114421330705447316

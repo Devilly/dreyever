@@ -512,6 +512,7 @@ GameObject:
   - component: {fileID: 354310229}
   - component: {fileID: 354310231}
   - component: {fileID: 354310230}
+  - component: {fileID: 354310232}
   m_Layer: 5
   m_Name: CoinsCText
   m_TagString: Untagged
@@ -569,13 +570,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "222\t"
+  m_Text: "\t"
 --- !u!222 &354310231
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 354310228}
+--- !u!114 &354310232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 354310228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38bda3bc55a6d8944bdcc0a173fe9842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
 --- !u!1 &378094957
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,7 +990,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1571988994}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1319,6 +1332,7 @@ GameObject:
   - component: {fileID: 1150212876}
   - component: {fileID: 1150212878}
   - component: {fileID: 1150212877}
+  - component: {fileID: 1150212879}
   m_Layer: 5
   m_Name: CoinsBText
   m_TagString: Untagged
@@ -1376,13 +1390,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "222\t"
+  m_Text: 
 --- !u!222 &1150212878
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1150212875}
+--- !u!114 &1150212879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1150212875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38bda3bc55a6d8944bdcc0a173fe9842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!1 &1234696847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,8 +2087,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 426858682}
-  - {fileID: 685908309}
   - {fileID: 1803483360}
+  - {fileID: 685908309}
   - {fileID: 1481788985}
   - {fileID: 1669852319}
   - {fileID: 682400187}
@@ -2489,7 +2515,7 @@ RectTransform:
   - {fileID: 18518951}
   - {fileID: 1596263680}
   m_Father: {fileID: 1571988994}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2541,6 +2567,7 @@ GameObject:
   - component: {fileID: 1846138253}
   - component: {fileID: 1846138255}
   - component: {fileID: 1846138254}
+  - component: {fileID: 1846138256}
   m_Layer: 5
   m_Name: CoinsAText
   m_TagString: Untagged
@@ -2598,13 +2625,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "222\t"
+  m_Text: 
 --- !u!222 &1846138255
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1846138252}
+--- !u!114 &1846138256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1846138252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38bda3bc55a6d8944bdcc0a173fe9842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!1 &2082350081
 GameObject:
   m_ObjectHideFlags: 0
