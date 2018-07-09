@@ -5,10 +5,12 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 namespace Start {
-	public class Play : MonoBehaviour {
+	public class LoadSceneAfterAnimation : MonoBehaviour {
 
 		private Image image;
 		public Sprite[] animationSprites;
+
+        public string targetScene;
 
 		void Start() {
 			image = GetComponent<Image> ();
@@ -30,7 +32,7 @@ namespace Start {
 
 		private IEnumerator StartNavigation() {
 			yield return new WaitForSeconds (.1f);
-			SceneManager.LoadSceneAsync ("menu");
+			SceneManager.LoadSceneAsync (targetScene);
 		}
 	}
 }

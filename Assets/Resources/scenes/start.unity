@@ -881,6 +881,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 448f35e1d9fa89643ac86825e3a1a17f, type: 3}
   - {fileID: 21300000, guid: dbd82abd968874d4f98f00b4a6146b81, type: 3}
   - {fileID: 21300000, guid: 157ebfa1e0a8fb244adb69efb421c288, type: 3}
+  targetScene: menu
 --- !u!114 &1907722399
 MonoBehaviour:
   m_ObjectHideFlags: 0
