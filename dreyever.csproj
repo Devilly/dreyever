@@ -480,6 +480,7 @@
     <Compile Include="Assets\Resources\scriptables\dreyevers\Dreyever.cs" />
     <Compile Include="Assets\Resources\scriptables\environment\machine\Properties.cs" />
     <Compile Include="Assets\Resources\scriptables\util\Instantiater.cs" />
+    <Compile Include="Assets\Resources\scripts\_debug\_Continue.cs" />
     <Compile Include="Assets\Resources\scripts\camera\Background.cs" />
     <Compile Include="Assets\Resources\scripts\camera\Orientation.cs" />
     <Compile Include="Assets\Resources\scripts\camera\VirtualCameraManagement.cs" />
