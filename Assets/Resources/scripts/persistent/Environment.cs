@@ -58,14 +58,12 @@ namespace Persistent
 
         public Scriptables.Dreyevers.Dreyever GetCurrentDreyever()
         {
-            return allDreyevers.OfType<Scriptables.Dreyevers.Dreyever>().ToList()
-                .Find(dreyever => dreyever.name == progress.currentDreyever);
+            return Array.Find(allDreyevers, dreyever => dreyever.name == progress.currentDreyever);
         }
 
         public void SetCurrentDreyever(Sprite sprite)
         {
-            progress.currentDreyever = allDreyevers.OfType<Scriptables.Dreyevers.Dreyever>().ToList()
-                .Find(dreyever => dreyever.sprite == sprite).name;
+            progress.currentDreyever = Array.Find(allDreyevers, dreyever => dreyever.sprite == sprite).name;
 
             Save();
         }
@@ -74,8 +72,7 @@ namespace Persistent
         {
             return progress.unlockedDreyevers.Select(unlockedDreyever =>
             {
-                return allDreyevers.OfType<Scriptables.Dreyevers.Dreyever>().ToList()
-                    .Find(dreyever => dreyever.name == unlockedDreyever);
+                return Array.Find(allDreyevers, dreyever => dreyever.name == unlockedDreyever);
             }).ToArray();
         }
 
