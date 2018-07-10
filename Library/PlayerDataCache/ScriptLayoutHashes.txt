@@ -6,6 +6,7 @@ Assets/Resources/scenes/rush.unity
 Assets/Resources/scenes/garage.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SceneReset
+6be8441659e50ab59354b256fe091685 Assembly-CSharp.dll:._Continue
 9b9c71cf06a525199c2eb4d3be433bc2 Assembly-CSharp.dll:Cinemachine.CinemachineStateDrivenCamera
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Environment.Cannon.Aim
 05d593de43ab73ed0e7f5004c5e25cea Assembly-CSharp.dll:.WallOfDreyevers
@@ -161,6 +162,7 @@ bec3a8a2b70409cd5ec21e0001e6b640 Assembly-CSharp.dll:Rush.FallFail
 eea8769570f50b690b38192c50155e22 Assembly-CSharp.dll:Dead.Behavior
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Persistent.Vibrator
 c261e943c1efad142d715ca930c9b7c6 Assembly-CSharp.dll:Cinemachine.CinemachineComposer
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Persistent.Lighting
 7de429fd231b7c107cd7c9153b821faa Assembly-CSharp.dll:Environment.Speed.SpeedPartInteract
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
@@ -204,8 +206,9 @@ d9ae8c6401801a4a88651871144fd209 Assembly-CSharp.dll:Cinemachine.CinemachineBlen
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
 879db55796310b9ecf6f670c91db1b42 Assembly-CSharp.dll:Cinemachine.CinemachineVirtualCamera
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
-4ed12342330e003868edf8e23c50a7de Assembly-CSharp.dll:Persistent.Environment
+08c6738e65807231b513b92cca225145 Assembly-CSharp.dll:Persistent.Environment
 47c058608167ed19b25064da3ec227fd Assembly-CSharp.dll:GoogleARCore.ARCoreSessionConfig
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Util.MakeNotDestroyed
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 c94f235470474991b880c2b2a84ae948 Assembly-CSharp.dll:Environment.Cannon.BallBehaviour
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Dead.Restart
@@ -218,16 +221,18 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 76e9de097d61507dbbefc433f1435e54 Assembly-CSharp.dll:GoogleARCore.AugmentedImageDatabase
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Hue.Connect
+2caf3176837334c739522238f829d2b2 Assembly-CSharp.dll:Hue.Connect
 85241c88cd02e2068b27e37f90dfe18c Assembly-CSharp.dll:GoogleARCore.Examples.Common.DetectedPlaneGenerator
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+bcf5ed5f3864b303c85557996cd44f4b Assembly-CSharp.dll:Scriptables.Util.Instantiater
 f739fe68956c7babcc274f024cbc4a87 Assembly-CSharp.dll:Cinemachine.CinemachineSmoothPath
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Cinemachine.CinemachineHardLookAt
+7a75edc83a9f267c790ac1425865847a Assembly-CSharp.dll:Menu.TextCoinsCount
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Dead.CanvasResize
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Dead.Exit
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:GoogleARCore.Examples.Common.DetectedPlaneVisualizer
 96f60feb5adaec50bf08249c8852156a Assembly-CSharp.dll:Environment.Machine.Layout
-c2f104d202ef84e5d5a9c5d872b4492a Assembly-CSharp.dll:Scriptables.Dreyevers.Dreyever
+b1ffbc72190d1b20ba37051afeff7352 Assembly-CSharp.dll:Scriptables.Dreyevers.Dreyever
 198821265cde3c9f54b6e533eaf2419b Assembly-CSharp.dll:Environment.Machine.Deport
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Environment.Coins.Aesthetics
 e50e88db07609b7b983cb0abb23ce44c Assembly-CSharp.dll:Environment.Cannon.Follow
@@ -239,6 +244,3 @@ ef47b5b296e56702c76218de521ccc37 Assembly-CSharp.dll:Cinemachine.CinemachineBrai
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Cinemachine.CinemachineHardLockToTarget
 506e030fa92c58e7a9fb2a4b86130357 Assembly-CSharp.dll:Cinemachine.CinemachineBasicMultiChannelPerlin
 9dd74a41363b134db6b934985dfd2f92 Assembly-CSharp.dll:Cinemachine.CinemachineClearShot
-bcf5ed5f3864b303c85557996cd44f4b Assembly-CSharp.dll:Scriptables.Util.Instantiater
-7a75edc83a9f267c790ac1425865847a Assembly-CSharp.dll:Menu.TextCoinsCount
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Util.MakeNotDestroyed

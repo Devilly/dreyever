@@ -14,3 +14,4 @@ MonoBehaviour:
   name: demon
   displayName: Demon
   sprite: {fileID: 21300000, guid: 0bbeb319bab73704f962eb3076514c8e, type: 3}
+  blackSprite: {fileID: 21300000, guid: 0c86c2dd23ca2204d81eab5ca2048fed, type: 3}

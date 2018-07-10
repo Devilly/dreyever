@@ -317,7 +317,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 220114203}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 111f221083e2e8841a7fb6d2b8b8823a, type: 3}
   m_Name: 
@@ -353,6 +353,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultDreyever: {fileID: 11400000, guid: e79a59cc68400b043b688e5333bff0c0, type: 2}
+  defaultUnlockedDreyevers:
+  - {fileID: 11400000, guid: cef76472ce1cd8847a74a0498520bec6, type: 2}
+  - {fileID: 11400000, guid: e79a59cc68400b043b688e5333bff0c0, type: 2}
+  - {fileID: 11400000, guid: a3d6089a488832347977076a0a612589, type: 2}
+  - {fileID: 11400000, guid: 0ed6a9374b4f7a54c9d1d87285a12b8f, type: 2}
   allDreyevers:
   - {fileID: 11400000, guid: cef76472ce1cd8847a74a0498520bec6, type: 2}
   - {fileID: 11400000, guid: e79a59cc68400b043b688e5333bff0c0, type: 2}
@@ -936,7 +941,6 @@ GameObject:
   - component: {fileID: 2032634373}
   - component: {fileID: 2032634372}
   - component: {fileID: 2032634375}
-  - component: {fileID: 2032634374}
   m_Layer: 5
   m_Name: Hue
   m_TagString: Untagged
@@ -959,8 +963,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -150}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 125, y: -125}
+  m_SizeDelta: {x: 175, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2032634372
 MonoBehaviour:
@@ -974,14 +978,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.216}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 74bf295e68a423241bbf6b092e1519ed, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -995,36 +999,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2032634370}
---- !u!114 &2032634374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2032634370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2032634375}
-          m_MethodName: RequestUserId
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &2032634375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1036,3 +1010,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8d9d5ebfb0a23a4883005b1fbc1e53e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bridge: {fileID: 21300000, guid: 8922622e14c84ee42bc916a77ec74221, type: 3}
+  pressBridge: {fileID: 21300000, guid: f728bf668a762c14488857fa144ff5bb, type: 3}

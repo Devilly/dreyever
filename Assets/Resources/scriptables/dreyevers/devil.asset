@@ -14,3 +14,4 @@ MonoBehaviour:
   name: devil
   displayName: Devilly
   sprite: {fileID: 21300000, guid: e28ba262cf9633840bbb835f70aa0590, type: 3}
+  blackSprite: {fileID: 21300000, guid: 4707361d81088434ab66e7d7d0fb2ec5, type: 3}

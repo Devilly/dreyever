@@ -14,3 +14,4 @@ MonoBehaviour:
   name: deathstroke
   displayName: Deathstroke
   sprite: {fileID: 21300000, guid: 7389e4157920c8845b1da7ca4a13a0b8, type: 3}
+  blackSprite: {fileID: 21300000, guid: f871c87b01489de44b11206563320bb8, type: 3}

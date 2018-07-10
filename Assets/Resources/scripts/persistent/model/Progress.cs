@@ -10,6 +10,8 @@ namespace Persistent.Model
     {
         public string currentDreyever;
 
+        public string[] unlockedDreyevers;
+
         public int coinsCountA;
         public int coinsCountB;
         public int coinsCountC;

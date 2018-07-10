@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 namespace Garage
 {
@@ -15,8 +16,23 @@ namespace Garage
             foreach(Scriptables.Dreyevers.Dreyever dreyever in Persistent.Environment.instance.allDreyevers) {
                 GameObject newObject = Instantiate(listImagePrefab, transform);
                 Image image = newObject.GetComponent<Image>();
-                image.sprite = dreyever.sprite;
                 image.preserveAspect = true;
+
+                bool isUnlocked = Persistent.Environment.instance.GetUnlockedDreyevers().Any(unlockedDreyever =>
+                {
+                    return unlockedDreyever.name == dreyever.name;
+                });
+
+                if(isUnlocked)
+                {
+                    image.sprite = dreyever.sprite;
+                } else
+                {
+                    DreyeverBehaviour behaviour = newObject.GetComponent<DreyeverBehaviour>();
+                    behaviour.enabled = false;
+
+                    image.sprite = dreyever.blackSprite;
+                }
             }
 
             StartCoroutine(LayoutGrid());

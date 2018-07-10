@@ -14,3 +14,4 @@ MonoBehaviour:
   name: godoftires
   displayName: God of Tires
   sprite: {fileID: 21300000, guid: 618cc046b67660345a31d3a3dd848859, type: 3}
+  blackSprite: {fileID: 21300000, guid: 336b3336828cd264d8b2ac14c52a5675, type: 3}

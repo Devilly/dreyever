@@ -14,3 +14,4 @@ MonoBehaviour:
   name: zipper
   displayName: Zipper
   sprite: {fileID: 21300000, guid: 009ff504c340a0942b646a882c4b9d44, type: 3}
+  blackSprite: {fileID: 21300000, guid: ed1649e501ca8854486682fc9107dcda, type: 3}

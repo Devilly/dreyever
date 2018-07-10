@@ -14,3 +14,4 @@ MonoBehaviour:
   name: franky
   displayName: Franky
   sprite: {fileID: 21300000, guid: dca24f84512d27740801a85fd42f8dad, type: 3}
+  blackSprite: {fileID: 21300000, guid: 6309c29b979ca944eb8e2e714920fd17, type: 3}

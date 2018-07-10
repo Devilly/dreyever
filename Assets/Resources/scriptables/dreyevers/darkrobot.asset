@@ -14,3 +14,4 @@ MonoBehaviour:
   name: darkrobot
   displayName: Dark Robot
   sprite: {fileID: 21300000, guid: a8cf33470036bab429f6c1afa16ca8ac, type: 3}
+  blackSprite: {fileID: 21300000, guid: 44cfd36fd4fb43f4c9d0e92e759a4e92, type: 3}

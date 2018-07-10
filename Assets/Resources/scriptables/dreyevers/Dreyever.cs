@@ -10,5 +10,6 @@ namespace Scriptables.Dreyevers
         public new string name;
         public string displayName;
         public Sprite sprite;
+        public Sprite blackSprite;
     }
 }

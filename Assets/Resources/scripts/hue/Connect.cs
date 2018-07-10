@@ -11,6 +11,8 @@ using Hue.Persistence;
 
 namespace Hue {
 	public class Connect : MonoBehaviour {
+        public Sprite bridge;
+        public Sprite pressBridge;
 
 		private string persistencePath;
 
@@ -24,10 +26,32 @@ namespace Hue {
 				
 			image = GetComponent<Image> ();
 
-			StartCoroutine(GetBridge ());
+			StartCoroutine(Initialize());
 		}
 
-		public void RequestUserId() {
+        IEnumerator Initialize()
+        {
+            yield return StartCoroutine(GetBridge());
+            RequestUserId();
+        }
+
+        private void SetRegistered(bool registered)
+        {
+            if(registered)
+            {
+                image.sprite = bridge;
+            } else
+            {
+                image.sprite = pressBridge;
+            }
+
+            Color color = image.color;
+            image.color = new Color(color.r, color.g, color.b, .75f);
+
+            Persistent.Lighting.SetUsername(username);
+        }
+
+        public void RequestUserId() {
 			if (bridgeInfo == null)
 				return;
 			
@@ -36,8 +60,7 @@ namespace Hue {
 					Data data = (Data) new BinaryFormatter ().Deserialize (file);
 					username = data.username;
 
-					Color color = image.color;
-					image.color = new Color (color.r, color.g, color.b, 0);
+                    SetRegistered(true);
 				}
 			} else {
 				StartCoroutine (GetUser ());
@@ -45,28 +68,36 @@ namespace Hue {
 		}
 
 		private IEnumerator GetUser() {
-			using (UnityWebRequest request = new UnityWebRequest ("http://" + bridgeInfo.internalipaddress + "/api")) {
-				request.uploadHandler = new UploadHandlerRaw (Encoding.UTF8.GetBytes ("{\"devicetype\":\"unity-test\"}"));
-				request.downloadHandler = new DownloadHandlerBuffer ();
-				request.method = UnityWebRequest.kHttpVerbPOST;
+            SetRegistered(false);
 
-				yield return request.SendWebRequest ();
+            while (username == null)
+            {
+                using (UnityWebRequest request = new UnityWebRequest("http://" + bridgeInfo.internalipaddress + "/api"))
+                {
+                    request.uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes("{\"devicetype\":\"unity-test\"}"));
+                    request.downloadHandler = new DownloadHandlerBuffer();
+                    request.method = UnityWebRequest.kHttpVerbPOST;
 
-				NewUserAccepted accepted = JsonUtility.FromJson<NewUserAccepted> ("{\"items\": " + request.downloadHandler.text + "}");
-				string username = accepted.items.ToArray () [0].success.username;
-				if (username != null) {
-					using (FileStream file = File.Create (persistencePath)) {
-						Data data = new Data ();
-						data.username = username;
-						new BinaryFormatter().Serialize(file, data);
+                    yield return request.SendWebRequest();
 
-						this.username = username;
+                    NewUserAccepted accepted = JsonUtility.FromJson<NewUserAccepted>("{\"items\": " + request.downloadHandler.text + "}");
+                    string username = accepted.items.ToArray()[0].success.username;
+                    if (username != null)
+                    {
+                        using (FileStream file = File.Create(persistencePath))
+                        {
+                            Data data = new Data();
+                            data.username = username;
+                            new BinaryFormatter().Serialize(file, data);
 
-						Color color = image.color;
-						image.color = new Color (color.r, color.g, color.b, 0);
-					}
-				}
-			}
+                            this.username = username;
+                            SetRegistered(true);
+                        }
+                    }
+                }
+
+                yield return new WaitForSeconds(5);
+            }
 		}
 
 		private IEnumerator GetBridge() {
@@ -76,9 +107,6 @@ namespace Hue {
 				Bridges bridges = JsonUtility.FromJson<Bridges> ("{\"connected\":" + request.downloadHandler.text + "}");
 				if (bridges.connected.Count > 0) {
 					bridgeInfo = bridges.connected.ToArray () [0];
-
-					Color color = image.color;
-					image.color = new Color (color.r, color.g, color.b, .75f);
 				}
 			}
 		}

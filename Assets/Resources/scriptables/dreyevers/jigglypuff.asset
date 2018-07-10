@@ -14,3 +14,4 @@ MonoBehaviour:
   name: jigglypuff
   displayName: Jigglypuff
   sprite: {fileID: 21300000, guid: e76117d9a7e0ec0418f9bae820e48707, type: 3}
+  blackSprite: {fileID: 21300000, guid: 17aca4059ee04ab49bb0e335aabe523f, type: 3}

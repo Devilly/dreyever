@@ -15,6 +15,7 @@ namespace Persistent
         public static Environment instance = null;
 
         public Scriptables.Dreyevers.Dreyever defaultDreyever;
+        public Scriptables.Dreyevers.Dreyever[] defaultUnlockedDreyevers;
         public Scriptables.Dreyevers.Dreyever[] allDreyevers;
 
         private string persistencePath;
@@ -40,6 +41,10 @@ namespace Persistent
             {
                 progress = new Progress();
                 progress.currentDreyever = defaultDreyever.name;
+                progress.unlockedDreyevers = defaultUnlockedDreyevers.Select(dreyever =>
+                {
+                    return dreyever.name;
+                }).ToArray();
             }
         }
 
@@ -63,6 +68,15 @@ namespace Persistent
                 .Find(dreyever => dreyever.sprite == sprite).name;
 
             Save();
+        }
+
+        public Scriptables.Dreyevers.Dreyever[] GetUnlockedDreyevers()
+        {
+            return progress.unlockedDreyevers.Select(unlockedDreyever =>
+            {
+                return allDreyevers.OfType<Scriptables.Dreyevers.Dreyever>().ToList()
+                    .Find(dreyever => dreyever.name == unlockedDreyever);
+            }).ToArray();
         }
 
         public int GetCoinsCount(CoinType type)
