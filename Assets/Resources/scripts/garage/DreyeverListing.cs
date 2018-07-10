@@ -32,6 +32,8 @@ namespace Garage
                     behaviour.enabled = false;
 
                     image.sprite = dreyever.blackSprite;
+                    Color color = image.color;
+                    image.color = new Color(color.r, color.g, color.b, .3f);
                 }
             }
 
