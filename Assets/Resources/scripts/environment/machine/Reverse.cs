@@ -7,7 +7,7 @@ namespace Environment.Machine
 {
     public class Reverse : MonoBehaviour
     {
-        public new SpriteRenderer symbol;
+        public SpriteRenderer symbol;
 
         public Sprite inactive;
         public Sprite active;

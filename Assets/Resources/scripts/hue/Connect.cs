@@ -49,6 +49,7 @@ namespace Hue {
             image.color = new Color(color.r, color.g, color.b, .75f);
 
             Persistent.Lighting.SetUsername(username);
+            Persistent.Lighting.SetHueIpaddress(bridgeInfo.internalipaddress);
         }
 
         public void RequestUserId() {
@@ -101,7 +102,7 @@ namespace Hue {
 		}
 
 		private IEnumerator GetBridge() {
-			using (UnityWebRequest request = UnityWebRequest.Get ("https://www.meethue.com/api/nupnp")) {
+			using (UnityWebRequest request = UnityWebRequest.Get ("https://discovery.meethue.com")) {
 				yield return request.SendWebRequest ();
 
 				Bridges bridges = JsonUtility.FromJson<Bridges> ("{\"connected\":" + request.downloadHandler.text + "}");
