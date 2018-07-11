@@ -6,13 +6,20 @@ namespace Coins
 {
     public class CoinBehaviour : MonoBehaviour
     {
+        private Animator animator;
+
         public CoinType type;
+
+        void Start()
+        {
+            animator = GetComponent<Animator>();
+        }
 
         private void OnTriggerEnter2D(Collider2D collider)
         {
             if (collider.name == "Hitbox")
             {
-                Destroy(gameObject);
+                animator.Play("collect");
                 Persistent.Environment.instance.IncreaseCoinsCount(type);
             }
         }

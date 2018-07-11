@@ -477,6 +477,7 @@
     <Compile Include="Assets\GoogleARCore\SDK\Scripts\XPSession.cs" />
     <Compile Include="Assets\GoogleARCore\SDK\Scripts\XPSessionStatus.cs" />
     <Compile Include="Assets\GoogleARCore\SDK\Scripts\XPTrackingState.cs" />
+    <Compile Include="Assets\Resources\animations\world\coins\DestroyAfterCollect.cs" />
     <Compile Include="Assets\Resources\scriptables\dreyevers\Dreyever.cs" />
     <Compile Include="Assets\Resources\scriptables\environment\machine\Properties.cs" />
     <Compile Include="Assets\Resources\scriptables\util\Instantiater.cs" />
