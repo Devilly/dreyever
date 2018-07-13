@@ -7,6 +7,7 @@ namespace Environment.Cannon
 {
     public class Shoot : MonoBehaviour
     {
+        public float interval;
         public GameObject cannonball;
 
         void Start()
@@ -18,7 +19,7 @@ namespace Environment.Cannon
         {
             while (true)
             {
-                yield return new WaitForSeconds(3f);
+                yield return new WaitForSeconds(interval);
 
                 GameObject newCannonball = Instantiate(cannonball, transform.position, transform.rotation);
                 BallBehaviour behaviour = newCannonball.GetComponent<BallBehaviour>();
