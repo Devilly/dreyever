@@ -180,6 +180,9 @@
     <Compile Include="Assets\Resources\scripts\util\MakeNotDestroyed.cs" />
     <Compile Include="Assets\Resources\scripts\util\MakeSingleton.cs" />
     <None Include="Assets\Cinemachine\ReleaseNotes.txt" />
+    <Reference Include="UnityEditor.StandardEvents">
+      <HintPath>C:/Users/deslo/Documents/unity-workspace/dreyever/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/deslo/Documents/unity-workspace/dreyever/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
