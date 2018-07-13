@@ -147,6 +147,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 6172ce0f777c231d1bbfc5b528028128 Assembly-CSharp.dll:GoogleARCore.Examples.HelloAR.HelloARController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Dreyever.State
 4294352ce43e027e71b199587be57c74 Assembly-CSharp.dll:GoogleARCore.Examples.AugmentedImage.AugmentedImageVisualizer
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Animations.World.Coins.DestroyAfterCollect
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Dead.SpriteResize
 fe460ef6985517d84e68664be1e7af5b Assembly-CSharp.dll:Cinemachine.CinemachineFramingTransposer
 ed9279a9d1042bde3a6ae6cd0c1a92fa Assembly-CSharp.dll:Cinemachine.CinemachinePOV

@@ -1,8 +1,4 @@
-﻿using GoogleARCore;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 namespace CameraSpace {
 	public class Background : MonoBehaviour {
@@ -14,19 +10,11 @@ namespace CameraSpace {
 
 		void Start () {
             component = GetComponent<Camera>();
-
-            //AsyncTask<GoogleARCore.ApkAvailabilityStatus> arAvailability = Session.CheckApkAvailability();
-            //arAvailability.ThenAction(status =>
-            //{
-            //    arAvailable = status == ApkAvailabilityStatus.SupportedInstalled;
-            //});
 		}
 
         private void Update()
         {
             float pixelIntensity = 1;
-            //if (arAvailable) pixelIntensity = Frame.LightEstimate.PixelIntensity * 5;
-
             float colorValue = minColorValue + (maxColorValue - minColorValue) * pixelIntensity;
             component.backgroundColor = new Color(
                 convertColorIntToFloat(colorValue),
