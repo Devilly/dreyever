@@ -1,4 +1,5 @@
-﻿using Dreyever;
+﻿using Cinemachine;
+using Dreyever;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,9 +34,19 @@ namespace Environment.Machine
 
             yield return new WaitForSeconds(2);
 
+            VirtualCameraManagement vCamManagement = Camera.main.GetComponent<VirtualCameraManagement>();
+            GameObject currentVirtualCameraLeft = vCamManagement.virtualCameraLeft;
+            GameObject newVirtualCameraLeft = Instantiate(vCamManagement.virtualCameraLeft);
+            newVirtualCameraLeft.SetActive(false);
+            currentVirtualCameraLeft.GetComponent<CinemachineVirtualCamera>().Follow = null;
+
             monocar.parent.position = destinations[new System.Random().Next(0, destinations.Length)].transform.position;
 
-            yield return new WaitForSeconds(2);
+            newVirtualCameraLeft.SetActive(true);
+            currentVirtualCameraLeft.SetActive(false);
+            vCamManagement.virtualCameraLeft = newVirtualCameraLeft;
+
+            yield return new WaitForSeconds(3);
 
             state.StartMoving();
             symbol.sprite = inactive;
