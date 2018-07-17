@@ -356,9 +356,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f5251faa6807284d9cf751036f3dc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultDreyever: {fileID: 11400000, guid: 8daef4ad2a843334d907b5ca91d18186, type: 2}
+  defaultDreyever: {fileID: 11400000, guid: 173c7425f331e724da88c026e9b1e26f, type: 2}
   defaultUnlockedDreyevers:
-  - {fileID: 11400000, guid: 8daef4ad2a843334d907b5ca91d18186, type: 2}
+  - {fileID: 11400000, guid: 173c7425f331e724da88c026e9b1e26f, type: 2}
   allDreyevers:
   - {fileID: 11400000, guid: cef76472ce1cd8847a74a0498520bec6, type: 2}
   - {fileID: 11400000, guid: e79a59cc68400b043b688e5333bff0c0, type: 2}
