@@ -151,6 +151,7 @@
     <Compile Include="Assets\Resources\scripts\environment\machine\Reverse.cs" />
     <Compile Include="Assets\Resources\scripts\environment\speed\SpeedPartInteract.cs" />
     <Compile Include="Assets\Resources\scripts\environment\speed\SpeedSectionBehaviour.cs" />
+    <Compile Include="Assets\Resources\scripts\from-portrait-to-landscape\LetPlayerChangeOrientation.cs" />
     <Compile Include="Assets\Resources\scripts\garage\Back.cs" />
     <Compile Include="Assets\Resources\scripts\garage\DreyeverBehaviour.cs" />
     <Compile Include="Assets\Resources\scripts\garage\DreyeverListing.cs" />
