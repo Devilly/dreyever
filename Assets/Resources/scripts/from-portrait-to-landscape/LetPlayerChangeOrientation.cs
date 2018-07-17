@@ -20,7 +20,6 @@ namespace FromPortraitToLandscape
         private Image greenEyeText;
 
         private const float xGravityTarget = -.5f;
-        private const float xGravityBuffer = .05f;
 
         void Awake()
         {
@@ -79,8 +78,7 @@ namespace FromPortraitToLandscape
         private void CheckIfReadyAndAct()
         {
             var xGravityCurrent = Input.gyro.gravity.x;
-            if (xGravityCurrent > xGravityTarget - xGravityBuffer &&
-                xGravityCurrent < xGravityTarget + xGravityBuffer)
+            if (xGravityCurrent < xGravityTarget)
             {
                 StartCoroutine(StartGame());
             }
