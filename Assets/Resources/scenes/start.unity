@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111f221083e2e8841a7fb6d2b8b8823a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: garage
+  targetScene: rush
 --- !u!1 &327127386
 GameObject:
   m_ObjectHideFlags: 0

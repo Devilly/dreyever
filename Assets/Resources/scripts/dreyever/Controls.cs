@@ -10,7 +10,7 @@ namespace Dreyever {
 
 		public GameObject container;
 
-        public new PolygonCollider2D collider;
+        private new PolygonCollider2D collider;
 
 		public GameObject hitbox;
 		private BoxCollider2D hitboxCollider;
