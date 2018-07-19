@@ -11,5 +11,10 @@ namespace Scriptables.Dreyevers
         public string displayName;
         public Sprite sprite;
         public Sprite blackSprite;
+
+        public Sprite[] tilt;
+        public Sprite[] jump;
+        public Sprite[] airturn;
+        public Sprite[] landing;
     }
 }

@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -15,3 +15,29 @@ MonoBehaviour:
   displayName: God of Tires
   sprite: {fileID: 21300000, guid: 618cc046b67660345a31d3a3dd848859, type: 3}
   blackSprite: {fileID: 21300000, guid: 336b3336828cd264d8b2ac14c52a5675, type: 3}
+  tilt:
+  - {fileID: 21300000, guid: ccb23d902452497498a905c5ee094979, type: 3}
+  - {fileID: 21300000, guid: 5effc108a2affbc41bf0374172bf8851, type: 3}
+  - {fileID: 21300000, guid: 1c457e1d936496f4897631ba390137d7, type: 3}
+  - {fileID: 21300000, guid: 8cdacdeed1b42204eb5a0a6eb86d6082, type: 3}
+  - {fileID: 21300000, guid: 77b0c3bba0d9d214d89d14e1d75079c9, type: 3}
+  jump:
+  - {fileID: 21300000, guid: fbe0ba15d2cf2614d8bc0d7a035e7a0d, type: 3}
+  - {fileID: 21300000, guid: 7cd6a0a69805e81479324cab10135bce, type: 3}
+  - {fileID: 21300000, guid: c466575d172d2304b81b8655a467f8c2, type: 3}
+  - {fileID: 21300000, guid: e9e62cbc49571ea44a170fdde2cf5f49, type: 3}
+  - {fileID: 21300000, guid: 047a66d951fc88b408c026e5cd4bbf3a, type: 3}
+  - {fileID: 21300000, guid: 4f3b0ddf39b392c41b163b3bf127e916, type: 3}
+  - {fileID: 21300000, guid: 1ec8f2dac6b762047aaee3eb4169f791, type: 3}
+  - {fileID: 21300000, guid: 6e174620170964d45be2abc5233fc40a, type: 3}
+  airturn:
+  - {fileID: 21300000, guid: f595e4a45fd2cb84280cede15ca9d5d4, type: 3}
+  - {fileID: 21300000, guid: c1ae7ea691b26b44daecd9b6fcf45d6b, type: 3}
+  - {fileID: 21300000, guid: b0c2c19a166411b459c9617858a5a6b7, type: 3}
+  - {fileID: 21300000, guid: dd47cc2b385a21f47a798745a8e40276, type: 3}
+  landing:
+  - {fileID: 21300000, guid: 8e17666ac1ca306499ab073091eccf87, type: 3}
+  - {fileID: 21300000, guid: fa2d02f121f22b843924e21508323f1a, type: 3}
+  - {fileID: 21300000, guid: a22dc2bdb5f404d459edfee017947248, type: 3}
+  - {fileID: 21300000, guid: ff80ec7357cee7742974cb6579b899ee, type: 3}
+  - {fileID: 21300000, guid: 5ad778a9282758641814b0a0dbca48bb, type: 3}

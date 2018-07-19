@@ -27,6 +27,11 @@ namespace Dreyever
                     {
                         Destroy(component);
                     }
+
+                    if(type == typeof(SpriteRenderer))
+                    {
+                        ((SpriteRenderer)component).sprite = gameObject.GetComponent<SpriteRenderer>().sprite;
+                    }
                 }
 
                 afterimage.AddComponent<AfterimageFading>();

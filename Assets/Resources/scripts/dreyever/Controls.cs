@@ -7,10 +7,9 @@ using Environment.Speed;
 namespace Dreyever {
 	public class Controls : MonoBehaviour {
 		public State state;
+        public Animator animator;
 
 		public GameObject container;
-
-        private new PolygonCollider2D collider;
 
 		public GameObject hitbox;
 		private BoxCollider2D hitboxCollider;
@@ -24,6 +23,7 @@ namespace Dreyever {
 		private const float jumpSpeed = 0.4f;
 
 		private bool grounded = false;
+        private bool jumped = false;
 		private float verticalSpeed = 0f;
 
 		public const float safetyRing = 0.01f;
@@ -31,8 +31,6 @@ namespace Dreyever {
 		private string[] collisionLayers = new string[]{ "environment" };
 
 		void Start() {
-            collider = gameObject.AddComponent<PolygonCollider2D>();
-
             hitboxCollider = hitbox.GetComponent<BoxCollider2D> ();
         }
 
@@ -49,10 +47,6 @@ namespace Dreyever {
 
 			// Turn dreyever into the right direction.
 			float rotation = 0;
-			if (currentMovement == Movement.RUNNING) {
-				rotation = -22;
-			}
-
 			if (currentDirection == Direction.LEFT) {
 				rotation *= -1;
 			}
@@ -61,7 +55,7 @@ namespace Dreyever {
 		}
 
 		void AdaptPhysics() {
-            Bounds realBounds = collider.bounds;
+            Bounds realBounds = GetComponent<BoxCollider2D>().bounds;
 			float bottomSpacing = 0.05f;
 
 			Vector2 size = ((Vector2) realBounds.size) - new Vector2 (0, bottomSpacing);
@@ -85,6 +79,11 @@ namespace Dreyever {
 			if (currentMovement == Movement.RUNNING) {
 				naturalMovementDistance = (runningSpeed + bonusSpeed) * Time.deltaTime;
 			}
+
+            if(grounded && currentMovement == Movement.RUNNING)
+            {
+                animator.StartAnimation(Animation.TILT);
+            }
 
             Direction currentDirection = state.GetDirection();
             if(currentDirection == Direction.LEFT)
@@ -166,10 +165,22 @@ namespace Dreyever {
 
 			if (grounded && isCurrentlyJumping) {
 				grounded = false;
+                jumped = true;
 				verticalSpeed = jumpSpeed;
+
+                animator.StartAnimation(Animation.JUMP);
 			}
 
+            float previousVerticalSpeed = verticalSpeed;
 			verticalSpeed -= gravity * Time.deltaTime;
+
+            if(jumped &&
+                (previousVerticalSpeed >= 0) &&
+                (verticalSpeed <= 0))
+            {
+                animator.StartAnimation(Animation.AIRTURN);
+            }
+
 			if (verticalSpeed < maximumVerticalDropSpeed) {
 				verticalSpeed = maximumVerticalDropSpeed;
 			}
@@ -203,6 +214,11 @@ namespace Dreyever {
 			} else {
 				grounded = false;
 			}
+
+            if(grounded)
+            {
+                jumped = false;
+            }
 
 			Move(movementVector);
 

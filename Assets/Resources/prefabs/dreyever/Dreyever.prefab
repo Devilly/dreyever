@@ -23,7 +23,9 @@ GameObject:
   - component: {fileID: 114908987455691312}
   - component: {fileID: 114809113538006114}
   - component: {fileID: 114312209552832402}
+  - component: {fileID: 114532875563050120}
   - component: {fileID: 114048139837646112}
+  - component: {fileID: 61627476774657486}
   m_Layer: 0
   m_Name: Monocar
   m_TagString: Untagged
@@ -84,8 +86,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1057794013905024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.17029895, y: 0.17029895, z: 0.17029895}
+  m_LocalPosition: {x: -0.477, y: 0.482, z: 0}
+  m_LocalScale: {x: 0.4002025, y: 0.4002025, z: 0.4002025}
   m_Children: []
   m_Father: {fileID: 4361533724305430}
   m_RootOrder: 0
@@ -103,6 +105,31 @@ Transform:
   m_Father: {fileID: 4361533724305430}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61627476774657486
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1057794013905024}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.24665773, y: -0.10385603}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.15, y: 4.19}
+    newSize: {x: 5.52, y: 8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.7605393, y: 3.7226477}
+  m_EdgeRadius: 0
 --- !u!61 &61630384557063228
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -150,6 +177,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 897c528ba2e444d42958d1d3d6ba5fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114532875563050120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1057794013905024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9812feed573337444a84c69abb63d604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fps: 30
 --- !u!114 &114809113538006114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -162,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: {fileID: 114908987455691312}
+  animator: {fileID: 114532875563050120}
   container: {fileID: 1400934210646708}
   hitbox: {fileID: 1233186141914300}
 --- !u!114 &114908987455691312
@@ -210,7 +250,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ccb23d902452497498a905c5ee094979, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -218,6 +258,6 @@ SpriteRenderer:
   m_Size: {x: 5.52, y: 8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

@@ -5,6 +5,6 @@ using UnityEngine;
 public class SetDreyever : MonoBehaviour
 {
 	void Awake () {
-        GetComponent<SpriteRenderer>().sprite = Persistent.Environment.instance.GetCurrentDreyever().sprite;
+        GetComponent<SpriteRenderer>().sprite = Persistent.Environment.instance.GetCurrentDreyever().tilt[0];
 	}
 }

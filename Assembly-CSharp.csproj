@@ -128,6 +128,8 @@
     <Compile Include="Assets\Resources\scripts\dead\Restart.cs" />
     <Compile Include="Assets\Resources\scripts\dead\SpriteResize.cs" />
     <Compile Include="Assets\Resources\scripts\dreyever\Afterimaging.cs" />
+    <Compile Include="Assets\Resources\scripts\dreyever\Animation.cs" />
+    <Compile Include="Assets\Resources\scripts\dreyever\Animator.cs" />
     <Compile Include="Assets\Resources\scripts\dreyever\Controls.cs" />
     <Compile Include="Assets\Resources\scripts\dreyever\Direction.cs" />
     <Compile Include="Assets\Resources\scripts\dreyever\Movement.cs" />
