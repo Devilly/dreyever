@@ -7,10 +7,21 @@ namespace Dreyever
 {
     public class Afterimaging : MonoBehaviour
     {
+        private Coroutine coroutine;
 
         void Start()
         {
-            StartCoroutine(AddAfterimages());
+            coroutine = StartCoroutine(AddAfterimages());
+        }
+
+        public void StopShowingAfterimages()
+        {
+            StopCoroutine(coroutine);
+
+            foreach(GameObject afterimage in GameObject.FindGameObjectsWithTag("afterimage"))
+            {
+                Destroy(afterimage);
+            }
         }
 
         private IEnumerator AddAfterimages()
@@ -36,6 +47,7 @@ namespace Dreyever
 
                 afterimage.AddComponent<AfterimageFading>();
                 afterimage.GetComponent<SpriteRenderer>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder - 1;
+                afterimage.tag = "afterimage";
             }
         }
 

@@ -10,8 +10,11 @@ namespace Dreyever
         private Animation currentAnimation;
         private float animationStart;
 
-        public int fps = 30;
+        public int fps = 40;
         private float millisPerFrame;
+
+        public delegate void Callback();
+        private Callback callback;
         
         void Start()
         {
@@ -22,11 +25,21 @@ namespace Dreyever
 
         public void StartAnimation(Animation animation)
         {
-            if(animation != currentAnimation)
+            StartAnimation(animation, () => { });
+        }
+
+        public void StartAnimation(Animation animation, Callback callback)
+        {
+            if ((animation == Animation.TILT) &&
+                (currentAnimation != Animation.NONE))
             {
-                currentAnimation = animation;
-                animationStart = Time.time;
+                return;
             }
+
+            currentAnimation = animation;
+            animationStart = Time.time;
+
+            this.callback = callback;
         }
         
         void Update()
@@ -38,10 +51,6 @@ namespace Dreyever
             {
                 sprites = Persistent.Environment.instance.GetCurrentDreyever().tilt;
             }
-            else if (currentAnimation == Animation.JUMP)
-            {
-                sprites = Persistent.Environment.instance.GetCurrentDreyever().jump;
-            }
             else if (currentAnimation == Animation.AIRTURN)
             {
                 sprites = Persistent.Environment.instance.GetCurrentDreyever().airturn;
@@ -49,7 +58,17 @@ namespace Dreyever
             else if (currentAnimation == Animation.LANDING)
             {
                 sprites = Persistent.Environment.instance.GetCurrentDreyever().landing;
-            } else
+            }
+            else if (currentAnimation == Animation.EXPLOSION)
+            {
+                // After an explosion there is nothing.
+                // Adding a null entry in the array to represent the "nothing".
+                // Would be the same to add an empty sprite but this is less resource intensive.
+                Sprite[] arrayWithTrailingNull = new Sprite[Persistent.Environment.instance.GetCurrentDreyever().explosion.Length + 1];
+                Array.Copy(Persistent.Environment.instance.GetCurrentDreyever().explosion, arrayWithTrailingNull, Persistent.Environment.instance.GetCurrentDreyever().explosion.Length);
+                sprites = arrayWithTrailingNull;
+            }
+            else
             {
                 throw new NotImplementedException();
             }
@@ -58,6 +77,20 @@ namespace Dreyever
             frameIndex = Mathf.Clamp(frameIndex, 0, sprites.Length - 1);
 
             GetComponent<SpriteRenderer>().sprite = sprites[frameIndex];
+
+            if (frameIndex == sprites.Length - 1)
+            {
+                if (this.callback != null)
+                {
+                    this.callback();
+                    this.callback = null;
+                }
+
+                if(currentAnimation != Animation.TILT)
+                {
+                    currentAnimation = Animation.NONE;
+                }
+            }
         }
     }
 }

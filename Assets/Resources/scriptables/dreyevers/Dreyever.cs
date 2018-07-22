@@ -13,8 +13,9 @@ namespace Scriptables.Dreyevers
         public Sprite blackSprite;
 
         public Sprite[] tilt;
-        public Sprite[] jump;
         public Sprite[] airturn;
         public Sprite[] landing;
+
+        public Sprite[] explosion;
     }
 }

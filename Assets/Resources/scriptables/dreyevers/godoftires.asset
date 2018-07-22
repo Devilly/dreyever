@@ -21,15 +21,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1c457e1d936496f4897631ba390137d7, type: 3}
   - {fileID: 21300000, guid: 8cdacdeed1b42204eb5a0a6eb86d6082, type: 3}
   - {fileID: 21300000, guid: 77b0c3bba0d9d214d89d14e1d75079c9, type: 3}
-  jump:
-  - {fileID: 21300000, guid: fbe0ba15d2cf2614d8bc0d7a035e7a0d, type: 3}
-  - {fileID: 21300000, guid: 7cd6a0a69805e81479324cab10135bce, type: 3}
-  - {fileID: 21300000, guid: c466575d172d2304b81b8655a467f8c2, type: 3}
-  - {fileID: 21300000, guid: e9e62cbc49571ea44a170fdde2cf5f49, type: 3}
-  - {fileID: 21300000, guid: 047a66d951fc88b408c026e5cd4bbf3a, type: 3}
-  - {fileID: 21300000, guid: 4f3b0ddf39b392c41b163b3bf127e916, type: 3}
-  - {fileID: 21300000, guid: 1ec8f2dac6b762047aaee3eb4169f791, type: 3}
-  - {fileID: 21300000, guid: 6e174620170964d45be2abc5233fc40a, type: 3}
   airturn:
   - {fileID: 21300000, guid: f595e4a45fd2cb84280cede15ca9d5d4, type: 3}
   - {fileID: 21300000, guid: c1ae7ea691b26b44daecd9b6fcf45d6b, type: 3}
@@ -41,3 +32,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a22dc2bdb5f404d459edfee017947248, type: 3}
   - {fileID: 21300000, guid: ff80ec7357cee7742974cb6579b899ee, type: 3}
   - {fileID: 21300000, guid: 5ad778a9282758641814b0a0dbca48bb, type: 3}
+  explosion:
+  - {fileID: 21300000, guid: db478a3cdf3c39142a5cb1df4d8003d9, type: 3}
+  - {fileID: 21300000, guid: be434032b2748344c8ab023b12556cc5, type: 3}
+  - {fileID: 21300000, guid: 70846677d00cf75479ed8636cf5825e5, type: 3}
+  - {fileID: 21300000, guid: 2a786071e20dc484da2acac6cff9af13, type: 3}
+  - {fileID: 21300000, guid: 27eb4a009be2c2247a609c712ca478ae, type: 3}
+  - {fileID: 21300000, guid: 8632eeae39f508e43a0f02c8dbb70a64, type: 3}
+  - {fileID: 21300000, guid: d8d7aa47c628c69468e2f0aa4ff6b82d, type: 3}
+  - {fileID: 21300000, guid: 17acb0ce76540cf4d9b1a243b0363dad, type: 3}

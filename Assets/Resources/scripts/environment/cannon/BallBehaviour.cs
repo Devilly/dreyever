@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Dead;
 using Scriptables.Util;
+using Dreyever;
 
 namespace Environment.Cannon
 {
@@ -33,7 +34,7 @@ namespace Environment.Cannon
         {
             if(collider.name == "Hitbox")
             {
-                instantiater.Clone();
+                collider.transform.parent.GetComponentInChildren<Controls>().Influence(new Influence().Die(true));
             }
             
             Destroy(gameObject);

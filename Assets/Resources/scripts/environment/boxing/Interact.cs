@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Dead;
 using Scriptables.Util;
+using Dreyever;
 
 namespace Environment.Boxing
 {
     public class Interact : MonoBehaviour
     {
-        public Instantiater instantiater;
-
         private Transform playerTransform;
 
         private const float lengthOfExpansion = 1.8f;
@@ -77,7 +76,7 @@ namespace Environment.Boxing
         {
             if (collider.name == "Hitbox")
             {
-                instantiater.Clone();
+                collider.transform.parent.GetComponentInChildren<Controls>().Influence(new Influence().Die(true));
             }
         }
     }

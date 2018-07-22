@@ -200,10 +200,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6d32de078f94d74587d56e86c9ab0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instantiater: {fileID: 11400000, guid: d58b88f3a3396b94495a94edc4d3700a, type: 2}
   state: {fileID: 114908987455691312}
   animator: {fileID: 114532875563050120}
   container: {fileID: 1400934210646708}
   hitbox: {fileID: 1233186141914300}
+  afterimaging: {fileID: 114048139837646112}
 --- !u!114 &114908987455691312
 MonoBehaviour:
   m_ObjectHideFlags: 1

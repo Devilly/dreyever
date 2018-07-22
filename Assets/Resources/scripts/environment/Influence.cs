@@ -8,9 +8,11 @@ namespace Environment {
         private float verticalMovement;
         private Vector2 reposition;
 
+        private bool die;
+
         public Influence()
         {
-            reposition = new Vector2(0, 0);
+            reposition = Vector2.zero;
         }
 
 		public Influence HorizontalMovement(float horizontalMovement) {
@@ -42,6 +44,17 @@ namespace Environment {
         public Vector2 Reposition()
         {
             return reposition;
+        }
+
+        public Influence Die(bool die)
+        {
+            this.die = die;
+            return this;
+        }
+
+        public bool Die()
+        {
+            return die;
         }
     }
 }

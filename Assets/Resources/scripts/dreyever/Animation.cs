@@ -6,6 +6,6 @@ namespace Dreyever
 {
     public enum Animation
     {
-        NONE, TILT, JUMP, AIRTURN, LANDING
+        NONE, TILT, AIRTURN, LANDING, EXPLOSION
     }
 }

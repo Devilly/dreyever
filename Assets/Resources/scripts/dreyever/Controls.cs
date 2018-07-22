@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using Environment;
 using Environment.Speed;
+using Scriptables.Util;
 
 namespace Dreyever {
 	public class Controls : MonoBehaviour {
-		public State state;
+
+        public Instantiater instantiater;
+
+        public State state;
         public Animator animator;
 
 		public GameObject container;
 
 		public GameObject hitbox;
 		private BoxCollider2D hitboxCollider;
+
+        public Afterimaging afterimaging;
 
 		private const float runningSpeed = 9f;
 		private float bonusSpeed = 0f;
@@ -23,10 +29,13 @@ namespace Dreyever {
 		private const float jumpSpeed = 0.4f;
 
 		private bool grounded = false;
+        private bool jumpReady = false;
         private bool jumped = false;
 		private float verticalSpeed = 0f;
 
 		public const float safetyRing = 0.01f;
+
+        private bool dead = false;
 
 		private string[] collisionLayers = new string[]{ "environment" };
 
@@ -35,6 +44,8 @@ namespace Dreyever {
         }
 
 		void FixedUpdate() {
+            if (dead) return;
+
 			MoveHorizontal ();
 			MoveVertical ();
             
@@ -67,7 +78,7 @@ namespace Dreyever {
 
 		void MoveHorizontal() {
 			if (grounded) {
-				bonusSpeed -= bonusSpeedLoss * Time.deltaTime;
+				bonusSpeed -= bonusSpeedLoss * Time.fixedDeltaTime;
 				if (bonusSpeed < 0f) {
 					bonusSpeed = 0f;
 				}
@@ -77,12 +88,15 @@ namespace Dreyever {
 
             Movement currentMovement = state.GetMovement();
 			if (currentMovement == Movement.RUNNING) {
-				naturalMovementDistance = (runningSpeed + bonusSpeed) * Time.deltaTime;
+				naturalMovementDistance = (runningSpeed + bonusSpeed) * Time.fixedDeltaTime;
 			}
 
             if(grounded && currentMovement == Movement.RUNNING)
             {
-                animator.StartAnimation(Animation.TILT);
+                animator.StartAnimation(Animation.TILT, () =>
+                {
+                    jumpReady = true;
+                });
             }
 
             Direction currentDirection = state.GetDirection();
@@ -163,16 +177,15 @@ namespace Dreyever {
 		void MoveVertical() {
 			bool isCurrentlyJumping = state.IsJumping ();
 
-			if (grounded && isCurrentlyJumping) {
-				grounded = false;
+			if (grounded && jumpReady && isCurrentlyJumping) {
+                grounded = false;
+                jumpReady = false;
                 jumped = true;
-				verticalSpeed = jumpSpeed;
-
-                animator.StartAnimation(Animation.JUMP);
-			}
+                verticalSpeed = jumpSpeed;
+            }
 
             float previousVerticalSpeed = verticalSpeed;
-			verticalSpeed -= gravity * Time.deltaTime;
+			verticalSpeed -= gravity * Time.fixedDeltaTime;
 
             if(jumped &&
                 (previousVerticalSpeed >= 0) &&
@@ -217,6 +230,11 @@ namespace Dreyever {
 
             if(grounded)
             {
+                if(jumped)
+                {
+                    animator.StartAnimation(Animation.LANDING);
+                }
+                
                 jumped = false;
             }
 
@@ -243,6 +261,16 @@ namespace Dreyever {
 
         public void Influence(Influence influence)
         {
+            if(influence.Die())
+            {
+                dead = true;
+                animator.StartAnimation(Animation.EXPLOSION, () =>
+                {
+                    afterimaging.StopShowingAfterimages();
+                    instantiater.Clone();
+                });
+            }
+
             bonusSpeed += influence.HorizontalMovement();
             verticalSpeed += influence.VerticalMovement();
 
