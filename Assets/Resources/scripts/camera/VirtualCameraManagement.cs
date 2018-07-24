@@ -12,7 +12,11 @@ public class VirtualCameraManagement : MonoBehaviour {
 
     void Start()
     {
-        state = GameObject.FindGameObjectWithTag("Player").transform.Find("Monocar").GetComponent<State>();
+        Transform playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        state = playerTransform.Find("Monocar").GetComponent<State>();
+
+        virtualCameraRight.GetComponent<Cinemachine.CinemachineVirtualCamera>().Follow = playerTransform;
+        virtualCameraLeft.GetComponent<Cinemachine.CinemachineVirtualCamera>().Follow = playerTransform;
     }
 
     void Update () {
