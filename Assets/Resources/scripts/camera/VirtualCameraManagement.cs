@@ -5,12 +5,17 @@ using UnityEngine;
 
 public class VirtualCameraManagement : MonoBehaviour {
 
-    public State state;
+    private State state;
 
     public GameObject virtualCameraRight;
     public GameObject virtualCameraLeft;
-	
-	void Update () {
+
+    void Start()
+    {
+        state = GameObject.FindGameObjectWithTag("Player").transform.Find("Monocar").GetComponent<State>();
+    }
+
+    void Update () {
 		if(state.GetDirection() == Direction.RIGHT)
         {
             virtualCameraRight.SetActive(true);

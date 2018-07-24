@@ -6,10 +6,12 @@ using Dreyever;
 namespace Rush {
 	public class AutoRun : MonoBehaviour {
 
-		public State state;
+		private State state;
 
 		void Start () {
-			StartCoroutine (StartMovingRight ());
+            state = GameObject.FindGameObjectWithTag("Player").transform.Find("Monocar").GetComponent<State>();
+            
+            StartCoroutine (StartMovingRight ());
 		}
 
 		private IEnumerator StartMovingRight() {

@@ -6,7 +6,12 @@ using Dreyever;
 namespace Rush {
 	public class Jump : MonoBehaviour {
 
-		public State state;
+		private State state;
+
+        void Start()
+        {
+            state = GameObject.FindGameObjectWithTag("Player").transform.Find("Monocar").GetComponent<State>();
+        }
 
 		void FixedUpdate () {
 #if UNITY_EDITOR

@@ -8,12 +8,17 @@ namespace Rush
 {
     public class FallFail : MonoBehaviour
     {
-        public GameObject dreyever;
+        private Transform playerTransform;
         public Instantiater instantiater;
 
-        private void FixedUpdate()
+        void Start()
         {
-            if (dreyever.transform.position.y < -15)
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform.Find("Monocar");
+        }
+
+        void FixedUpdate()
+        {
+            if (playerTransform.transform.position.y < -15)
             {
                 instantiater.Clone();
             }

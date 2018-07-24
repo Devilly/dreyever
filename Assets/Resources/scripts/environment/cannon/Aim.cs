@@ -6,13 +6,12 @@ namespace Environment.Cannon
 {
     public class Aim : MonoBehaviour
     {
-
         private Transform playerTransform;
         private Transform barrelTransform;
 
         void Start()
         {
-            playerTransform = GameObject.Find("Dreyever").transform;
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform.Find("Monocar");
             barrelTransform = transform;
         }
 

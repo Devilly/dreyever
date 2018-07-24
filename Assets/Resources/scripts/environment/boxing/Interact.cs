@@ -27,7 +27,7 @@ namespace Environment.Boxing
 
         void Start()
         {
-            playerTransform = GameObject.Find("Dreyever").transform;
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform.Find("Monocar");
 
             startPosition = transform.position;
             endPosition = startPosition + new Vector2(-lengthOfExpansion, 0);
