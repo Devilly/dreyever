@@ -16,6 +16,10 @@ namespace Scriptables.Dreyevers
         public Sprite[] airturn;
         public Sprite[] landing;
 
+        public Sprite[] reverseTilt;
+        public Sprite[] reverseAirturn;
+        public Sprite[] reverseLanding;
+
         public Sprite[] explosion;
     }
 }

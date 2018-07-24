@@ -32,6 +32,23 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a22dc2bdb5f404d459edfee017947248, type: 3}
   - {fileID: 21300000, guid: ff80ec7357cee7742974cb6579b899ee, type: 3}
   - {fileID: 21300000, guid: 5ad778a9282758641814b0a0dbca48bb, type: 3}
+  reverseTilt:
+  - {fileID: 21300000, guid: b71c6927452a7dc4296116689cae0ec5, type: 3}
+  - {fileID: 21300000, guid: 852e11c0dbd53fb4886f1171150bb876, type: 3}
+  - {fileID: 21300000, guid: 3e6a3663cd304dc42b35cb4723019347, type: 3}
+  - {fileID: 21300000, guid: feb2b3c0710370045b7502b5d9d05bf6, type: 3}
+  - {fileID: 21300000, guid: 170c757ff0a32f6428263b0bd95febd5, type: 3}
+  reverseAirturn:
+  - {fileID: 21300000, guid: 23732ed8641b61c42a810cfb0153e0eb, type: 3}
+  - {fileID: 21300000, guid: f61b152d4b8268a4c904ef931b7a496f, type: 3}
+  - {fileID: 21300000, guid: 0d19e32a70af5e54994671b14418325f, type: 3}
+  - {fileID: 21300000, guid: 9f3bc1fed6d976242b156233099f5fba, type: 3}
+  reverseLanding:
+  - {fileID: 21300000, guid: f637a4a25abbee944bbf13cd11b84a8d, type: 3}
+  - {fileID: 21300000, guid: ca122c624391cb045b1818f452df0919, type: 3}
+  - {fileID: 21300000, guid: bfbfccf11a7571640afec85250d3c66f, type: 3}
+  - {fileID: 21300000, guid: 483af5fb374b9d640a003e7125064bee, type: 3}
+  - {fileID: 21300000, guid: c41aa25f309252e49bb80f4ad7ab080f, type: 3}
   explosion:
   - {fileID: 21300000, guid: db478a3cdf3c39142a5cb1df4d8003d9, type: 3}
   - {fileID: 21300000, guid: be434032b2748344c8ab023b12556cc5, type: 3}

@@ -48,22 +48,7 @@ namespace Dreyever {
 
 			MoveHorizontal ();
 			MoveVertical ();
-            
-            AdaptLooks();
         }
-
-		void AdaptLooks() {
-			Movement currentMovement = state.GetMovement();
-			Direction currentDirection = state.GetDirection ();
-
-			// Turn dreyever into the right direction.
-			float rotation = 0;
-			if (currentDirection == Direction.LEFT) {
-				rotation *= -1;
-			}
-
-			transform.eulerAngles = new Vector3 (0, 0, rotation);
-		}
 
 		void AdaptPhysics() {
             Bounds realBounds = GetComponent<BoxCollider2D>().bounds;
@@ -93,7 +78,7 @@ namespace Dreyever {
 
             if(grounded && currentMovement == Movement.RUNNING)
             {
-                animator.StartAnimation(Animation.TILT, () =>
+                animator.StartAnimation(Animation.TILT, state.GetDirection(), () =>
                 {
                     jumpReady = true;
                 });
@@ -191,7 +176,7 @@ namespace Dreyever {
                 (previousVerticalSpeed >= 0) &&
                 (verticalSpeed <= 0))
             {
-                animator.StartAnimation(Animation.AIRTURN);
+                animator.StartAnimation(Animation.AIRTURN, state.GetDirection());
             }
 
 			if (verticalSpeed < maximumVerticalDropSpeed) {
@@ -232,7 +217,7 @@ namespace Dreyever {
             {
                 if(jumped)
                 {
-                    animator.StartAnimation(Animation.LANDING);
+                    animator.StartAnimation(Animation.LANDING, state.GetDirection());
                 }
                 
                 jumped = false;
@@ -264,7 +249,7 @@ namespace Dreyever {
             if(influence.Die())
             {
                 dead = true;
-                animator.StartAnimation(Animation.EXPLOSION, () =>
+                animator.StartAnimation(Animation.EXPLOSION, state.GetDirection(), () =>
                 {
                     afterimaging.StopShowingAfterimages();
                     instantiater.Clone();

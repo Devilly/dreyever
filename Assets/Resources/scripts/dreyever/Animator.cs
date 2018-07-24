@@ -9,6 +9,7 @@ namespace Dreyever
     {
         private Animation currentAnimation;
         private float animationStart;
+        private Direction currentDirection;
 
         public int fps = 40;
         private float millisPerFrame;
@@ -23,21 +24,24 @@ namespace Dreyever
             millisPerFrame = 1f / fps;
         }
 
-        public void StartAnimation(Animation animation)
+        public void StartAnimation(Animation animation, Direction direction)
         {
-            StartAnimation(animation, () => { });
+            StartAnimation(animation, direction, () => { });
         }
 
-        public void StartAnimation(Animation animation, Callback callback)
+        public void StartAnimation(Animation animation, Direction direction, Callback callback)
         {
-            if ((animation == Animation.TILT) &&
-                (currentAnimation != Animation.NONE))
+            if(direction == currentDirection)
             {
-                return;
+                if ((animation == Animation.TILT) && (currentAnimation != Animation.NONE))
+                {
+                    return;
+                }
             }
 
             currentAnimation = animation;
             animationStart = Time.time;
+            currentDirection = direction;
 
             this.callback = callback;
         }
@@ -49,15 +53,35 @@ namespace Dreyever
             Sprite[] sprites;
             if (currentAnimation == Animation.TILT)
             {
-                sprites = Persistent.Environment.instance.GetCurrentDreyever().tilt;
+                if(currentDirection == Direction.RIGHT)
+                {
+                    sprites = Persistent.Environment.instance.GetCurrentDreyever().tilt;
+                } else
+                {
+                    sprites = Persistent.Environment.instance.GetCurrentDreyever().reverseTilt;
+                }
             }
             else if (currentAnimation == Animation.AIRTURN)
             {
-                sprites = Persistent.Environment.instance.GetCurrentDreyever().airturn;
+                if (currentDirection == Direction.RIGHT)
+                {
+                    sprites = Persistent.Environment.instance.GetCurrentDreyever().airturn;
+                }
+                else
+                {
+                    sprites = Persistent.Environment.instance.GetCurrentDreyever().reverseAirturn;
+                }
             }
             else if (currentAnimation == Animation.LANDING)
             {
-                sprites = Persistent.Environment.instance.GetCurrentDreyever().landing;
+                if (currentDirection == Direction.RIGHT)
+                {
+                    sprites = Persistent.Environment.instance.GetCurrentDreyever().landing;
+                }
+                else
+                {
+                    sprites = Persistent.Environment.instance.GetCurrentDreyever().reverseLanding;
+                }
             }
             else if (currentAnimation == Animation.EXPLOSION)
             {
