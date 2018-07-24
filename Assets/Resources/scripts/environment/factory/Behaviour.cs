@@ -16,6 +16,8 @@ namespace Environment.Factory
 
         private bool activated = false;
 
+        public float manufacturingTime = 1;
+
         void Start()
         {
             GameObject dreyever = Instantiate(dreyeverPrefab, transform.position, Quaternion.identity);
@@ -57,7 +59,7 @@ namespace Environment.Factory
 
         private IEnumerator StartMovingRight()
         {
-            yield return new WaitForSecondsRealtime(2);
+            yield return new WaitForSecondsRealtime(manufacturingTime);
             state.StartMovingRight();
         }
     }
