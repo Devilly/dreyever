@@ -17,7 +17,7 @@ namespace Coins
 
         private void OnTriggerEnter2D(Collider2D collider)
         {
-            if (collider.name == "Hitbox")
+            if (collider.tag == "dreyever")
             {
                 animator.Play("collect");
                 Persistent.Environment.instance.IncreaseCoinsCount(type);

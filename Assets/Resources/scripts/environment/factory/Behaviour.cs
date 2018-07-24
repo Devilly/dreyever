@@ -19,7 +19,7 @@ namespace Environment.Factory
         void Start()
         {
             GameObject dreyever = Instantiate(dreyeverPrefab, transform.position, Quaternion.identity);
-            state = dreyever.transform.Find("Monocar").GetComponent<State>();
+            state = dreyever.GetComponent<State>();
 
             renderer = GetComponent<SpriteRenderer>();
         }

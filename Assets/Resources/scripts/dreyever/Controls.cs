@@ -13,14 +13,11 @@ namespace Dreyever {
         public State state;
         public Animator animator;
 
-		public GameObject container;
-
-		public GameObject hitbox;
-		private BoxCollider2D hitboxCollider;
-
         public Afterimaging afterimaging;
 
-		private const float runningSpeed = 9f;
+        private new BoxCollider2D collider;
+
+        private const float runningSpeed = 9f;
 		private float bonusSpeed = 0f;
 		private const float bonusSpeedLoss = 10f;
 
@@ -39,8 +36,9 @@ namespace Dreyever {
 
 		private string[] collisionLayers = new string[]{ "environment" };
 
-		void Start() {
-            hitboxCollider = hitbox.GetComponent<BoxCollider2D> ();
+        void Start()
+        {
+            collider = GetComponent<BoxCollider2D>();
         }
 
 		void FixedUpdate() {
@@ -49,17 +47,6 @@ namespace Dreyever {
 			MoveHorizontal ();
 			MoveVertical ();
         }
-
-		void AdaptPhysics() {
-            Bounds realBounds = GetComponent<BoxCollider2D>().bounds;
-			float bottomSpacing = 0.05f;
-
-			Vector2 size = ((Vector2) realBounds.size) - new Vector2 (0, bottomSpacing);
-			hitboxCollider.size = size;
-
-			Bounds hitboxBounds = hitboxCollider.bounds;
-			hitboxCollider.offset = hitboxCollider.offset + new Vector2 (realBounds.min.x - hitboxBounds.min.x, realBounds.max.y - hitboxBounds.max.y);
-		}
 
 		void MoveHorizontal() {
 			if (grounded) {
@@ -92,7 +79,7 @@ namespace Dreyever {
 
             Vector2 movementVector = new Vector2 (naturalMovementDistance, 0);
 
-            RaycastHit2D hit = Physics2D.BoxCast(hitboxCollider.bounds.center, hitboxCollider.bounds.size,
+            RaycastHit2D hit = Physics2D.BoxCast(collider.bounds.center, collider.bounds.size,
                 0, movementVector, Mathf.Abs(movementVector.x), LayerMask.GetMask(collisionLayers));
 
             if (hit.collider != null)
@@ -140,7 +127,7 @@ namespace Dreyever {
 
             while ((lift <= 0.1) && !found)
             {
-                hit = Physics2D.BoxCast(hitboxCollider.bounds.center + new Vector3(0, lift, 0), hitboxCollider.bounds.size,
+                hit = Physics2D.BoxCast(collider.bounds.center + new Vector3(0, lift, 0), collider.bounds.size,
                     0, new Vector2(naturalMovementDistance, 0), Mathf.Infinity, LayerMask.GetMask(collisionLayers));
 
                 alternativeMovementDistance = CalculateMaximumDistance(naturalMovementDistance, hit);
@@ -185,7 +172,7 @@ namespace Dreyever {
 				
 			Vector2 movementVector = new Vector2 (0, verticalSpeed);
 
-			RaycastHit2D hit = Physics2D.BoxCast(hitboxCollider.bounds.center, hitboxCollider.bounds.size,
+			RaycastHit2D hit = Physics2D.BoxCast(collider.bounds.center, collider.bounds.size,
                 0, movementVector, Mathf.Abs(movementVector.y), LayerMask.GetMask(collisionLayers));
 
 			if (hit.collider != null) {
@@ -226,7 +213,7 @@ namespace Dreyever {
 			Move(movementVector);
 
 			if (grounded) {
-				RaycastHit2D[] floorHits = Physics2D.BoxCastAll(hitboxCollider.bounds.center, hitboxCollider.bounds.size,
+				RaycastHit2D[] floorHits = Physics2D.BoxCastAll(collider.bounds.center, collider.bounds.size,
 					0, Vector2.down, safetyRing, LayerMask.GetMask(collisionLayers));
 
 				foreach(RaycastHit2D floorHit in floorHits) {
@@ -264,10 +251,8 @@ namespace Dreyever {
 
 		private void Move(Vector2 movementVector)
         {
-            container.transform.position = new Vector2(container.transform.position.x + movementVector.x,
-                container.transform.position.y + movementVector.y);
-
-            AdaptPhysics();
+            transform.position = new Vector2(transform.position.x + movementVector.x,
+                transform.position.y + movementVector.y);
         }
 	}
 }

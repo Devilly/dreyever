@@ -15,7 +15,7 @@ namespace Environment.Cannon
 
         void Start()
         {
-            playerTransform = GameObject.FindGameObjectWithTag("Player").transform.Find("Monocar");
+            playerTransform = GameObject.FindGameObjectWithTag("dreyever").transform;
         }
 
         void FixedUpdate()

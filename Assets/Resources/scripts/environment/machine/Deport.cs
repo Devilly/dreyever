@@ -18,16 +18,15 @@ namespace Environment.Machine
 
         private void OnTriggerEnter2D(Collider2D collider)
         {
-            if (collider.name == "Hitbox")
+            if (collider.tag == "dreyever")
             {
-                Transform monocar = collider.gameObject.transform.parent.Find("Monocar");
-                StartCoroutine(TurnAround(monocar));
+                StartCoroutine(TurnAround(collider.transform));
             }
         }
 
-        private IEnumerator TurnAround(Transform monocar)
+        private IEnumerator TurnAround(Transform dreyever)
         {
-            State state = monocar.GetComponent<State>();
+            State state = dreyever.GetComponent<State>();
 
             state.StopMoving();
             symbol.sprite = active;
@@ -40,7 +39,7 @@ namespace Environment.Machine
             newVirtualCameraLeft.SetActive(false);
             currentVirtualCameraLeft.GetComponent<CinemachineVirtualCamera>().Follow = null;
 
-            monocar.parent.position = destinations[new System.Random().Next(0, destinations.Length)].transform.position;
+            dreyever.position = destinations[new System.Random().Next(0, destinations.Length)].transform.position;
 
             newVirtualCameraLeft.SetActive(true);
             currentVirtualCameraLeft.SetActive(false);

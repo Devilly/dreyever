@@ -10,7 +10,7 @@ namespace Rush {
 
         void Start()
         {
-            state = GameObject.FindGameObjectWithTag("Player").transform.Find("Monocar").GetComponent<State>();
+            state = GameObject.FindGameObjectWithTag("dreyever").transform.GetComponent<State>();
         }
 
 		void FixedUpdate () {

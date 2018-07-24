@@ -14,9 +14,9 @@ namespace Environment.Machine
 
         private void OnTriggerEnter2D(Collider2D collider)
         {
-            if (collider.name == "Hitbox")
+            if (collider.tag == "dreyever")
             {
-                State state = collider.gameObject.transform.parent.GetComponentInChildren<State>();
+                State state = collider.GetComponentInChildren<State>();
                 StartCoroutine(TurnAround(state));
             }
         }

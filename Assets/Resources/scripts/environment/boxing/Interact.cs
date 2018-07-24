@@ -27,7 +27,7 @@ namespace Environment.Boxing
 
         void Start()
         {
-            playerTransform = GameObject.FindGameObjectWithTag("Player").transform.Find("Monocar");
+            playerTransform = GameObject.FindGameObjectWithTag("dreyever").transform;
 
             startPosition = transform.position;
             endPosition = startPosition + new Vector2(-lengthOfExpansion, 0);
@@ -74,9 +74,9 @@ namespace Environment.Boxing
 
         private void OnTriggerEnter2D(Collider2D collider)
         {
-            if (collider.name == "Hitbox")
+            if (collider.tag == "dreyever")
             {
-                collider.transform.parent.GetComponentInChildren<Controls>().Influence(new Influence().Die(true));
+                collider.GetComponentInChildren<Controls>().Influence(new Influence().Die(true));
             }
         }
     }

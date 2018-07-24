@@ -32,9 +32,9 @@ namespace Environment.Cannon
 
         private void OnTriggerEnter2D(Collider2D collider)
         {
-            if(collider.name == "Hitbox")
+            if(collider.tag == "dreyever")
             {
-                collider.transform.parent.GetComponentInChildren<Controls>().Influence(new Influence().Die(true));
+                collider.GetComponentInChildren<Controls>().Influence(new Influence().Die(true));
             }
             
             Destroy(gameObject);
