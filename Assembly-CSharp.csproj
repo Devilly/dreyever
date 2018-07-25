@@ -158,8 +158,6 @@
     <Compile Include="Assets\Resources\scripts\garage\Back.cs" />
     <Compile Include="Assets\Resources\scripts\garage\DreyeverBehaviour.cs" />
     <Compile Include="Assets\Resources\scripts\garage\DreyeverListing.cs" />
-    <Compile Include="Assets\Resources\scripts\garage\ImageDreyever.cs" />
-    <Compile Include="Assets\Resources\scripts\garage\NameDreyever.cs" />
     <Compile Include="Assets\Resources\scripts\hue\BridgeInfo.cs" />
     <Compile Include="Assets\Resources\scripts\hue\Bridges.cs" />
     <Compile Include="Assets\Resources\scripts\hue\Connect.cs" />
@@ -167,8 +165,10 @@
     <Compile Include="Assets\Resources\scripts\hue\NewUserInfo.cs" />
     <Compile Include="Assets\Resources\scripts\hue\NewUserListItem.cs" />
     <Compile Include="Assets\Resources\scripts\hue\persistence\Data.cs" />
+    <Compile Include="Assets\Resources\scripts\ImageDreyever.cs" />
     <Compile Include="Assets\Resources\scripts\menu\Notification.cs" />
     <Compile Include="Assets\Resources\scripts\menu\TextCoinsCount.cs" />
+    <Compile Include="Assets\Resources\scripts\NameDreyever.cs" />
     <Compile Include="Assets\Resources\scripts\persistent\Environment.cs" />
     <Compile Include="Assets\Resources\scripts\persistent\Lighting.cs" />
     <Compile Include="Assets\Resources\scripts\persistent\model\Progress.cs" />
