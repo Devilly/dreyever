@@ -27,7 +27,7 @@ namespace Dreyever {
 
 		private bool grounded = false;
         private bool jumpReady = false;
-        private bool jumped = false;
+        private bool airturned = false;
 		private float verticalSpeed = 0f;
 
 		public const float safetyRing = 0.01f;
@@ -68,6 +68,7 @@ namespace Dreyever {
                 animator.StartAnimation(Animation.TILT, state.GetDirection(), () =>
                 {
                     jumpReady = true;
+                    airturned = false;
                 });
             }
 
@@ -152,7 +153,6 @@ namespace Dreyever {
 			if (grounded && jumpReady && isCurrentlyJumping) {
                 grounded = false;
                 jumpReady = false;
-                jumped = true;
                 verticalSpeed = jumpSpeed;
             }
 
@@ -160,11 +160,13 @@ namespace Dreyever {
 			verticalSpeed -= gravity * Time.fixedDeltaTime;
 
             float verticalSpeedAirturnMoment = .15f;
-            if(jumped &&
-                (previousVerticalSpeed >= verticalSpeedAirturnMoment) &&
+            if((previousVerticalSpeed >= verticalSpeedAirturnMoment) &&
                 (verticalSpeed <= verticalSpeedAirturnMoment))
             {
-                animator.StartAnimation(Animation.AIRTURN, state.GetDirection());
+                animator.StartAnimation(Animation.AIRTURN, state.GetDirection(), () =>
+                {
+                    airturned = true;
+                });
             }
 
 			if (verticalSpeed < maximumVerticalDropSpeed) {
@@ -175,6 +177,8 @@ namespace Dreyever {
 
 			RaycastHit2D hit = Physics2D.BoxCast(collider.bounds.center, collider.bounds.size,
                 0, movementVector, Mathf.Abs(movementVector.y), LayerMask.GetMask(collisionLayers));
+
+            bool wasGrounded = grounded;
 
 			if (hit.collider != null) {
 				bool touchedFloor = false;
@@ -201,14 +205,15 @@ namespace Dreyever {
 				grounded = false;
 			}
 
-            if(grounded)
+            if(grounded && !wasGrounded)
             {
-                if(jumped)
+                if(airturned)
                 {
                     animator.StartAnimation(Animation.LANDING, state.GetDirection());
+                } else
+                {
+                    jumpReady = true;
                 }
-                
-                jumped = false;
             }
 
 			Move(movementVector);
