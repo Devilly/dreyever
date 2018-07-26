@@ -61,6 +61,8 @@ namespace Environment.Factory
         {
             yield return new WaitForSecondsRealtime(manufacturingTime);
             state.StartMovingRight();
+            yield return new WaitForSecondsRealtime(.5f);
+            state.SendMessage("Influence", new Influence().StartToListen(true));
         }
     }
 }

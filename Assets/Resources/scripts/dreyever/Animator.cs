@@ -99,9 +99,8 @@ namespace Dreyever
 
             var frameIndex = (int) ((Time.time - animationStart) / millisPerFrame);
             frameIndex = Mathf.Clamp(frameIndex, 0, sprites.Length - 1);
-
             GetComponent<SpriteRenderer>().sprite = sprites[frameIndex];
-            Debug.Log(currentAnimation.ToString() + ": " + frameIndex);
+
             if (frameIndex == sprites.Length - 1)
             {
                 if (this.callback != null)

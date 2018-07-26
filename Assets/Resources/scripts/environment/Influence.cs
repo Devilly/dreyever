@@ -8,6 +8,7 @@ namespace Environment {
         private float verticalMovement;
         private Vector2 reposition;
 
+        private bool startToListen;
         private bool die;
 
         public Influence()
@@ -44,6 +45,17 @@ namespace Environment {
         public Vector2 Reposition()
         {
             return reposition;
+        }
+
+        public Influence StartToListen(bool startToListen)
+        {
+            this.startToListen = startToListen;
+            return this;
+        }
+
+        public bool StartToListen()
+        {
+            return startToListen;
         }
 
         public Influence Die(bool die)

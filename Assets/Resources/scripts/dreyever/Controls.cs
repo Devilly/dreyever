@@ -24,7 +24,7 @@ namespace Dreyever {
 		private const float maximumVerticalDropSpeed = -2.0f;
 		private const float gravity = 1.5f;
 		private const float jumpSpeed = 0.4f;
-
+        
 		private bool grounded = false;
         private bool jumpReady = false;
         private bool airturned = false;
@@ -32,6 +32,7 @@ namespace Dreyever {
 
 		public const float safetyRing = 0.01f;
 
+        private bool startedToListen = false;
         private bool dead = false;
 
 		private string[] collisionLayers = new string[]{ "environment" };
@@ -68,7 +69,6 @@ namespace Dreyever {
                 animator.StartAnimation(Animation.TILT, state.GetDirection(), () =>
                 {
                     jumpReady = true;
-                    airturned = false;
                 });
             }
 
@@ -148,7 +148,7 @@ namespace Dreyever {
         }
 
 		void MoveVertical() {
-			bool isCurrentlyJumping = state.IsJumping ();
+			bool isCurrentlyJumping = startedToListen && state.IsJumping ();
 
 			if (grounded && jumpReady && isCurrentlyJumping) {
                 grounded = false;
@@ -209,6 +209,7 @@ namespace Dreyever {
             {
                 if(airturned)
                 {
+                    airturned = false;
                     animator.StartAnimation(Animation.LANDING, state.GetDirection());
                 } else
                 {
@@ -235,10 +236,15 @@ namespace Dreyever {
 					}
 				}
 			}
-		}
+        }
 
         public void Influence(Influence influence)
         {
+            if(influence.StartToListen())
+            {
+                startedToListen = true;
+            }
+
             if(influence.Die())
             {
                 dead = true;
