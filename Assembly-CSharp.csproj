@@ -173,6 +173,7 @@
     <Compile Include="Assets\Resources\scripts\persistent\Lighting.cs" />
     <Compile Include="Assets\Resources\scripts\persistent\model\Progress.cs" />
     <Compile Include="Assets\Resources\scripts\persistent\Vibrator.cs" />
+    <Compile Include="Assets\Resources\scripts\rush\ExecuteProgressSaveToPreventHickups.cs" />
     <Compile Include="Assets\Resources\scripts\rush\FallFail.cs" />
     <Compile Include="Assets\Resources\scripts\rush\Jump.cs" />
     <Compile Include="Assets\Resources\scripts\start\Framerate.cs" />

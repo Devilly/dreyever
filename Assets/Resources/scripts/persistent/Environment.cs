@@ -48,7 +48,7 @@ namespace Persistent
             }
         }
 
-        private void Save()
+        public void Save()
         {
             using (FileStream file = File.Create(persistencePath))
             {

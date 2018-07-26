@@ -79,11 +79,10 @@ namespace Environment.Jump {
 
 				if (trackedBodies.Count () > 0) {
 					trackedBodies.ToList ().ForEach (hit => {
-						Controls controls = hit.transform.GetComponentInChildren<Controls> ();
-                        controls.Influence(new Influence().Reposition(new Vector2(0, deltaY - hit.distance + Controls.safetyRing)));
+                        hit.transform.SendMessage("Influence", new Influence().Reposition(new Vector2(0, deltaY - hit.distance + Controls.safetyRing)));
 
 						if (isCatapulted) {
-                            controls.Influence(new Influence().VerticalMovement(transmittedVerticalMovement));
+                            hit.transform.SendMessage("Influence", new Influence().VerticalMovement(transmittedVerticalMovement));
 						}
 					});
 				}

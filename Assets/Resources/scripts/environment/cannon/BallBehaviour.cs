@@ -34,7 +34,7 @@ namespace Environment.Cannon
         {
             if(collider.tag == "dreyever")
             {
-                collider.GetComponentInChildren<Controls>().Influence(new Influence().Die(true));
+                collider.SendMessage("Influence", new Influence().Die(true));
             }
             
             Destroy(gameObject);

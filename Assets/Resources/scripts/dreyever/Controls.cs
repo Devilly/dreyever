@@ -159,9 +159,10 @@ namespace Dreyever {
             float previousVerticalSpeed = verticalSpeed;
 			verticalSpeed -= gravity * Time.fixedDeltaTime;
 
+            float verticalSpeedAirturnMoment = .15f;
             if(jumped &&
-                (previousVerticalSpeed >= 0) &&
-                (verticalSpeed <= 0))
+                (previousVerticalSpeed >= verticalSpeedAirturnMoment) &&
+                (verticalSpeed <= verticalSpeedAirturnMoment))
             {
                 animator.StartAnimation(Animation.AIRTURN, state.GetDirection());
             }
