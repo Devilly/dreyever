@@ -163,7 +163,7 @@ namespace Dreyever {
                 StartCoroutine(SetAirJumpReady());
             }
             
-            if(!grounded && airJumpReady && !airJumped && isCurrentlyJumping)
+            if(canAirJump && !grounded && airJumpReady && !airJumped && isCurrentlyJumping)
             {
                 airJumped = true;
                 verticalSpeed = jumpSpeed;
