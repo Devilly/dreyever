@@ -9,6 +9,9 @@ namespace Scriptables.Dreyevers
     {
         public new string name;
         public string displayName;
+
+        public bool canAirJump;
+
         public Sprite sprite;
         public Sprite blackSprite;
 

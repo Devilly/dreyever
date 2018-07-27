@@ -24,11 +24,16 @@ namespace Dreyever {
 		private const float maximumVerticalDropSpeed = -2.0f;
 		private const float gravity = 1.5f;
 		private const float jumpSpeed = 0.4f;
-        
+
 		private bool grounded = false;
         private bool jumpReady = false;
         private bool airturned = false;
-		private float verticalSpeed = 0f;
+
+        private readonly bool canAirJump = Persistent.Environment.instance.GetCurrentDreyever().canAirJump;
+        private bool airJumpReady = false;
+        private bool airJumped = false;
+
+        private float verticalSpeed = 0f;
 
 		public const float safetyRing = 0.01f;
 
@@ -154,17 +159,28 @@ namespace Dreyever {
                 grounded = false;
                 jumpReady = false;
                 verticalSpeed = jumpSpeed;
+
+                StartCoroutine(SetAirJumpReady());
+            }
+            
+            if(!grounded && airJumpReady && !airJumped && isCurrentlyJumping)
+            {
+                airJumped = true;
+                verticalSpeed = jumpSpeed;
             }
 
             float previousVerticalSpeed = verticalSpeed;
 			verticalSpeed -= gravity * Time.fixedDeltaTime;
 
             float verticalSpeedAirturnMoment = .15f;
-            if((previousVerticalSpeed >= verticalSpeedAirturnMoment) &&
+            if(!airturned &&
+                (previousVerticalSpeed >= verticalSpeedAirturnMoment) &&
                 (verticalSpeed <= verticalSpeedAirturnMoment))
             {
+                airJumpReady = false;
                 animator.StartAnimation(Animation.AIRTURN, state.GetDirection(), () =>
                 {
+                    airJumpReady = true;
                     airturned = true;
                 });
             }
@@ -215,6 +231,9 @@ namespace Dreyever {
                 {
                     jumpReady = true;
                 }
+
+                airJumpReady = false;
+                airJumped = false;
             }
 
 			Move(movementVector);
@@ -236,6 +255,12 @@ namespace Dreyever {
 					}
 				}
 			}
+        }
+
+        private IEnumerator SetAirJumpReady()
+        {
+            yield return new WaitForSeconds(.1f);
+            airJumpReady = true;
         }
 
         public void Influence(Influence influence)
