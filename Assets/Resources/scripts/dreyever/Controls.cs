@@ -31,7 +31,6 @@ namespace Dreyever {
 
         private readonly bool canAirJump = Persistent.Environment.instance.GetCurrentDreyever().canAirJump;
         private bool airJumpReady = false;
-        private bool airJumped = false;
 
         private float verticalSpeed = 0f;
 
@@ -159,13 +158,11 @@ namespace Dreyever {
                 grounded = false;
                 jumpReady = false;
                 verticalSpeed = jumpSpeed;
-
-                StartCoroutine(SetAirJumpReady());
             }
             
-            if(canAirJump && !grounded && airJumpReady && !airJumped && isCurrentlyJumping)
+            if(canAirJump && !grounded && airJumpReady && isCurrentlyJumping)
             {
-                airJumped = true;
+                airJumpReady = false;
                 verticalSpeed = jumpSpeed;
             }
 
@@ -177,7 +174,6 @@ namespace Dreyever {
                 (previousVerticalSpeed >= verticalSpeedAirturnMoment) &&
                 (verticalSpeed <= verticalSpeedAirturnMoment))
             {
-                airJumpReady = false;
                 animator.StartAnimation(Animation.AIRTURN, state.GetDirection(), () =>
                 {
                     airJumpReady = true;
@@ -233,7 +229,6 @@ namespace Dreyever {
                 }
 
                 airJumpReady = false;
-                airJumped = false;
             }
 
 			Move(movementVector);
@@ -255,12 +250,6 @@ namespace Dreyever {
 					}
 				}
 			}
-        }
-
-        private IEnumerator SetAirJumpReady()
-        {
-            yield return new WaitForSeconds(.1f);
-            airJumpReady = true;
         }
 
         public void Influence(Influence influence)
