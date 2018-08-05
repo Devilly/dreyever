@@ -248,7 +248,7 @@ PlayerSettings:
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   AndroidEnableTango: 0
-  androidEnableBanner: 1
+  androidEnableBanner: 0
   androidUseLowAccuracyLocation: 0
   m_AndroidBanners:
   - width: 320
@@ -260,7 +260,9 @@ PlayerSettings:
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: Android
     m_Icons:
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 0}
+      - {fileID: 2800000, guid: b1ee1e71744dd574b9594382e039df49, type: 3}
       m_Width: 432
       m_Height: 432
       m_Kind: 2
@@ -291,7 +293,7 @@ PlayerSettings:
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 0}
+      - {fileID: 2800000, guid: b1ee1e71744dd574b9594382e039df49, type: 3}
       m_Width: 192
       m_Height: 192
       m_Kind: 1
@@ -327,7 +329,7 @@ PlayerSettings:
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 315501393b8a4be4d96d1cc4993d51b8, type: 3}
+      - {fileID: 2800000, guid: b1ee1e71744dd574b9594382e039df49, type: 3}
       m_Width: 192
       m_Height: 192
       m_Kind: 0
