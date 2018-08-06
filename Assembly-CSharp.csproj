@@ -122,6 +122,7 @@
     <Compile Include="Assets\Resources\scripts\camera\Background.cs" />
     <Compile Include="Assets\Resources\scripts\camera\Orientation.cs" />
     <Compile Include="Assets\Resources\scripts\camera\VirtualCameraManagement.cs" />
+    <Compile Include="Assets\Resources\scripts\CoinType.cs" />
     <Compile Include="Assets\Resources\scripts\dead\Behavior.cs" />
     <Compile Include="Assets\Resources\scripts\dead\CanvasResize.cs" />
     <Compile Include="Assets\Resources\scripts\dead\Exit.cs" />
@@ -144,7 +145,6 @@
     <Compile Include="Assets\Resources\scripts\environment\cannon\Shoot.cs" />
     <Compile Include="Assets\Resources\scripts\environment\coins\Aesthetics.cs" />
     <Compile Include="Assets\Resources\scripts\environment\coins\CoinBehaviour.cs" />
-    <Compile Include="Assets\Resources\scripts\environment\coins\CoinType.cs" />
     <Compile Include="Assets\Resources\scripts\environment\factory\Behaviour.cs" />
     <Compile Include="Assets\Resources\scripts\environment\Influence.cs" />
     <Compile Include="Assets\Resources\scripts\environment\InteractionBase.cs" />
