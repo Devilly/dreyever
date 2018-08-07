@@ -170,6 +170,7 @@
     <Compile Include="Assets\Resources\scripts\menu\TextCoinsCount.cs" />
     <Compile Include="Assets\Resources\scripts\NameDreyever.cs" />
     <Compile Include="Assets\Resources\scripts\persistent\Environment.cs" />
+    <Compile Include="Assets\Resources\scripts\persistent\Initialization.cs" />
     <Compile Include="Assets\Resources\scripts\persistent\Lighting.cs" />
     <Compile Include="Assets\Resources\scripts\persistent\model\Progress.cs" />
     <Compile Include="Assets\Resources\scripts\persistent\Vibrator.cs" />

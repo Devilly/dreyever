@@ -18,34 +18,12 @@ namespace Persistent
         public Scriptables.Dreyevers.Dreyever[] defaultUnlockedDreyevers;
         public Scriptables.Dreyevers.Dreyever[] allDreyevers;
 
-        private string persistencePath;
-        private Progress progress;
+        internal string persistencePath;
+        internal Progress progress;
 
         private void Awake()
         {
             instance = this;
-
-            persistencePath = Application.persistentDataPath + "/progress.data";
-        }
-
-        void Start()
-        {
-            if (File.Exists(persistencePath))
-            {
-                using (FileStream file = File.OpenRead(persistencePath))
-                {
-                    progress = (Progress) new BinaryFormatter().Deserialize(file);
-                }
-            }
-            else
-            {
-                progress = new Progress();
-                progress.currentDreyever = defaultDreyever.name;
-                progress.unlockedDreyevers = defaultUnlockedDreyevers.Select(dreyever =>
-                {
-                    return dreyever.name;
-                }).ToArray();
-            }
         }
 
         public void Save()

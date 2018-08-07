@@ -7,7 +7,6 @@ namespace Util
 {
     public class MakeSingleton : MonoBehaviour
     {
-
         private static List<string> instances = new List<string>();
 
         static MakeSingleton() {

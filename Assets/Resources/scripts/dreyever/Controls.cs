@@ -29,7 +29,7 @@ namespace Dreyever {
         private bool jumpReady = false;
         private bool airturned = false;
 
-        private readonly bool canAirJump = Persistent.Environment.instance.GetCurrentDreyever().canAirJump;
+        private bool canAirJump;
         private bool airJumpReady = false;
 
         private float verticalSpeed = 0f;
@@ -43,6 +43,8 @@ namespace Dreyever {
 
         void Start()
         {
+            canAirJump = Persistent.Environment.instance.GetCurrentDreyever().canAirJump;
+
             collider = GetComponent<BoxCollider2D>();
         }
 
