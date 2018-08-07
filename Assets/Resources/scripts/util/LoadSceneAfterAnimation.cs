@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-namespace Start {
+namespace Util {
 	public class LoadSceneAfterAnimation : MonoBehaviour {
 
 		private Image image;
