@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetDreyever : MonoBehaviour
+namespace Dreyever
 {
-	void Awake () {
-        GetComponent<SpriteRenderer>().sprite = Persistent.Environment.instance.GetCurrentDreyever().tilt[0];
-	}
+    public class SetDreyever : MonoBehaviour
+    {
+        void Start()
+        {
+            GetComponent<SpriteRenderer>().sprite = Persistent.Environment.instance.GetCurrentDreyever().tilt[0];
+        }
+    }
 }
