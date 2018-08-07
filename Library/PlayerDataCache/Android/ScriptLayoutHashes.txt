@@ -4,12 +4,11 @@ C:/Users/deslo/OneDrive/dreyever.apk
 SceneListBegin?
 Assets/Resources/scenes/start.unity
 Assets/Resources/scenes/menu.unity
+Assets/Resources/scenes/garage.unity
 Assets/Resources/scenes/from-portrait-to-landscape.unity
 Assets/Resources/scenes/rush.unity
-Assets/Resources/scenes/garage.unity
 SceneListEnd?
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.SceneReset
-3d86aaeb9de4a98a8c426709be5db4ad Assembly-CSharp.dll:._Continue
 bf9878f6bdc34cc297c58b3c10340ca9 Assembly-CSharp.dll:Cinemachine.CinemachineStateDrivenCamera
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:Environment.Cannon.Aim
 c422dd62785a6d0afa870fbd111886ce Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
@@ -149,6 +148,7 @@ dfd33ff9ae3ce8d7ca1f22b475ec2387 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:Animations.World.Coins.DestroyAfterCollect
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:Dead.SpriteResize
 e7026a458eb0e5bffb5d29970ab06882 Assembly-CSharp.dll:Cinemachine.CinemachineFramingTransposer
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:Persistent.Initialization
 269b37db44145156e3958b0e3fb19fb3 Assembly-CSharp.dll:Cinemachine.CinemachinePOV
 16e0cae6c70e739f286d690a8de93605 Assembly-CSharp.dll:Start.LoadSceneAfterAnimation
 35a652655291766b240f750f89142280 Assembly-CSharp.dll:Scriptables.Environment.Machine.Properties
@@ -218,7 +218,7 @@ fc53744884c96f177c2aa9a02dcbb8d6 Assembly-CSharp.dll:Persistent.Environment
 9e72ea22f0e7e0138cc071db5f92f61f Assembly-CSharp.dll:Environment.Cannon.BallBehaviour
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:Dead.Restart
 a5df3ae7071abaae1603fae321e34d56 Assembly-CSharp.dll:Cinemachine.CinemachineCollider
-486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.SetDreyever
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:Dreyever.SetDreyever
 15320b6936160df5b889e031a8802ff7 Assembly-CSharp.dll:Cinemachine.CinemachineBlenderSettings
 d75dc834c5dec688db75a55a1724c90f UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 486cd95c82d8305219c352c06b776e1f UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput

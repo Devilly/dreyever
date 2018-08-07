@@ -12,12 +12,12 @@ EditorBuildSettings:
     path: Assets/Resources/scenes/menu.unity
     guid: c168faf67fbd0ce4a91ee26ccb4c5757
   - enabled: 1
+    path: Assets/Resources/scenes/garage.unity
+    guid: 94848fc0969d1a944b1ee613980d96bb
+  - enabled: 1
     path: Assets/Resources/scenes/from-portrait-to-landscape.unity
     guid: e6a2d2d2676acde468f83eb769abb4da
   - enabled: 1
     path: Assets/Resources/scenes/rush.unity
     guid: 3c618a11b9bfe494e85e2f4d07ebfe4b
-  - enabled: 1
-    path: Assets/Resources/scenes/garage.unity
-    guid: 94848fc0969d1a944b1ee613980d96bb
   m_configObjects: {}
