@@ -16,20 +16,20 @@ namespace Environment.Machine
         {
             if (collider.tag == "dreyever")
             {
-                State state = collider.GetComponentInChildren<State>();
-                StartCoroutine(TurnAround(state));
+                StartCoroutine(TurnAround(collider));
             }
         }
 
-        private IEnumerator TurnAround(State state)
+        private IEnumerator TurnAround(Collider2D collider)
         {
-            state.StopMoving();
+            collider.SendMessage("Influence", new Influence().StopMoving(true));
             symbol.sprite = active;
 
             yield return new WaitForSeconds(1);
 
-            state.TurnAround();
-            state.StartMoving();
+            collider.SendMessage("Influence", new Influence()
+                .TurnAround(true)
+                .StartMoving(true));
             symbol.sprite = inactive;
         }
     }

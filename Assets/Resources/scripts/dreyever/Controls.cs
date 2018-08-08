@@ -271,16 +271,36 @@ namespace Dreyever {
                 });
             }
 
+            if(influence.StartMoving())
+            {
+                state.StartMoving();
+            }
+
+            if(influence.StopMoving())
+            {
+                state.StopMoving();
+            }
+
+            if(influence.TurnAround())
+            {
+                state.TurnAround();
+            }
+
             bonusSpeed += influence.HorizontalMovement();
             verticalSpeed += influence.VerticalMovement();
 
             Move(new Vector2(influence.Reposition().x, influence.Reposition().y));
+
+            Vector2? place = influence.Place();
+            if(place != null)
+            {
+                transform.position = (Vector2) place;
+            }
         }
 
 		private void Move(Vector2 movementVector)
         {
-            transform.position = new Vector2(transform.position.x + movementVector.x,
-                transform.position.y + movementVector.y);
+            transform.position = (Vector2) transform.position + movementVector;
         }
 	}
 }

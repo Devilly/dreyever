@@ -20,15 +20,13 @@ namespace Environment.Machine
         {
             if (collider.tag == "dreyever")
             {
-                StartCoroutine(TurnAround(collider.transform));
+                StartCoroutine(Displace(collider));
             }
         }
 
-        private IEnumerator TurnAround(Transform dreyever)
+        private IEnumerator Displace(Collider2D collider)
         {
-            State state = dreyever.GetComponent<State>();
-
-            state.StopMoving();
+            collider.SendMessage("Influence", new Influence().StopMoving(true));
             symbol.sprite = active;
 
             yield return new WaitForSeconds(2);
@@ -39,7 +37,8 @@ namespace Environment.Machine
             newVirtualCameraLeft.SetActive(false);
             currentVirtualCameraLeft.GetComponent<CinemachineVirtualCamera>().Follow = null;
 
-            dreyever.position = destinations[new System.Random().Next(0, destinations.Length)].transform.position;
+            collider.SendMessage("Influence", new Influence()
+                .Place(destinations[new System.Random().Next(0, destinations.Length)].transform.position));
 
             newVirtualCameraLeft.SetActive(true);
             currentVirtualCameraLeft.SetActive(false);
@@ -47,7 +46,7 @@ namespace Environment.Machine
 
             yield return new WaitForSeconds(3);
 
-            state.StartMoving();
+            collider.SendMessage("Influence", new Influence().StartMoving(true));
             symbol.sprite = inactive;
         }
     }
