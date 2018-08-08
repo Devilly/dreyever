@@ -21,7 +21,7 @@ namespace Util {
 		}
 
 		private IEnumerator StartAnimation() {
-			float frameTime = 1 / 40;
+			float frameTime = 1f / 40;
 			foreach (Sprite sprite in animationSprites) {
 				yield return new WaitForSeconds (frameTime);
 				image.sprite = sprite;

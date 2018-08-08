@@ -24,10 +24,9 @@ public class CoinsBlink : MonoBehaviour {
             StartCoroutine(Animate());
         }
     }
-
-    private IEnumerator Animate()
+        private IEnumerator Animate()
     {
-        float frameTime = 1 / 40;
+        float frameTime = 1f / 30;
         foreach (Sprite sprite in animationSprites)
         {
             yield return new WaitForSeconds(frameTime);
