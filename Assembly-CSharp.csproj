@@ -165,6 +165,7 @@
     <Compile Include="Assets\Resources\scripts\hue\NewUserListItem.cs" />
     <Compile Include="Assets\Resources\scripts\hue\persistence\Data.cs" />
     <Compile Include="Assets\Resources\scripts\ImageDreyever.cs" />
+    <Compile Include="Assets\Resources\scripts\menu\CoinsBlink.cs" />
     <Compile Include="Assets\Resources\scripts\menu\Notification.cs" />
     <Compile Include="Assets\Resources\scripts\menu\TextCoinsCount.cs" />
     <Compile Include="Assets\Resources\scripts\NameDreyever.cs" />
