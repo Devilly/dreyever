@@ -32,17 +32,12 @@ namespace Environment.Machine
             yield return new WaitForSeconds(2);
 
             VirtualCameraManagement vCamManagement = Camera.main.GetComponent<VirtualCameraManagement>();
-            GameObject currentVirtualCameraLeft = vCamManagement.virtualCameraLeft;
-            GameObject newVirtualCameraLeft = Instantiate(vCamManagement.virtualCameraLeft);
-            newVirtualCameraLeft.SetActive(false);
-            currentVirtualCameraLeft.GetComponent<CinemachineVirtualCamera>().Follow = null;
+            vCamManagement.StopFollowing();
 
             collider.SendMessage("Influence", new Influence()
                 .Place(destinations[new System.Random().Next(0, destinations.Length)].transform.position));
 
-            newVirtualCameraLeft.SetActive(true);
-            currentVirtualCameraLeft.SetActive(false);
-            vCamManagement.virtualCameraLeft = newVirtualCameraLeft;
+            vCamManagement.StartFollowing();
 
             yield return new WaitForSeconds(3);
 
