@@ -1,6 +1,5 @@
-﻿using Dreyever;
-using System.Collections;
-using System.Collections.Generic;
+﻿using Cinemachine;
+using Dreyever;
 using UnityEngine;
 
 public class VirtualCameraManagement : MonoBehaviour {
@@ -36,16 +35,16 @@ public class VirtualCameraManagement : MonoBehaviour {
         
         GameObject currentVirtualCamera = virtualCameraLeft.activeSelf ? virtualCameraLeft : virtualCameraRight;
         GameObject newVirtualCamera = Instantiate(currentVirtualCamera);
-        newVirtualCamera.GetComponent<Cinemachine.CinemachineVirtualCamera>().Follow = playerTransform;
+        newVirtualCamera.GetComponent<CinemachineVirtualCamera>().Follow = playerTransform;
         
         if(virtualCameraLeft.activeSelf)
         {
             virtualCameraLeft = newVirtualCamera;
-            virtualCameraRight.GetComponent<Cinemachine.CinemachineVirtualCamera>().Follow = playerTransform;
+            virtualCameraRight.GetComponent<CinemachineVirtualCamera>().Follow = playerTransform;
         } else
         {
             virtualCameraRight = newVirtualCamera;
-            virtualCameraLeft.GetComponent<Cinemachine.CinemachineVirtualCamera>().Follow = playerTransform;
+            virtualCameraLeft.GetComponent<CinemachineVirtualCamera>().Follow = playerTransform;
         }
 
         newVirtualCamera.SetActive(true);
@@ -56,7 +55,7 @@ public class VirtualCameraManagement : MonoBehaviour {
 
     public void StopFollowing()
     {
-        virtualCameraRight.GetComponent<Cinemachine.CinemachineVirtualCamera>().Follow = null;
-        virtualCameraLeft.GetComponent<Cinemachine.CinemachineVirtualCamera>().Follow = null;
+        virtualCameraRight.GetComponent<CinemachineVirtualCamera>().Follow = null;
+        virtualCameraLeft.GetComponent<CinemachineVirtualCamera>().Follow = null;
     }
 }
