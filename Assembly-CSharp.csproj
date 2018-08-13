@@ -131,6 +131,9 @@
     <Compile Include="Assets\Resources\scripts\util\LoadSceneAfterAnimation.cs" />
     <Compile Include="Assets\Resources\scripts\util\MakeNotDestroyed.cs" />
     <Compile Include="Assets\Resources\scripts\util\MakeSingleton.cs" />
+    <Reference Include="Cinemachine">
+      <HintPath>C:/Users/deslo/Documents/unity-workspace/dreyever/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/deslo/Documents/unity-workspace/dreyever/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
@@ -140,14 +143,11 @@
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>C:/Users/deslo/Documents/unity-workspace/dreyever/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/deslo/Documents/unity-workspace/dreyever/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>C:/Users/deslo/Documents/unity-workspace/dreyever/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
-    </Reference>
     <Reference Include="com.unity.cinemachine.editor">
       <HintPath>C:/Users/deslo/Documents/unity-workspace/dreyever/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/deslo/Documents/unity-workspace/dreyever/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
