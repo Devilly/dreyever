@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// https://forum.unity.com/threads/follow-only-along-a-certain-axis.544511/#post-3591751
 public class FollowAlongHorizontally : CinemachineExtension
 {
     internal float yPosition = 2;
