@@ -236,3 +236,5 @@ C:\Users\deslo\Documents\unity-workspace\dreyever\obj\Debug\Assembly-CSharp.cspr
 C:\Users\deslo\Documents\unity-workspace\dreyever\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\deslo\Documents\unity-workspace\dreyever\obj\Debug\Assembly-CSharp.dll
 C:\Users\deslo\Documents\unity-workspace\dreyever\obj\Debug\Assembly-CSharp.pdb
+C:\Users\deslo\Documents\unity-workspace\dreyever\Temp\bin\Debug\Cinemachine.dll
+C:\Users\deslo\Documents\unity-workspace\dreyever\Temp\bin\Debug\com.unity.cinemachine.editor.dll

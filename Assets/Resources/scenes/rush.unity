@@ -664,6 +664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 3
+  m_LookaheadIgnoreY: 0
   m_XDamping: 0
   m_YDamping: 0.26
   m_ZDamping: 0
@@ -835,6 +836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 3
+  m_LookaheadIgnoreY: 0
   m_XDamping: 0
   m_YDamping: 0.26
   m_ZDamping: 0
@@ -922,11 +924,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4879441026169636, guid: 5c0d36ca5460c7042b4de8d06e39bfa8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 38.29
+      value: -5.12
       objectReference: {fileID: 0}
     - target: {fileID: 4879441026169636, guid: 5c0d36ca5460c7042b4de8d06e39bfa8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -8.66
+      value: 2.33
       objectReference: {fileID: 0}
     - target: {fileID: 4879441026169636, guid: 5c0d36ca5460c7042b4de8d06e39bfa8, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1058,6 +1060,7 @@ GameObject:
   m_Component:
   - component: {fileID: 820008097}
   - component: {fileID: 820008096}
+  - component: {fileID: 820008095}
   m_Layer: 0
   m_Name: Virtual Camera - Left
   m_TagString: Untagged
@@ -1065,6 +1068,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &820008095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 820008094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7035a119fa363cd49bf85cf7cdae1813, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &820008096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1081,6 +1095,7 @@ MonoBehaviour:
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
   m_Priority: 10
+  m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
@@ -1089,6 +1104,16 @@ MonoBehaviour:
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
+    LensShift: {x: 0, y: 0}
+  m_Transitions:
+    m_BlendHint: 0
+    m_InheritPosition: 0
+    m_OnCameraLive:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 487703968}
 --- !u!4 &820008097
 Transform:
@@ -1417,17 +1442,23 @@ MonoBehaviour:
   m_UpdateMethod: 2
   m_DefaultBlend:
     m_Style: 1
-    m_Time: 2
+    m_Time: 0.5
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   m_CustomBlends: {fileID: 0}
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Assembly-CSharp, Version=0.0.0.0,
+    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Cinemachine, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+VcamEvent, Assembly-CSharp, Version=0.0.0.0,
+    m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &930927088
 MonoBehaviour:
@@ -1440,6 +1471,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7784f7432cb3d4449aab84c8ec56d20a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraHeights:
+  - 2
+  - -4
+  - -9
   virtualCameraRight: {fileID: 1802914620}
   virtualCameraLeft: {fileID: 820008094}
 --- !u!1001 &939413509
@@ -7963,6 +7998,7 @@ MonoBehaviour:
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
   m_Priority: 10
+  m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
@@ -7971,6 +8007,16 @@ MonoBehaviour:
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
+    LensShift: {x: 0, y: 0}
+  m_Transitions:
+    m_BlendHint: 0
+    m_InheritPosition: 0
+    m_OnCameraLive:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 550840742}
 --- !u!4 &1802914622
 Transform:
@@ -7994,7 +8040,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1802914620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b6a9c9b855ec6144a18458415d4cf76, type: 3}
+  m_Script: {fileID: 11500000, guid: 7035a119fa363cd49bf85cf7cdae1813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1861848667

@@ -66,6 +66,7 @@
     <Compile Include="Assets\Resources\scriptables\environment\machine\Properties.cs" />
     <Compile Include="Assets\Resources\scriptables\util\Instantiater.cs" />
     <Compile Include="Assets\Resources\scripts\camera\Background.cs" />
+    <Compile Include="Assets\Resources\scripts\camera\FollowAlongHorizontally.cs" />
     <Compile Include="Assets\Resources\scripts\camera\Orientation.cs" />
     <Compile Include="Assets\Resources\scripts\camera\VirtualCameraManagement.cs" />
     <Compile Include="Assets\Resources\scripts\CoinType.cs" />
