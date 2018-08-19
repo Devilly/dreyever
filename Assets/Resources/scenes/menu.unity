@@ -1814,7 +1814,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 94426c44049592f46ba10a0c44596685, type: 3}
   - {fileID: 21300000, guid: 7bc9a30efa261fe49bee31f7398516f6, type: 3}
   - {fileID: 21300000, guid: a5dedbdb36a0d5d4397363cd6d34b013, type: 3}
-  targetScene: from-portrait-to-landscape
+  targetScene: rush
 --- !u!224 &1349336871 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224314971486736336, guid: cb2b3a93e1394b3478cd6954e5b7a61f,
