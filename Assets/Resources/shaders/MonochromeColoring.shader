@@ -39,7 +39,6 @@
 			
 			sampler2D _MainTex;
 			float4 _Color;
-			float _Opacity;
 
 			fixed4 frag (v2f i) : SV_Target
 			{

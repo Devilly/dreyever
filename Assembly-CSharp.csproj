@@ -131,6 +131,7 @@
     <Compile Include="Assets\Resources\scripts\util\LoadSceneAfterAnimation.cs" />
     <Compile Include="Assets\Resources\scripts\util\MakeNotDestroyed.cs" />
     <Compile Include="Assets\Resources\scripts\util\MakeSingleton.cs" />
+    <None Include="Assets\Resources\shaders\OverlayColoring.shader" />
     <None Include="Assets\Resources\shaders\MonochromeColoring.shader" />
     <Reference Include="Cinemachine">
       <HintPath>C:/Users/deslo/Documents/unity-workspace/dreyever/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
