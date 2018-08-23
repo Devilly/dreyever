@@ -11,7 +11,7 @@ public class WallOfDreyevers : MonoBehaviour {
 
     public int numberOfRows;
     public int numberOfColumns;
-    
+
 	void Start () {
         float height = Camera.main.orthographicSize * 2;
         float rowHeight = height / (numberOfRows + .5f);
