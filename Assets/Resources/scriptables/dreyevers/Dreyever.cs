@@ -13,7 +13,6 @@ namespace Scriptables.Dreyevers
         public bool canAirJump;
 
         public Sprite sprite;
-        public Sprite blackSprite;
 
         public Sprite[] tilt;
         public Sprite[] airturn;

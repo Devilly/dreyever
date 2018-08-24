@@ -16,6 +16,7 @@ namespace Garage
             foreach(Scriptables.Dreyevers.Dreyever dreyever in Persistent.Environment.instance.allDreyevers) {
                 GameObject newObject = Instantiate(listImagePrefab, transform);
                 Image image = newObject.GetComponent<Image>();
+                image.sprite = dreyever.sprite;
                 image.preserveAspect = true;
 
                 bool isUnlocked = Persistent.Environment.instance.GetUnlockedDreyevers().Any(unlockedDreyever =>
@@ -25,15 +26,11 @@ namespace Garage
 
                 if(isUnlocked)
                 {
-                    image.sprite = dreyever.sprite;
+                    image.material = null;
                 } else
                 {
                     DreyeverBehaviour behaviour = newObject.GetComponent<DreyeverBehaviour>();
                     behaviour.enabled = false;
-
-                    image.sprite = dreyever.blackSprite;
-                    Color color = image.color;
-                    image.color = new Color(color.r, color.g, color.b, .3f);
                 }
             }
 
