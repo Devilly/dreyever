@@ -83,6 +83,7 @@
     <Compile Include="Assets\Resources\scripts\dreyever\Movement.cs" />
     <Compile Include="Assets\Resources\scripts\dreyever\SetDreyever.cs" />
     <Compile Include="Assets\Resources\scripts\dreyever\State.cs" />
+    <Compile Include="Assets\Resources\scripts\environment\background\Parallax.cs" />
     <Compile Include="Assets\Resources\scripts\environment\boxing\Interact.cs" />
     <Compile Include="Assets\Resources\scripts\environment\bridge\BridgePartInteract.cs" />
     <Compile Include="Assets\Resources\scripts\environment\bridge\BridgeSectionBehaviour.cs" />
