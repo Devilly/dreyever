@@ -6,41 +6,37 @@ using UnityEngine.UI;
 
 public class Parallax : MonoBehaviour {
 
-    private new SpriteRenderer renderer;
+    public Sprite sprite;
+    private GameObject spriteObject;
+    private SpriteRenderer spriteRenderer;
+
+    private LevelBoundsInfo levelBoundsInfo;
+    
+    private float cameraToRendererMovementRatio;
 
     void Start()
     {
-        renderer = GetComponent<SpriteRenderer>();
+        levelBoundsInfo = Camera.main.GetComponent<LevelBoundsInfo>();
 
-        GameObject[] gameObjects = FindObjectsOfType<GameObject>();
-        Bounds totalBounds = new Bounds(Vector3.zero, Vector3.zero);
-        foreach(GameObject gameObject in gameObjects)
-        {
-            SpriteRenderer gameObjectRenderer = gameObject.GetComponent<SpriteRenderer>();
-            if(gameObjectRenderer != null)
-            {
-                totalBounds.Encapsulate(new Bounds(gameObjectRenderer.bounds.center, gameObjectRenderer.bounds.size));
-            } else
-            {
-                Tilemap gameObjectTilemap = gameObject.GetComponentInChildren<Tilemap>();
-                if(gameObjectTilemap != null)
-                {
-                    gameObjectTilemap.CompressBounds();
+        spriteObject = new GameObject();
+        spriteRenderer = spriteObject.AddComponent<SpriteRenderer>();
+        spriteRenderer.sprite = sprite;
 
-                    Bounds bounds = gameObjectTilemap.localBounds;
-                    totalBounds.Encapsulate(gameObjectTilemap.transform.TransformPoint(bounds.min));
-                    totalBounds.Encapsulate(gameObjectTilemap.transform.TransformPoint(bounds.max));
-                }
-            }
-        }
+        float singleSideMovementSpaceCamera = levelBoundsInfo.totalBounds.extents.y - Camera.main.orthographicSize;
+        float singleSideMovementSpaceRenderer = levelBoundsInfo.totalBounds.extents.y - spriteRenderer.bounds.extents.y;
+        cameraToRendererMovementRatio = singleSideMovementSpaceRenderer / singleSideMovementSpaceCamera;
 
-        float scaleToScreenFit = totalBounds.size.y / renderer.bounds.size.y;
-        transform.localScale = new Vector3(transform.localScale.x * scaleToScreenFit,
-                transform.localScale.y * scaleToScreenFit, 1);
+        PlaceAccordingToCameraPosition();
     }
 
     void Update()
     {
+        PlaceAccordingToCameraPosition();
+    }
 
+    private void PlaceAccordingToCameraPosition()
+    {
+        float verticalCameraOffset = Camera.main.transform.position.y - levelBoundsInfo.totalBounds.center.y;
+        spriteObject.transform.position = new Vector3(transform.position.x, verticalCameraOffset * cameraToRendererMovementRatio, transform.position.z);
     }
 }

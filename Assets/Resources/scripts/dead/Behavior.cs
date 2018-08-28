@@ -46,18 +46,9 @@ namespace Dead
 
         private IEnumerator StopTime()
         {
-            int secondsToStop = 2;
-            int steps = 20;
+            yield return new WaitForSeconds(.5f);
 
-            for (int repetition = 0; repetition < steps; repetition++)
-            {
-                yield return new WaitForSecondsRealtime(secondsToStop / steps);
-
-                float newTimeScale = Time.timeScale - 0.05f;
-                if (newTimeScale < 0) newTimeScale = 0;
-                Time.timeScale = newTimeScale;
-            }
-
+            Time.timeScale = 0;
             readyForPositioning = true;
         }
     }

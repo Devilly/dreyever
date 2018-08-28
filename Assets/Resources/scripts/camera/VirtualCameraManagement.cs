@@ -17,6 +17,8 @@ public class VirtualCameraManagement : MonoBehaviour {
     public GameObject virtualCameraRight;
     public GameObject virtualCameraLeft;
 
+    private LevelBoundsInfo levelBoundsInfo;
+
     void Start()
     {
         cinemachineBrain = GetComponent<CinemachineBrain>();
@@ -24,6 +26,8 @@ public class VirtualCameraManagement : MonoBehaviour {
 
         playerTransform = GameObject.FindGameObjectWithTag("dreyever").transform;
         state = playerTransform.GetComponent<State>();
+
+        levelBoundsInfo = Camera.main.GetComponent<LevelBoundsInfo>();
 
         currentCameraHeight = FindNearestCameraHeight();
 
@@ -41,14 +45,14 @@ public class VirtualCameraManagement : MonoBehaviour {
             virtualCameraLeft.SetActive(true);
         }
 
-        float nearestCameraHeight = FindNearestCameraHeight();
-        if(!Mathf.Approximately(nearestCameraHeight, currentCameraHeight))
-        {
-            currentCameraHeight = nearestCameraHeight;
+        //float nearestCameraHeight = FindNearestCameraHeight();
+        //if(!Mathf.Approximately(nearestCameraHeight, currentCameraHeight))
+        //{
+        //    currentCameraHeight = nearestCameraHeight;
 
-            StopFollowing();
-            StartFollowing();
-        }
+        //    StopFollowing();
+        //    StartFollowing();
+        //}
 	}
 
     private float FindNearestCameraHeight()
@@ -77,16 +81,19 @@ public class VirtualCameraManagement : MonoBehaviour {
             currentVirtualCamera = virtualCameraLeft;
 
             virtualCameraRight.GetComponent<FollowAlongHorizontally>().yPosition = currentCameraHeight;
+            virtualCameraRight.GetComponent<FollowAlongWithinBounds>().bounds = levelBoundsInfo.totalBounds;
         } else
         {
             currentVirtualCamera = virtualCameraRight;
 
             virtualCameraLeft.GetComponent<FollowAlongHorizontally>().yPosition = currentCameraHeight;
+            virtualCameraLeft.GetComponent<FollowAlongWithinBounds>().bounds = levelBoundsInfo.totalBounds;
         }
 
         GameObject newVirtualCamera = Instantiate(currentVirtualCamera);
         newVirtualCamera.SetActive(false);
         newVirtualCamera.GetComponent<FollowAlongHorizontally>().yPosition = currentCameraHeight;
+        newVirtualCamera.GetComponent<FollowAlongWithinBounds>().bounds = levelBoundsInfo.totalBounds;
         newVirtualCamera.GetComponent<CinemachineVirtualCamera>().Follow = playerTransform;
         
         if(virtualCameraLeft.activeSelf)
