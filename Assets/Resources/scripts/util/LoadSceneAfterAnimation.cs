@@ -10,6 +10,8 @@ namespace Util {
 		private Image image;
 		public Sprite[] animationSprites;
 
+        private bool activated = false;
+
         public string targetScene;
 
 		void Start() {
@@ -17,6 +19,9 @@ namespace Util {
 		}
 
 		public void Entered() {
+            if (activated) return;
+            else activated = true;
+
 			StartCoroutine (StartAnimation());
 		}
 

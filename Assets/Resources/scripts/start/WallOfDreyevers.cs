@@ -11,13 +11,15 @@ public class WallOfDreyevers : MonoBehaviour {
 
     public int numberOfRows;
     public int numberOfColumns;
+    public float borderMargin;
+    public float innerMargin;
 
 	void Start () {
         float height = Camera.main.orthographicSize * 2;
-        float rowHeight = height / (numberOfRows + .5f);
+        float rowHeight = (height - 2 * borderMargin - (numberOfRows - 1) * innerMargin) / numberOfRows;
 
         float width = height / Screen.height * Screen.width;
-        float columnWidth = width / (numberOfColumns + .5f);
+        float columnWidth = (width - 2 * borderMargin - (numberOfColumns - 1) * innerMargin) / numberOfColumns;
 
         Vector3 topLeftCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0));
         Vector3 bottomRightCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
@@ -33,7 +35,9 @@ public class WallOfDreyevers : MonoBehaviour {
                 SpriteRenderer spriteRenderer = dreyeverShadow.AddComponent<SpriteRenderer>();
                 spriteRenderer.material = spriteMaterial;
                 spriteRenderer.sprite = dreyevers[random.Next(0, dreyevers.Length)];
-                float resizeBy = columnWidth / (new float[] { spriteRenderer.bounds.size.x, spriteRenderer.bounds.size.y }).Max();
+                float horizontalResize = columnWidth / spriteRenderer.bounds.size.x;
+                float verticalResize = rowHeight / spriteRenderer.bounds.size.y;
+                float resizeBy = Mathf.Min(horizontalResize, verticalResize);
                 dreyeverShadow.transform.localScale = new Vector3(dreyeverShadow.transform.localScale.x * resizeBy,
                     dreyeverShadow.transform.localScale.y * resizeBy, 1);
 
@@ -44,11 +48,10 @@ public class WallOfDreyevers : MonoBehaviour {
                 float centerY = spriteRenderer.sprite.rect.height / 2;
                 float pivotY = spriteRenderer.sprite.pivot.y;
                 float offsetY = (pivotY - centerY) / spriteRenderer.sprite.rect.height;
-
-                float marginAsCellSizeFraction = .75f;
+                
                 dreyeverShadow.transform.position = new Vector3(
-                    topLeftCorner.x + (columnIndex + marginAsCellSizeFraction) * columnWidth + spriteRenderer.bounds.size.x * offsetX,
-                    topLeftCorner.y - (rowIndex + marginAsCellSizeFraction) * rowHeight + spriteRenderer.bounds.size.y * offsetY,
+                    topLeftCorner.x + borderMargin + (columnIndex + .5f) * columnWidth + columnIndex * innerMargin + spriteRenderer.bounds.size.x * offsetX,
+                    topLeftCorner.y - borderMargin - (rowIndex + .5f) * rowHeight - rowIndex * innerMargin + spriteRenderer.bounds.size.y * offsetY,
                     0);                
             }
         }

@@ -4,9 +4,8 @@ namespace CameraSpace {
 	public class Background : MonoBehaviour {
 
 		private Camera component;
-        private bool arAvailable = false;
-        public int minColorValue = 251;
-        public int maxColorValue = 251;
+
+        public Color backgroundColor = new Color(14, 16, 18, 255);
 
 		void Start () {
             component = GetComponent<Camera>();
@@ -14,17 +13,7 @@ namespace CameraSpace {
 
         private void Update()
         {
-            float pixelIntensity = 1;
-            float colorValue = minColorValue + (maxColorValue - minColorValue) * pixelIntensity;
-            component.backgroundColor = new Color(
-                convertColorIntToFloat(colorValue),
-                convertColorIntToFloat(colorValue),
-                convertColorIntToFloat(colorValue)
-            );
+            component.backgroundColor = backgroundColor;
         }
-
-        private float convertColorIntToFloat(float color) {
-			return 1f / 255 * color;
-		}
 	}
 }

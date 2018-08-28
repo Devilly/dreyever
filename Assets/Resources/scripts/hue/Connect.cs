@@ -48,6 +48,8 @@ namespace Hue {
             Color color = image.color;
             image.color = new Color(color.r, color.g, color.b, .75f);
 
+            image.enabled = true;
+
             Persistent.Lighting.SetUsername(username);
             Persistent.Lighting.SetHueIpaddress(bridgeInfo.internalipaddress);
         }
