@@ -11,6 +11,6 @@ public class HandleTouches : MonoBehaviour {
 
         if (hit.collider == null) return;
 
-        hit.collider.SendMessage("ihavebeentouched");
+        hit.collider.SendMessage("ihavebeentouched", null, SendMessageOptions.DontRequireReceiver);
     }
 }

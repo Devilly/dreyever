@@ -1348,6 +1348,7 @@ GameObject:
   - component: {fileID: 930927082}
   - component: {fileID: 930927086}
   - component: {fileID: 930927084}
+  - component: {fileID: 930927090}
   - component: {fileID: 930927089}
   - component: {fileID: 930927088}
   m_Layer: 0
@@ -1447,8 +1448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f358519afb7864d81893fd6e07d3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minColorValue: 175
-  maxColorValue: 251
+  backgroundColor: {r: 14, g: 16, b: 18, a: 255}
 --- !u!114 &930927084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1553,6 +1553,17 @@ MonoBehaviour:
   environmentalBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+--- !u!114 &930927090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 930927077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7628209dc3b0e214da9e5ce6dbb31b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &939413509
 Prefab:
   m_ObjectHideFlags: 0

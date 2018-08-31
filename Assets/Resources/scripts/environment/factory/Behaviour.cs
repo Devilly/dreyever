@@ -26,23 +26,12 @@ namespace Environment.Factory
             renderer = GetComponent<SpriteRenderer>();
         }
 
-        void FixedUpdate()
+        public void ihavebeentouched()
         {
             if (activated) return;
-            if (Input.touches.Length == 0) return;
 
-            Touch touch = Input.GetTouch(0);
-            Vector3 position = Camera.main.ScreenToWorldPoint(touch.position);
-            RaycastHit2D hit = Physics2D.Raycast(position, Vector2.zero);
-
-            if(hit.collider != null)
-            {
-                if(hit.collider.name == "Factory")
-                {
-                    StartCoroutine(StartAnimation());
-                    activated = true;
-                }
-            }
+            StartCoroutine(StartAnimation());
+            activated = true;
         }
 
         private IEnumerator StartAnimation()
