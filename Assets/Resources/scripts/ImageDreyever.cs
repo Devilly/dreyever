@@ -7,12 +7,11 @@ namespace Garage
 {
     public class ImageDreyever : MonoBehaviour
     {
-        private Image image;
+        private SpriteRenderer spriteRenderer;
         
         void Start()
         {
-            image = GetComponent<Image>();
-            image.preserveAspect = true;
+            spriteRenderer = GetComponent<SpriteRenderer>();
 
             SetSprite();
         }
@@ -24,7 +23,7 @@ namespace Garage
 
         void SetSprite()
         {
-            image.sprite = Persistent.Environment.instance.GetCurrentDreyever().sprite;
+            spriteRenderer.sprite = Persistent.Environment.instance.GetCurrentDreyever().sprite;
         }
     }
 }
