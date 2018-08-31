@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 namespace Util {
 	public class LoadSceneAfterAnimation : MonoBehaviour {
 
-		private Image image;
+		private SpriteRenderer spriteRenderer;
 		public Sprite[] animationSprites;
 
         private bool activated = false;
@@ -15,10 +15,10 @@ namespace Util {
         public string targetScene;
 
 		void Start() {
-			image = GetComponent<Image> ();
+            spriteRenderer = GetComponent<SpriteRenderer> ();
 		}
 
-		public void Entered() {
+		public void ihavebeentouched() {
             if (activated) return;
             else activated = true;
 
@@ -29,7 +29,7 @@ namespace Util {
 			float frameTime = 1f / 40;
 			foreach (Sprite sprite in animationSprites) {
 				yield return new WaitForSeconds (frameTime);
-				image.sprite = sprite;
+                spriteRenderer.sprite = sprite;
 			}
 
             StartCoroutine(StartNavigation());
