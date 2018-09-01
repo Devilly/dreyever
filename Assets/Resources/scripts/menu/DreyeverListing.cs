@@ -11,6 +11,9 @@ namespace Garage
         public GameObject listImagePrefab;
         public int numberOfColumns;
 
+        public Material lockedDreyeverMaterial;
+        public Material unlockedDreyeverMaterial;
+
         void Start()
         {
             foreach(Scriptables.Dreyevers.Dreyever dreyever in Persistent.Environment.instance.allDreyevers) {
@@ -26,11 +29,13 @@ namespace Garage
 
                 if(isUnlocked)
                 {
-                    image.material = null;
+                    image.material = unlockedDreyeverMaterial;
                 } else
                 {
                     DreyeverBehaviour behaviour = newObject.GetComponent<DreyeverBehaviour>();
                     behaviour.enabled = false;
+
+                    image.material = lockedDreyeverMaterial;
                 }
             }
 
