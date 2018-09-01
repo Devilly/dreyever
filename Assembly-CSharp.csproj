@@ -116,6 +116,7 @@
     <Compile Include="Assets\Resources\scripts\menu\Back.cs" />
     <Compile Include="Assets\Resources\scripts\menu\DreyeverBehaviour.cs" />
     <Compile Include="Assets\Resources\scripts\menu\DreyeverListing.cs" />
+    <Compile Include="Assets\Resources\scripts\menu\DreyeverPropertiesListing.cs" />
     <Compile Include="Assets\Resources\scripts\menu\MoveToGarageAfterTouchAndAnimation.cs" />
     <Compile Include="Assets\Resources\scripts\menu\MoveToMenuAfterTouchAndAnimation.cs" />
     <Compile Include="Assets\Resources\scripts\NameDreyever.cs" />
