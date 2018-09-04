@@ -2,6 +2,3 @@ sceneSetups:
 - path: Assets/Resources/scenes/start.unity
   isLoaded: 1
   isActive: 1
-- path: Assets/Resources/scenes/rush.unity
-  isLoaded: 0
-  isActive: 0
