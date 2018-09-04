@@ -18,7 +18,7 @@ public class WallOfDreyevers : MonoBehaviour {
         float height = Camera.main.orthographicSize * 2;
         float rowHeight = (height - 2 * borderMargin - (numberOfRows - 1) * innerMargin) / numberOfRows;
 
-        float width = height / Screen.height * Screen.width;
+        float width = height / Camera.main.pixelRect.height * Camera.main.pixelRect.width;
         float columnWidth = (width - 2 * borderMargin - (numberOfColumns - 1) * innerMargin) / numberOfColumns;
 
         Vector3 topLeftCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0));

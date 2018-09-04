@@ -68,6 +68,7 @@
     <Compile Include="Assets\Resources\scripts\camera\Background.cs" />
     <Compile Include="Assets\Resources\scripts\camera\FollowAlongHorizontally.cs" />
     <Compile Include="Assets\Resources\scripts\camera\FollowAlongWithinBounds.cs" />
+    <Compile Include="Assets\Resources\scripts\camera\GiveCameraWantedAspectRatio.cs" />
     <Compile Include="Assets\Resources\scripts\camera\HandleTouches.cs" />
     <Compile Include="Assets\Resources\scripts\camera\LevelBoundsInfo.cs" />
     <Compile Include="Assets\Resources\scripts\camera\Orientation.cs" />
